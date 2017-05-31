@@ -1,0 +1,21 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: shell 
+
+platforms:
+  - name: centos65
+    driver:
+      box: learningchef/centos65
+      box_url: learningchef/centos65
+      network:
+      - ["private_network", {ip: "192.168.33.37"}]
+      synched_folders:
+      - ["/Users/ncamara/code/learningchef/chef-repo", "/chef_repo"]
+
+suites:
+  - name: node2
+    run_list:
+    attributes:
