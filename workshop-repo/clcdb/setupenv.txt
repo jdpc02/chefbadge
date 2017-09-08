@@ -1,0 +1,32 @@
+1. Install the latest stable ChefDK
+```
+curl -s https://omnitruck.chef.io/install.sh | sudo bash -s -- -P chefdk
+echo 'eval "$(chef shell-init bash)"' >> ~/.bash_profile
+source ~/.bash_profile
+```
+2. Install Docker
+```
+sudo yum install -y git yum-utils
+sudo yum-config-manager --add-repo \
+https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum makecache fast
+sudo yum -y install docker-ce
+sudo systemctl enable docker
+sudo systemctl start docker
+sudo usermod -aG docker $USER
+sudo systemctl stop getty@tty1.service
+sudo systemctl mask getty@tty1.service
+logout
+```
+   Log back in so settings are commited:
+```
+docker network create --subnet=10.1.1.0/24 mytestnet
+gem install kitchen-docker
+```
+3. Configure git
+```
+git config --global user.name "Your Name”
+git config --global user.email "email@example.com”
+git config --global core.editor vim
+git config --global color.ui auto
+```
