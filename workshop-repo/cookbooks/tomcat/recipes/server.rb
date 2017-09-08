@@ -7,7 +7,7 @@
 package 'java-1.7.0-openjdk-devel'
 
 group 'tomcat' do
- action :create
+  action :create
 end
 
 user 'tomcat' do
@@ -25,15 +25,6 @@ remote_file '/tmp/apache-tomcat-8.5.20.tar.gz' do
   action :create
   not_if { ::File.exist?('/tmp/apache-tomcat-8.5.20.tar.gz') }
 end
-
-# remote_file '/tmp/sample.war' do
-#   source 'https://github.com/johnfitzpatrick/certification-workshops/blob/master/Tomcat/sample.war'
-#   owner 'tomcat'
-#   group 'tomcat'
-#   mode '0755'
-#   action :create
-#   not_if { ::File.exist?('/tmp/sample.war') }
-# end
 
 directory '/opt/tomcat' do
   action :create
@@ -68,9 +59,9 @@ end
 
 template '/opt/tomcat/conf/server.xml' do
   source 'server.xml.erb'
-  variables({
-    :connectorport => node['cp']
-  })
+  variables(
+    connectorport: node['cp']
+  )
   notifies :reload, 'service[tomcat restart]', :immediately
 end
 
