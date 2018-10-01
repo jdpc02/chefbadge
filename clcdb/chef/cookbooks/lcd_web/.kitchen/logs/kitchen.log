@@ -1,0 +1,58 @@
+E, [2018-09-30T21:19:06.518550 #3840] ERROR -- Kitchen: ------Exception-------
+E, [2018-09-30T21:19:06.518715 #3840] ERROR -- Kitchen: Class: Kitchen::ClientError
+E, [2018-09-30T21:19:06.518749 #3840] ERROR -- Kitchen: Message: Could not load the 'docker' driver from the load path. Please ensure that your driver is installed as a gem or included in your Gemfile if using Bundler.
+E, [2018-09-30T21:19:06.518781 #3840] ERROR -- Kitchen: ----------------------
+E, [2018-09-30T21:19:06.518811 #3840] ERROR -- Kitchen: ------Backtrace-------
+E, [2018-09-30T21:19:06.518845 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/driver.rb:48:in `rescue in for_plugin'
+E, [2018-09-30T21:19:06.518877 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/driver.rb:37:in `for_plugin'
+E, [2018-09-30T21:19:06.518909 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/config.rb:234:in `new_driver'
+E, [2018-09-30T21:19:06.518941 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/config.rb:247:in `new_instance'
+E, [2018-09-30T21:19:06.518971 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/config.rb:142:in `block in build_instances'
+E, [2018-09-30T21:19:06.519001 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/config.rb:141:in `map'
+E, [2018-09-30T21:19:06.519032 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/config.rb:141:in `with_index'
+E, [2018-09-30T21:19:06.519063 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/config.rb:141:in `build_instances'
+E, [2018-09-30T21:19:06.519093 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/config.rb:117:in `instances'
+E, [2018-09-30T21:19:06.519124 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/command.rb:112:in `filtered_instances'
+E, [2018-09-30T21:19:06.519155 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/command.rb:142:in `parse_subcommand'
+E, [2018-09-30T21:19:06.519186 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/command/list.rb:30:in `call'
+E, [2018-09-30T21:19:06.519217 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/cli.rb:52:in `perform'
+E, [2018-09-30T21:19:06.519293 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/cli.rb:120:in `list'
+E, [2018-09-30T21:19:06.519324 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/thor-0.20.0/lib/thor/command.rb:27:in `run'
+E, [2018-09-30T21:19:06.519355 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/thor-0.20.0/lib/thor/invocation.rb:126:in `invoke_command'
+E, [2018-09-30T21:19:06.519386 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/thor-0.20.0/lib/thor.rb:387:in `dispatch'
+E, [2018-09-30T21:19:06.519417 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/thor-0.20.0/lib/thor/base.rb:466:in `start'
+E, [2018-09-30T21:19:06.519448 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/bin/kitchen:13:in `block in <top (required)>'
+E, [2018-09-30T21:19:06.519479 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/errors.rb:171:in `with_friendly_errors'
+E, [2018-09-30T21:19:06.519510 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/bin/kitchen:13:in `<top (required)>'
+E, [2018-09-30T21:19:06.519541 #3840] ERROR -- Kitchen: /opt/chefdk/bin/kitchen:293:in `load'
+E, [2018-09-30T21:19:06.519570 #3840] ERROR -- Kitchen: /opt/chefdk/bin/kitchen:293:in `<main>'
+E, [2018-09-30T21:19:06.519610 #3840] ERROR -- Kitchen: ----End Backtrace-----
+E, [2018-09-30T21:19:06.519640 #3840] ERROR -- Kitchen: ---Nested Exception---
+E, [2018-09-30T21:19:06.519670 #3840] ERROR -- Kitchen: Class: LoadError
+E, [2018-09-30T21:19:06.519699 #3840] ERROR -- Kitchen: Message: cannot load such file -- kitchen/driver/docker
+E, [2018-09-30T21:19:06.519729 #3840] ERROR -- Kitchen: ----------------------
+E, [2018-09-30T21:19:06.519758 #3840] ERROR -- Kitchen: ------Backtrace-------
+E, [2018-09-30T21:19:06.519787 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/driver.rb:48:in `rescue in for_plugin'
+E, [2018-09-30T21:19:06.519818 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/driver.rb:37:in `for_plugin'
+E, [2018-09-30T21:19:06.519849 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/config.rb:234:in `new_driver'
+E, [2018-09-30T21:19:06.519880 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/config.rb:247:in `new_instance'
+E, [2018-09-30T21:19:06.519910 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/config.rb:142:in `block in build_instances'
+E, [2018-09-30T21:19:06.519941 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/config.rb:141:in `map'
+E, [2018-09-30T21:19:06.519971 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/config.rb:141:in `with_index'
+E, [2018-09-30T21:19:06.520002 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/config.rb:141:in `build_instances'
+E, [2018-09-30T21:19:06.520032 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/config.rb:117:in `instances'
+E, [2018-09-30T21:19:06.520063 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/command.rb:112:in `filtered_instances'
+E, [2018-09-30T21:19:06.520093 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/command.rb:142:in `parse_subcommand'
+E, [2018-09-30T21:19:06.520124 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/command/list.rb:30:in `call'
+E, [2018-09-30T21:19:06.520154 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/cli.rb:52:in `perform'
+E, [2018-09-30T21:19:06.520185 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/cli.rb:120:in `list'
+E, [2018-09-30T21:19:06.520215 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/thor-0.20.0/lib/thor/command.rb:27:in `run'
+E, [2018-09-30T21:19:06.520246 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/thor-0.20.0/lib/thor/invocation.rb:126:in `invoke_command'
+E, [2018-09-30T21:19:06.520276 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/thor-0.20.0/lib/thor.rb:387:in `dispatch'
+E, [2018-09-30T21:19:06.520307 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/thor-0.20.0/lib/thor/base.rb:466:in `start'
+E, [2018-09-30T21:19:06.520337 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/bin/kitchen:13:in `block in <top (required)>'
+E, [2018-09-30T21:19:06.520368 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/errors.rb:171:in `with_friendly_errors'
+E, [2018-09-30T21:19:06.520398 #3840] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/bin/kitchen:13:in `<top (required)>'
+E, [2018-09-30T21:19:06.520429 #3840] ERROR -- Kitchen: /opt/chefdk/bin/kitchen:293:in `load'
+E, [2018-09-30T21:19:06.520458 #3840] ERROR -- Kitchen: /opt/chefdk/bin/kitchen:293:in `<main>'
+E, [2018-09-30T21:19:06.520497 #3840] ERROR -- Kitchen: ----End Backtrace-----
