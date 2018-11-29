@@ -31,3 +31,24 @@ suites:
       inspec_tests:
         - test/integration/default
     attributes:
+  - name: secondisk
+    run_list:
+      - recipe[resourcetest::default]
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    driver:
+      customize:
+        createhd:
+          - filename: d:/VMs/disk2.vdi
+            size: 1024
+        storagectl:
+          - name: IDE
+            controller: PIIX4
+            portcount: 2
+        storageattach:
+          - storagectl: IDE
+            port: 1
+            device: 1
+            type: hdd
+            medium: d:/VMs/disk2.vdi
