@@ -1,3 +1,0 @@
-I, [2018-12-01T09:36:45.640806 #10368]  INFO -- Kitchen: -----> Starting Kitchen (v1.23.2)
-I, [2018-12-01T09:37:02.080955 #10368]  INFO -- Kitchen: -----> Destroying <default-ubuntu-xenial64>...
-I, [2018-12-01T09:37:13.395066 #10368]  INFO -- Kitchen: -----> Kitchen is finished. (0m27.75s)

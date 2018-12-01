@@ -52,7 +52,5 @@ suites:
             device: 1
             type: hdd
             medium: d:/VMs/disk2.vdi
-    include:
+    includes:
       - centos/7
-
-
