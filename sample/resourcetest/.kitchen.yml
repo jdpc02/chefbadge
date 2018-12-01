@@ -31,7 +31,7 @@ suites:
       inspec_tests:
         - test/integration/default
     attributes:
-  - name: secondisk
+  - name: centosdisk2
     run_list:
       - recipe[resourcetest::default]
     verifier:
@@ -52,3 +52,7 @@ suites:
             device: 1
             type: hdd
             medium: d:/VMs/disk2.vdi
+    include:
+      - centos/7
+
+
