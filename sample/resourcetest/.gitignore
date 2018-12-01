@@ -13,8 +13,8 @@ bin/*
 .bundle/*
 
 # test kitchen
-.kitchen/*.*
 .kitchen.local.yml
+.kitchen
 
 # Chef
 Berksfile.lock
