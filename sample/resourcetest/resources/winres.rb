@@ -1,16 +1,17 @@
 # To learn more about Custom Resources, see https://docs.chef.io/custom_resources.html
-property :someprop, String, default: 'This is an example property'
+property :someprop, String, default: 'This is an example property', name_property: true
 property :somedisk, String, default: 'D'
 property :extsize, Integers, default: 20
 
 default_action :create
 
 action :create do
+  service 'ShellHWDetection' do
+    action :stop
+  end
+  
   powershell_script 'Grab New Disks, Initialize and Format' do
       code <<-EOH
-        ### Stops the Hardware Detection Service ###
-        Stop-Service -Name ShellHWDetection
-
         ### Grabs all the new RAW disks into a variable ###
         $disk = get-disk | where partitionstyle -eq ‘raw’
 
@@ -25,18 +26,19 @@ action :create do
             ### Initialization, Partitioning, and formatting ###
             Start-Sleep 2
         }
-        ### Starts the Hardware Detection Service again ###
-        Start-Service -Name ShellHWDetection
-
         ### end of script ###
       EOH
+  end
+
+  service 'ShellHWDetection' do
+    action :Start
   end
 end
 
 action :delete do
   powershell_script 'Delete partition' do
     code <<-EOH
-      $deldisk = new_resource.somedisk
+      $deldisk = #{somedisk}
       $deldisk = $deldisk.Trim()
       $deldisk = $deldisk.Substring(0,1)
       Remove-Partition -DriveLetter $deldisk
@@ -47,8 +49,8 @@ end
 action :extend do
   powershell_script 'Extending a disk' do
       code <<-EOH
-        $moredisk = new_resource.extsize
-        $extdisk = new_resource.somedisk
+        $moredisk = #{extsize}
+        $extdisk = #{somedisk}
         $extdisk = $extdisk.Trim()
         $extdisk = $extdisk.Substring(0,1)
         Resize-Partition -DriveLetter $extdisk -Size $moredisk
