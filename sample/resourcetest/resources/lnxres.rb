@@ -6,9 +6,9 @@ property :extsize, Integer, default: 20
 default_action :create
 
 action :create do
-  cmd = Mixlib::ShellOut.new('ls /sys/class/scsi_host/')
-  cmd.run_command
-  diskscans = cmd.stdout
+  cmd1 = Mixlib::ShellOut.new('ls /sys/class/scsi_host/')
+  cmd1.run_command
+  diskscans = cmd1.stdout
   diskscans = diskscans.split("\n")
   diskscans.each do |scandisk|
     execute "disk scan #{scandisk}" do
@@ -24,22 +24,31 @@ action :create do
     action :run
   end
 
-  cmd = Mixlib::ShellOut.new('lsblk | grep disk | grep sd | awk \'{if ($3 == 0) print $1}\'')
-  cmd.run_command
-  puts cmd.stdout
-  alldisk = cmd.stdout
-  alldisk = alldisk.to_s.chomp
-  alldisk = alldisk.split("\n")
-
   package 'e2fsprogs' do
     action :install
   end
 
-  puts alldisk
+  cmd2 = Mixlib::ShellOut.new('lsblk | grep disk | grep sd | awk \'{print $1}\'')
+  cmd2.run_command
+  alldisk = cmd2.stdout
+  alldisk = alldisk.to_s.chomp
+  alldisk = alldisk.split("\n")
   alldisk.each do |procdisk|
-    cmd = Mixlib::ShellOut.new("file -s /dev/#{procdisk} | grep data --count")
-    cmd.run_command
-    diskstat = cmd.stdout
+    log 'in the loop' do
+      level :warn
+      message "Finally in the loop with #{procdisk} "
+    end
+
+    cmd3 = Mixlib::ShellOut.new("file -s /dev/#{procdisk} | grep data --count")
+    cmd3.run_command
+    diskstat = cmd3.stdout
+    diskstat = diskstat.to_i
+
+    log 'value of diskstat' do
+      level :warn
+      message "It is #{diskstat}"
+    end
+
     next unless diskstat == 1
     bash 'Create partition' do
       code <<-EOH
