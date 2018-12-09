@@ -1,4 +1,3 @@
 # resourcetest
 
-TODO: Enter the cookbook description here.
-
+Cookbook reference for setting up custom resources.

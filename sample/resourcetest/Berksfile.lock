@@ -1,0 +1,7 @@
+DEPENDENCIES
+  resourcetest
+    path: .
+    metadata: true
+
+GRAPH
+  resourcetest (0.1.0)

@@ -1,0 +1,36 @@
+I, [2018-12-09T16:53:21.208504 #5804]  INFO -- centosdisk2-centos-7: -----> Converging <centosdisk2-centos-7>...
+I, [2018-12-09T16:53:21.211498 #5804]  INFO -- centosdisk2-centos-7: Preparing files for transfer
+I, [2018-12-09T16:53:21.213046 #5804]  INFO -- centosdisk2-centos-7: Preparing dna.json
+I, [2018-12-09T16:53:21.215568 #5804]  INFO -- centosdisk2-centos-7: Resolving cookbook dependencies with Berkshelf 7.0.7...
+I, [2018-12-09T16:53:24.995826 #5804]  INFO -- centosdisk2-centos-7: Removing non-cookbook files before transfer
+I, [2018-12-09T16:53:25.018709 #5804]  INFO -- centosdisk2-centos-7: Preparing validation.pem
+I, [2018-12-09T16:53:25.021689 #5804]  INFO -- centosdisk2-centos-7: Preparing client.rb
+I, [2018-12-09T16:53:25.306243 #5804]  INFO -- centosdisk2-centos-7: -----> Chef Omnibus installation detected (install only if missing)
+I, [2018-12-09T16:53:25.353785 #5804]  INFO -- centosdisk2-centos-7: Transferring files to <centosdisk2-centos-7>
+I, [2018-12-09T16:53:27.577005 #5804]  INFO -- centosdisk2-centos-7: Starting Chef Client, version 14.7.17
+I, [2018-12-09T16:53:28.753594 #5804]  INFO -- centosdisk2-centos-7: resolving cookbooks for run list: ["resourcetest::default"]
+I, [2018-12-09T16:53:28.787978 #5804]  INFO -- centosdisk2-centos-7: Synchronizing Cookbooks:
+I, [2018-12-09T16:53:28.789744 #5804]  INFO -- centosdisk2-centos-7:   - resourcetest (0.1.0)
+I, [2018-12-09T16:53:28.791873 #5804]  INFO -- centosdisk2-centos-7: Installing Cookbook Gems:
+I, [2018-12-09T16:53:28.792108 #5804]  INFO -- centosdisk2-centos-7: Compiling Cookbooks...
+I, [2018-12-09T16:53:28.792316 #5804]  INFO -- centosdisk2-centos-7: Converging 1 resources
+I, [2018-12-09T16:53:28.792511 #5804]  INFO -- centosdisk2-centos-7: Recipe: resourcetest::default
+I, [2018-12-09T16:53:28.839885 #5804]  INFO -- centosdisk2-centos-7:   * resourcetest_lnxres[setupdisk] action createsda
+I, [2018-12-09T16:53:28.840074 #5804]  INFO -- centosdisk2-centos-7: sdb
+I, [2018-12-09T16:53:28.840223 #5804]  INFO -- centosdisk2-centos-7: sda
+I, [2018-12-09T16:53:28.840362 #5804]  INFO -- centosdisk2-centos-7: sdb
+I, [2018-12-09T16:53:28.876183 #5804]  INFO -- centosdisk2-centos-7: 
+I, [2018-12-09T16:53:29.048030 #5804]  INFO -- centosdisk2-centos-7:     * execute[disk scan host0] action run
+I, [2018-12-09T16:53:29.048211 #5804]  INFO -- centosdisk2-centos-7:       - execute echo "- - -" > /sys/class/scsi_host/host0/scan
+I, [2018-12-09T16:53:29.220203 #5804]  INFO -- centosdisk2-centos-7:     * execute[disk scan host1] action run
+I, [2018-12-09T16:53:29.220426 #5804]  INFO -- centosdisk2-centos-7:       - execute echo "- - -" > /sys/class/scsi_host/host1/scan
+I, [2018-12-09T16:53:59.228834 #5804]  INFO -- centosdisk2-centos-7:     * ruby_block[break time] action run
+I, [2018-12-09T16:53:59.229105 #5804]  INFO -- centosdisk2-centos-7:       - execute the ruby block break time
+I, [2018-12-09T16:54:01.098610 #5804]  INFO -- centosdisk2-centos-7:     * yum_package[e2fsprogs] action install (up to date)
+I, [2018-12-09T16:54:01.098827 #5804]  INFO -- centosdisk2-centos-7:   
+I, [2018-12-09T16:54:01.154885 #5804]  INFO -- centosdisk2-centos-7: 
+I, [2018-12-09T16:54:01.155082 #5804]  INFO -- centosdisk2-centos-7: Running handlers:
+I, [2018-12-09T16:54:01.155240 #5804]  INFO -- centosdisk2-centos-7: Running handlers complete
+I, [2018-12-09T16:54:01.155399 #5804]  INFO -- centosdisk2-centos-7: Chef Client finished, 4/5 resources updated in 33 seconds
+I, [2018-12-09T16:54:01.170078 #5804]  INFO -- centosdisk2-centos-7: Downloading files from <centosdisk2-centos-7>
+I, [2018-12-09T16:54:01.183023 #5804]  INFO -- centosdisk2-centos-7: Finished converging <centosdisk2-centos-7> (0m39.97s).
