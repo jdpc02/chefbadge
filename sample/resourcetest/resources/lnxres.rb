@@ -35,7 +35,7 @@ action :create do
   alldisk = alldisk.split("\n")
   alldisk.each do |procdisk|
     log 'in the loop' do
-      level :warn
+      level :info
       message "Finally in the loop with #{procdisk} "
     end
 
@@ -45,17 +45,21 @@ action :create do
     diskstat = diskstat.to_i
 
     log 'value of diskstat' do
-      level :warn
+      level :info
       message "It is #{diskstat}"
     end
 
     next unless diskstat == 1
-    bash 'Create partition' do
-      code <<-EOH
-        sfdisk /dev/#{procdisk} <<EOF
-        0,
-        EOF
-      EOH
+    # bash 'Create partition' do
+    #   code <<-EOH
+    #     sfdisk /dev/#{procdisk} <<EOF
+    #     0,
+    #     EOF
+    #   EOH
+    # end
+
+    execute 'Create partition' do
+      command "echo 'type=83' | sfdisk /dev/#{procdisk}"
     end
 
     execute 'Format partition' do
