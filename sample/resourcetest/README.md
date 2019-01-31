@@ -1,3 +1,3 @@
 # resourcetest
 
-Cookbook reference for setting up custom resources.
+A simple custom resource for web config for windows and linux.

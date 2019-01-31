@@ -13,15 +13,8 @@ verifier:
   name: inspec
 
 platforms:
-  - name: ubuntu/xenial64
-  - name: centos/7
-  - name: mwrock/Windows2016
-    transport:
-      name: winrm
-      elevated: true
-      customize:
-        memory: 6144
-      vm_hostname: mywinvm
+  - name: ubuntu-16.04
+  - name: centos-7
 
 suites:
   - name: default
@@ -31,26 +24,3 @@ suites:
       inspec_tests:
         - test/integration/default
     attributes:
-  - name: centosdisk2
-    run_list:
-      - recipe[resourcetest::default]
-    verifier:
-      inspec_tests:
-        - test/integration/default
-    driver:
-      customize:
-        createhd:
-          - filename: d:/VMs/disk2.vdi
-            size: 1024
-        storagectl:
-          - name: IDE
-            controller: PIIX4
-            portcount: 2
-        storageattach:
-          - storagectl: IDE
-            port: 1
-            device: 1
-            type: hdd
-            medium: d:/VMs/disk2.vdi
-    includes:
-      - centos/7
