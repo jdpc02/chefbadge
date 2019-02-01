@@ -6,6 +6,5 @@ This file is used to list changes made in each version of the resourcetest cookb
 
 Initial release.
 
-- change 0
-- change 1
-
+- Added the IIS custom resource
+- Added the apache/httpd custom resource

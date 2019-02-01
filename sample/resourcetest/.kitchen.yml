@@ -15,6 +15,13 @@ verifier:
 platforms:
   - name: ubuntu-16.04
   - name: centos-7
+  - name: mwrock/Windows2016
+    transport:
+      name: winrm
+      elevated: true
+      customize:
+        memory: 6144
+      vm_hostname: mywinvm
 
 suites:
   - name: default
