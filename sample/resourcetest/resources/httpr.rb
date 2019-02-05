@@ -1,4 +1,6 @@
 # To learn more about Custom Resources, see https://docs.chef.io/custom_resources.html
+resource_name :linuxhttp
+
 property :someprop, String, name_property: true
 property :thisurl, String, default: 'mylocalnode.local.loc'
 
