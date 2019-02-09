@@ -1,2 +1,2 @@
-winhttp 'Setup IIS' do
+linuxhttp 'Setup IIS' do
 end

@@ -15,9 +15,9 @@ action :create do
     $output
   EOH
 
-  chkoutput = powershell_out(chkscript).stdout
+  chkoutput = powershell_out(chkscript).stdout.delete("\n").delete("\r")
 
-  if chkoutput == False
+  if chkoutput == 'False'
     platformver = node['platform_version']
     strarr = platformver.split('.')
     vn = strarr[2]
@@ -39,8 +39,7 @@ action :create do
           # not_if '(Get-WindowsFeature -Name Web-Server).Installed'
         end
 
-        %w(d:\inetpub d:\inetpub\wwwroot d:\inetpub\logs d:\inetpub\logs\LogFiles).each
-        do |createdir|
+        %w(d:\inetpub d:\inetpub\wwwroot d:\inetpub\logs d:\inetpub\logs\LogFiles).each do |createdir|
           directory createdir
         end
 

@@ -15,22 +15,23 @@ default_action :create
 
 action :create do
   execute 'IsWebRunning' do
-      command "systemctl status #{webpkg} | grep running > /tmp/IsWebRunning.txt"
-      action :run
-  end
+    command "systemctl status #{webpkg} | grep running > #{Chef::Config[:file_cache_path]}/IsWebRunning.txt"
+    ignore_failure true
+  end.run_action(:run)
 
-  chkweb = ::File.read('/tmp/IsWebRunning.txt').chomp
+  chkweb = ::File.read("#{Chef::Config[:file_cache_path]}/IsWebRunning.txt").chomp
   if chkweb.to_s.strip.empty?
     package webpkg
 
     case webpkg
     when 'httpd'
-      script 'enable firewall rules for httpd' do
+      bash 'enable firewall rules for httpd' do
         code <<-EOH
-          sudo firewall-cmd --permanent --add-port=80/tcp
-          sudo firewall-cmd --permanent --add-port=443/tcp
-          sudo firewall-cmd --reload
+          firewall-cmd --permanent --add-port=80/tcp
+          firewall-cmd --permanent --add-port=443/tcp
+          firewall-cmd --reload
         EOH
+        only_if 'firewall-cmd --state'
       end
 
       service 'httpd' do
@@ -38,9 +39,9 @@ action :create do
         action [ :enable, :start ]
       end    
     when 'apache2'
-      script 'enable firewall rules for apache2' do
+      bash 'enable firewall rules for apache2' do
         code <<-EOH
-          sudo ufw allow 'Apache Full'
+          ufw allow 'Apache Full'
         EOH
       end
     end
