@@ -4,4 +4,9 @@
 #
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
-include_recipe 'mycookbook::webtest'
+case node['platform']
+when 'windows'
+  include_recipe 'mycookbook::wintest'
+when 'linux'
+  include_recipe 'mycookbook::linuxtest'
+end

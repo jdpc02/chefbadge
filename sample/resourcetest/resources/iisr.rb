@@ -24,33 +24,95 @@ action :create do
 
     if vn.to_i >= 9600
       Chef::Log.info 'Running at least Server 2012 R2'
-      if Dir.exist? 'D:/'
-        logdir = 'd:/inetpub/logs/LogFiles'
-      else
-        logdir = node['iis']['docroot']
+      windows_feature_powershell 'Web-Server' do
+        # management_tools true
+        action :install
       end
 
-      # unless File.directory? logdir
-        powershell_script 'IIS Installation' do
-          code <<-EOH
-            Import-Module ServerManager
-            Add-WindowsFeature Web-Server, Web-Mgmt-Console
-          EOH
-          # not_if '(Get-WindowsFeature -Name Web-Server).Installed'
+      if Dir.exist? 'D:/'
+        directory 'D:/inetpub'
+
+        remote_directory 'D:/inetpub' do
+          source 'C:/inetpub'
+          recursive true
+          action :create
         end
 
-        %w(d:\inetpub d:\inetpub\wwwroot d:\inetpub\logs d:\inetpub\logs\LogFiles).each do |createdir|
-          directory createdir
+        registry_key 'HKLM\\System\\CurrentControlSet\\Services\\WAS\\Parameters' do
+          values [{
+            name: 'ConfigIsolationPath',
+            type: :string,
+            data: 'D:\\inetpub\\temp\\appPools'
+          }]
+          action :create
         end
 
-        powershell_script 'Change Default Log Dir' do
-          code <<-EOH
-            $newlogdir = #{logdir}
-            Import-Module WebAdministration
-            Set-WebConfigurationProperty "/system.applicationHost/sites/siteDefaults" -name logfile.directory -value $newlogdir
-          EOH
+        %w(HKLM\\Software\\Microsoft\\inetstp HKLM\\Software\\Wow6432Node\\Microsoft\\inetstp).each do |regkey|
+          registry_key "#{regkey}" do
+            values [{
+              name: 'PathWWWRoot',
+              type: :expand_string,
+              data: 'D:\\inetpub\\wwwroot'
+            }]
+            ignore_failure true
+            action :create
+          end
+
+          registry_key "#{regkey}" do
+            values [{
+              name: 'PathFTPRoot',
+              type: :expand_string,
+              data: 'D:\\inetpub\\ftproot'
+            }]
+            ignore_failure true
+            action :create
+          end
         end
-      # end
+
+        batch 'Move to D' do
+          cwd Chef::Config[:file_cache_path]
+          code <<-EOH
+          set MOVETO=D:\\
+          %windir%\\system32\\inetsrv\\appcmd add backup beforeRootMove
+          iisreset /stop
+          REM xcopy %systemdrive%\\inetpub %MOVETO%inetpub /O /E /I /Q
+
+          REM reg add HKLM\\System\\CurrentControlSet\\Services\\WAS\\Parameters /v ConfigIsolationPath /t REG_SZ /d %MOVETO%inetpub\\temp\\appPools /f
+
+          %windir%\\system32\\inetsrv\\appcmd set config -section:system.applicationHost/sites -siteDefaults.traceFailedRequestsLogging.directory:"%MOVETO%inetpub\\logs\\FailedReqLogFiles"
+          %windir%\\system32\\inetsrv\\appcmd set config -section:system.applicationHost/sites -siteDefaults.logfile.directory:"%MOVETO%inetpub\\logs\\logfiles"
+          %windir%\\system32\\inetsrv\\appcmd set config -section:system.applicationHost/log -centralBinaryLogFile.directory:"%MOVETO%inetpub\\logs\\logfiles"
+          %windir%\\system32\\inetsrv\\appcmd set config -section:system.applicationHost/log -centralW3CLogFile.directory:"%MOVETO%inetpub\\logs\\logfiles"
+          %windir%\\system32\\inetsrv\\appcmd set config -section:system.applicationHost/sites -siteDefaults.ftpServer.logFile.directory:"%MOVETO%inetpub\\logs\\logfiles"
+          %windir%\\system32\\inetsrv\\appcmd set config -section:system.ftpServer/log -centralLogFile.directory:"%MOVETO%inetpub\\logs\\logfiles"
+
+          %windir%\\system32\\inetsrv\\appcmd set config -section:system.applicationhost/configHistory -path:%MOVETO%inetpub\\history
+          %windir%\\system32\\inetsrv\\appcmd set config -section:system.webServer/asp -cache.disktemplateCacheDirectory:"%MOVETO%inetpub\\temp\\ASP Compiled Templates"
+          %windir%\\system32\\inetsrv\\appcmd set config -section:system.webServer/httpCompression -directory:"%MOVETO%inetpub\\temp\\IIS Temporary Compressed Files"
+          %windir%\\system32\\inetsrv\\appcmd set vdir "Default Web Site/" -physicalPath:%MOVETO%inetpub\\wwwroot
+          %windir%\\system32\\inetsrv\\appcmd set config -section:httpErrors /[statusCode='401'].prefixLanguageFilePath:%MOVETO%inetpub\\custerr
+          %windir%\\system32\\inetsrv\\appcmd set config -section:httpErrors /[statusCode='403'].prefixLanguageFilePath:%MOVETO%inetpub\\custerr
+          %windir%\\system32\\inetsrv\\appcmd set config -section:httpErrors /[statusCode='404'].prefixLanguageFilePath:%MOVETO%inetpub\\custerr
+          %windir%\\system32\\inetsrv\\appcmd set config -section:httpErrors /[statusCode='405'].prefixLanguageFilePath:%MOVETO%inetpub\\custerr
+          %windir%\\system32\\inetsrv\\appcmd set config -section:httpErrors /[statusCode='406'].prefixLanguageFilePath:%MOVETO%inetpub\\custerr
+          %windir%\\system32\\inetsrv\\appcmd set config -section:httpErrors /[statusCode='412'].prefixLanguageFilePath:%MOVETO%inetpub\\custerr
+          %windir%\\system32\\inetsrv\\appcmd set config -section:httpErrors /[statusCode='500'].prefixLanguageFilePath:%MOVETO%inetpub\\custerr
+          %windir%\\system32\\inetsrv\\appcmd set config -section:httpErrors /[statusCode='501'].prefixLanguageFilePath:%MOVETO%inetpub\\custerr
+          %windir%\\system32\\inetsrv\\appcmd set config -section:httpErrors /[statusCode='502'].prefixLanguageFilePath:%MOVETO%inetpub\\custerr
+
+          REM reg add HKLM\\Software\\Microsoft\\inetstp /v PathWWWRoot /t REG_SZ /d %MOVETO%inetpub\\wwwroot /f 
+          REM reg add HKLM\\Software\\Microsoft\\inetstp /v PathFTPRoot /t REG_SZ /d %MOVETO%inetpub\\ftproot /f
+
+          REM if not "%ProgramFiles(x86)%" == "" reg add HKLM\\Software\\Wow6432Node\\Microsoft\\inetstp /v PathWWWRoot /t REG_EXPAND_SZ /d %MOVETO%inetpub\\wwwroot /f 
+          REM if not "%ProgramFiles(x86)%" == "" reg add HKLM\\Software\\Wow6432Node\\Microsoft\\inetstp /v PathFTPRoot /t REG_EXPAND_SZ /d %MOVETO%inetpub\\ftproot /f
+
+          iisreset /start
+          EOH
+          action :run
+        end
+      else
+        logdir = node['iis']['logroot']
+      end
     end
   else
     puts 'IIS already installed'

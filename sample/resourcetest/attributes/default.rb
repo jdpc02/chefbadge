@@ -1,1 +1,1 @@
-default['iis']['docroot'] = 'C:/inetpub/wwwroot'
+default['iis']['logroot'] = 'C:/inetpub/logs/LogFiles'
