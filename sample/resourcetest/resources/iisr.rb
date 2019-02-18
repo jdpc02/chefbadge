@@ -24,19 +24,14 @@ action :create do
 
     if vn.to_i >= 9600
       Chef::Log.info 'Running at least Server 2012 R2'
-      windows_feature_powershell 'Web-Server' do
-        # management_tools true
-        action :install
+      %w(Web-Server Web-Mgmt-Console).each do |webfeat|
+        windows_feature_powershell webfeat do
+          action :install
+        end
       end
 
       if Dir.exist? 'D:/'
         directory 'D:/inetpub'
-
-        remote_directory 'D:/inetpub' do
-          source 'C:/inetpub'
-          recursive true
-          action :create
-        end
 
         registry_key 'HKLM\\System\\CurrentControlSet\\Services\\WAS\\Parameters' do
           values [{
@@ -48,7 +43,7 @@ action :create do
         end
 
         %w(HKLM\\Software\\Microsoft\\inetstp HKLM\\Software\\Wow6432Node\\Microsoft\\inetstp).each do |regkey|
-          registry_key "#{regkey}" do
+          registry_key regkey do
             values [{
               name: 'PathWWWRoot',
               type: :expand_string,
@@ -58,7 +53,7 @@ action :create do
             action :create
           end
 
-          registry_key "#{regkey}" do
+          registry_key regkey do
             values [{
               name: 'PathFTPRoot',
               type: :expand_string,
@@ -75,7 +70,7 @@ action :create do
           set MOVETO=D:\\
           %windir%\\system32\\inetsrv\\appcmd add backup beforeRootMove
           iisreset /stop
-          REM xcopy %systemdrive%\\inetpub %MOVETO%inetpub /O /E /I /Q
+          xcopy %systemdrive%\\inetpub %MOVETO%inetpub /O /E /I /Q
 
           REM reg add HKLM\\System\\CurrentControlSet\\Services\\WAS\\Parameters /v ConfigIsolationPath /t REG_SZ /d %MOVETO%inetpub\\temp\\appPools /f
 
@@ -110,12 +105,11 @@ action :create do
           EOH
           action :run
         end
-      else
-        logdir = node['iis']['logroot']
       end
     end
   else
     puts 'IIS already installed'
+    Chef::Log.info 'IIS already installed'
   end
 end
 

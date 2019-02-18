@@ -34,3 +34,26 @@ suites:
       inspec_tests:
         - test/integration/default
     attributes:
+  - name: win-diskd
+    run_list:
+      - recipe[mycookbook::dskxpnd]
+      - recipe[mycookbook::default]
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    driver:
+      customize:
+        createhd:
+          - filename: d:/VMs/disk2.vmdk
+            size: 2048
+        storagectl:
+          - name: IDE Controller
+            portcount: 2
+        storageattach:
+          - storagectl: IDE Controller
+            port: 1
+            device: 1
+            type: hdd
+            medium: d:/VMs/disk2.vmdk
+    includes:
+      - my/win2016
