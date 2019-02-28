@@ -139,3 +139,17 @@ Here is the command:
 openssl req -config sample.conf -new -x509 -sha256 -newkey rsa:4096 -nodes \
     -keyout test.pem -days 365 -out cert.csr
 ```
+
+
+Clear out output of a powershell script via:
+```
+powershell_stdout(script).stdout.delete("\n").delete("\r")
+```
+
+
+Alternative to guards:
+```
+if powershell_exec('(Get-Service "W3SVC").Name').result == 'W3SVC'
+  <<< Chef Resources >>>
+end
+```
