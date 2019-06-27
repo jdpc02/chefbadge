@@ -1,6 +1,5 @@
 # All things Chef
 
-
 Useful cookbooks as reference under Sample.
 - disktest is a custom resource about disks
 - lazytest utilized lazy for picking up updated attributes
@@ -11,6 +10,11 @@ Useful cookbooks as reference under Sample.
 Utilized the following as a basis for my code.
 * [Script to move IIS](https://gallery.technet.microsoft.com/scriptcenter/Script-to-move-the-IIS-f1fb62a5)
 * [Self Signed Cert Creation](https://stackoverflow.com/questions/10175812/how-to-create-a-self-signed-certificate-with-openssl)
+
+Work on, and pass, one of the following badges before July 2019 EOM
+* [Extending Chef Badge](https://training.chef.io/extending-chef-badge)
+* [Deploying Cookbooks Badge](https://training.chef.io/deploying-cookbooks-badge)
+* [Auditing with InSpec Badge](https://training.chef.io/auditing-with-inspec-badge)
 
 
 When adding disks for vagrant/virtualbox in .kitchen.yml, you can list the existing disk from a virtualbox VM via:
