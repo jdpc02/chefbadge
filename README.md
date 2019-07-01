@@ -1,6 +1,6 @@
 # All things Chef
 
-Useful cookbooks as reference under Sample.
+Useful cookbooks/resources under Sample.
 - disktest is a custom resource about disks
 - lazytest utilized lazy for picking up updated attributes
 - resourcetest is a custom resource to setup web servers
