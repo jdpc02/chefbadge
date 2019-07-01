@@ -1,3 +1,0 @@
-# frozen_string_literal: true
-source :chef_server
-cookbook 'tomcat', path: '../tomcat' 

@@ -1,0 +1,51 @@
+---
+driver:
+  name: docker
+  privileged: true
+  use_sudo: false
+
+provisioner:
+  name: chef_zero
+  # You may wish to disable always updating cookbooks in CI or other testing environments.
+  # For example:
+  #   always_update_cookbooks: <%= !ENV['CI'] %>
+  always_update_cookbooks: true
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: centos-7.2
+    driver_config:
+      run_command: /usr/lib/systemd/systemd
+
+suites:
+  - name: lb
+    driver:
+      run_options: --network=mytestnet --ip=10.1.1.2
+      forward: 80:80
+    run_list:
+      - recipe[lcd_haproxy::default]
+    verifier:
+      inspec_tests:
+        - test/smoke/default
+    attributes:
+  - name: web1
+    driver:
+      run_options: --network=mytestnet --ip=10.1.1.3
+    run_list:
+      - recipe[lcd_web::default]
+    verifier:
+      inspec_tests:
+        - test/smoke/default
+    attributes:
+  - name: web2
+    driver:
+      run_options: --network=mytestnet --ip=10.1.1.4
+    run_list:
+      - recipe[lcd_web::default]
+    verifier:
+      inspec_tests:
+        - test/smoke/default
+    attributes:
+
