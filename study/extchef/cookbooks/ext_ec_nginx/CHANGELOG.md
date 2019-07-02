@@ -6,6 +6,6 @@ This file is used to list changes made in each version of the ext_ec_nginx cookb
 
 Initial release.
 
-- change 0
-- change 1
-
+- Setup ohai
+- Update test kitchen config
+- Create nginx recipe
