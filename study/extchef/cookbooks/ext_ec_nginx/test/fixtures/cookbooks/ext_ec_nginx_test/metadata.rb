@@ -5,5 +5,5 @@ license          'Apache-2.0'
 description      'Tests the ext_ec_nginx cookbook resources'
 version          '1.0.0'
 
-depends 'extec_nginx'
+depends 'ext_ec_nginx'
 

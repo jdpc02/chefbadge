@@ -9,3 +9,9 @@ end
 nginx_server 'blog' do
   action :delete
 end
+
+nginx_server 'status_site' do
+  host 'status.example.com'
+  static_path '/var/www/status'
+  action :delete
+end

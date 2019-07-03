@@ -2,8 +2,12 @@ DEPENDENCIES
   ext_ec_nginx
     path: .
     metadata: true
+  ext_ec_nginx_test
+    path: test/fixtures/cookbooks/ext_ec_nginx_test
 
 GRAPH
   ext_ec_nginx (0.1.0)
     ohai (~> 5.2.3)
+  ext_ec_nginx_test (1.0.0)
+    ext_ec_nginx (>= 0.0.0)
   ohai (5.2.5)
