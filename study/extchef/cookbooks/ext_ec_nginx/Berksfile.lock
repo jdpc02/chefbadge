@@ -1,0 +1,9 @@
+DEPENDENCIES
+  ext_ec_nginx
+    path: .
+    metadata: true
+
+GRAPH
+  ext_ec_nginx (0.1.0)
+    ohai (~> 5.2.3)
+  ohai (5.2.5)
