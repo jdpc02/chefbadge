@@ -2,5 +2,5 @@
 .kitchen/*.*
 Bersfile.lock
 Gemfile.lock
-.gitignore
 .kitchen
+*.*~
