@@ -17,6 +17,13 @@ Work on, and pass, one of the following badges before July 2019 EOM
 * [Auditing with InSpec Badge](https://training.chef.io/auditing-with-inspec-badge)
 
 
+Find all the plugins!
+```bash
+$ sudo find / -path '*lib/ohai/plugins*'
+$ cd <plugin_dir>
+$ grep -Rl 'hint?' . | xargs grep 'Ohai.plugin'
+```
+
 When adding disks for vagrant/virtualbox in .kitchen.yml, you can list the existing disk from a virtualbox VM via:
 ```
 VBoxManage.exe list runningvms
