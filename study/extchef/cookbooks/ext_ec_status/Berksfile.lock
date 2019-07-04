@@ -1,0 +1,13 @@
+DEPENDENCIES
+  ext_ec_nginx
+    path: ../ext_ec_nginx
+  ext_ec_status
+    path: .
+    metadata: true
+
+GRAPH
+  ext_ec_nginx (0.1.0)
+    ohai (~> 5.2.3)
+  ext_ec_status (0.1.0)
+    ext_ec_nginx (>= 0.0.0)
+  ohai (5.2.5)

@@ -4,6 +4,7 @@ resource_name :nginx_server
 property :host, String, name_property: true
 property :static_path, String
 property :landing_page_content, String
+property :srcbook, String, default: 'ext_ec_nginx'
 
 action :create do
   package 'nginx'
@@ -20,6 +21,7 @@ action :create do
 
   template "/etc/nginx/conf.d/#{new_resource.host}.conf" do
     source "nginx-server.conf.erb"
+    cookbook new_resource.srcbook
     variables(
       host: new_resource.host,
       static_path: static_path
