@@ -1,9 +1,0 @@
----
-username: kitchen
-ssh_key: "/home/cloud_user/extchefrepo/cookbooks/ext_dev_setup/.kitchen/docker_id_rsa"
-image_id: a5a6e0a202a9
-container_id: c11e12c72001b12700362178cf29815822e129d11061d2ca30d106aea4f0e129
-hostname: localhost
-port: 32769
-last_action: converge
-last_error: 
