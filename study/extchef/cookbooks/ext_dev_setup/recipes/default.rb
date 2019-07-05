@@ -12,7 +12,11 @@ execute 'from parent recipe' do
   action :nothing
 end
 
-execute 'run child resource' do
-  command 'echo "Try to run child resource"'
-  notifies :run, 'execute[echo from custom]', :immediately
+execute 'run from parent subscribe' do
+  command 'echo "Try to call resource in init by subscription"'
+  action :nothing
+  subscribes :run, 'directory[/etc/chef/ohai/hints]'
 end
+
+puts "\nresource colletion:#{run_context.resource_collection.map { |item| item.name }}\n"
+

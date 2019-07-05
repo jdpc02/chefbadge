@@ -28,5 +28,7 @@ action :create do
     content({ host: new_resource.host })
     notifies :run, 'execute[from parent recipe]', :immediately
   end
+
+  puts "\ninit resource colletion:#{run_context.resource_collection.map { |item| item.name }}\n"
 end
 
