@@ -1,0 +1,145 @@
+I, [2019-07-05T17:09:07.290589 #28378]  INFO -- default-centos-7: -----> Creating <default-centos-7>...
+I, [2019-07-05T17:09:07.389585 #28378]  INFO -- default-centos-7: Sending build context to Docker daemon  66.56kB
+I, [2019-07-05T17:09:07.743024 #28378]  INFO -- default-centos-7: Step 1/17 : FROM centos:centos7
+I, [2019-07-05T17:09:07.743822 #28378]  INFO -- default-centos-7:  ---> 9f38484d220f
+I, [2019-07-05T17:09:07.743869 #28378]  INFO -- default-centos-7: Step 2/17 : ENV container docker
+I, [2019-07-05T17:09:07.749167 #28378]  INFO -- default-centos-7:  ---> Using cache
+I, [2019-07-05T17:09:07.749219 #28378]  INFO -- default-centos-7:  ---> 181de16d26c7
+I, [2019-07-05T17:09:07.749261 #28378]  INFO -- default-centos-7: Step 3/17 : RUN yum clean all
+I, [2019-07-05T17:09:07.749291 #28378]  INFO -- default-centos-7:  ---> Using cache
+I, [2019-07-05T17:09:07.749311 #28378]  INFO -- default-centos-7:  ---> 89fa2ac4b891
+I, [2019-07-05T17:09:07.749334 #28378]  INFO -- default-centos-7: Step 4/17 : RUN yum install -y sudo openssh-server openssh-clients which curl
+I, [2019-07-05T17:09:07.749355 #28378]  INFO -- default-centos-7:  ---> Using cache
+I, [2019-07-05T17:09:07.749372 #28378]  INFO -- default-centos-7:  ---> 289a0e2344f2
+I, [2019-07-05T17:09:07.749392 #28378]  INFO -- default-centos-7: Step 5/17 : RUN [ -f "/etc/ssh/ssh_host_rsa_key" ] || ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -N ''
+I, [2019-07-05T17:09:07.749409 #28378]  INFO -- default-centos-7:  ---> Using cache
+I, [2019-07-05T17:09:07.749428 #28378]  INFO -- default-centos-7:  ---> 73f98ec48839
+I, [2019-07-05T17:09:07.749446 #28378]  INFO -- default-centos-7: Step 6/17 : RUN [ -f "/etc/ssh/ssh_host_dsa_key" ] || ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key -N ''
+I, [2019-07-05T17:09:07.749465 #28378]  INFO -- default-centos-7:  ---> Using cache
+I, [2019-07-05T17:09:07.749526 #28378]  INFO -- default-centos-7:  ---> db82128f34fa
+I, [2019-07-05T17:09:07.749554 #28378]  INFO -- default-centos-7: Step 7/17 : RUN if ! getent passwd kitchen; then                 useradd -d /home/kitchen -m -s /bin/bash -p '*' kitchen;               fi
+I, [2019-07-05T17:09:07.749572 #28378]  INFO -- default-centos-7:  ---> Using cache
+I, [2019-07-05T17:09:07.749591 #28378]  INFO -- default-centos-7:  ---> fc105c084927
+I, [2019-07-05T17:09:07.749609 #28378]  INFO -- default-centos-7: Step 8/17 : RUN echo "kitchen ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+I, [2019-07-05T17:09:07.749627 #28378]  INFO -- default-centos-7:  ---> Using cache
+I, [2019-07-05T17:09:07.749644 #28378]  INFO -- default-centos-7:  ---> 3e4cbb2c699f
+I, [2019-07-05T17:09:07.749660 #28378]  INFO -- default-centos-7: Step 9/17 : RUN echo "Defaults !requiretty" >> /etc/sudoers
+I, [2019-07-05T17:09:07.749675 #28378]  INFO -- default-centos-7:  ---> Using cache
+I, [2019-07-05T17:09:07.749691 #28378]  INFO -- default-centos-7:  ---> 22b7c188b7e3
+I, [2019-07-05T17:09:07.749712 #28378]  INFO -- default-centos-7: Step 10/17 : RUN mkdir -p /home/kitchen/.ssh
+I, [2019-07-05T17:09:07.749729 #28378]  INFO -- default-centos-7:  ---> Using cache
+I, [2019-07-05T17:09:07.749745 #28378]  INFO -- default-centos-7:  ---> fb7efd5d588c
+I, [2019-07-05T17:09:07.749795 #28378]  INFO -- default-centos-7: Step 11/17 : RUN chown -R kitchen /home/kitchen/.ssh
+I, [2019-07-05T17:09:07.749819 #28378]  INFO -- default-centos-7:  ---> Using cache
+I, [2019-07-05T17:09:07.749836 #28378]  INFO -- default-centos-7:  ---> 5abbcbd307bf
+I, [2019-07-05T17:09:07.749857 #28378]  INFO -- default-centos-7: Step 12/17 : RUN chmod 0700 /home/kitchen/.ssh
+I, [2019-07-05T17:09:07.749875 #28378]  INFO -- default-centos-7:  ---> Using cache
+I, [2019-07-05T17:09:07.749890 #28378]  INFO -- default-centos-7:  ---> 369ebb7da346
+I, [2019-07-05T17:09:07.749910 #28378]  INFO -- default-centos-7: Step 13/17 : RUN touch /home/kitchen/.ssh/authorized_keys
+I, [2019-07-05T17:09:07.749928 #28378]  INFO -- default-centos-7:  ---> Using cache
+I, [2019-07-05T17:09:07.749943 #28378]  INFO -- default-centos-7:  ---> 0b46bbd11fcc
+I, [2019-07-05T17:09:07.749963 #28378]  INFO -- default-centos-7: Step 14/17 : RUN chown kitchen /home/kitchen/.ssh/authorized_keys
+I, [2019-07-05T17:09:07.749988 #28378]  INFO -- default-centos-7:  ---> Using cache
+I, [2019-07-05T17:09:07.750005 #28378]  INFO -- default-centos-7:  ---> 7b6c845afddf
+I, [2019-07-05T17:09:07.750021 #28378]  INFO -- default-centos-7: Step 15/17 : RUN chmod 0600 /home/kitchen/.ssh/authorized_keys
+I, [2019-07-05T17:09:07.750043 #28378]  INFO -- default-centos-7:  ---> Using cache
+I, [2019-07-05T17:09:07.750059 #28378]  INFO -- default-centos-7:  ---> 492ed4852c61
+I, [2019-07-05T17:09:07.750075 #28378]  INFO -- default-centos-7: Step 16/17 : RUN systemctl enable sshd.service
+I, [2019-07-05T17:09:07.750090 #28378]  INFO -- default-centos-7:  ---> Using cache
+I, [2019-07-05T17:09:07.750110 #28378]  INFO -- default-centos-7:  ---> 9f00022ab704
+I, [2019-07-05T17:09:07.750128 #28378]  INFO -- default-centos-7: Step 17/17 : RUN echo ssh-rsa\ AAAAB3NzaC1yc2EAAAADAQABAAABAQDDOfdwogZ6t\+X2BGiAHSxdlw6E8tSEvg60LI48fx\+s9ACC7jOzC8Lg3mnHdo4jI5\+SXF5a2x41AwNOLtFuZ0NVNrprDqVc7zqsMwIy4FHups7Qb9rdLjbEuVcZBON8KRBkCDNFdzdP61VWz66jmB0HBkO\+iMkXc0DPBeovq3UEDiyPnuQeU12k7nQTudFZ89KE0dI/57L4DDnrv/V2Y2kCH96GlZUKmP9F/WJ6uvB7AeKkZ\+fsEgma/ozYVjhiF8ludAfm9uM25EQe/DnI4cCSj4IhvcD4BjVQva\+i79OEwtD3YU\+fRIWPtcCo2Ef5WTwq7ZsKjfYayjwDHaE3/wxH\ kitchen_docker_key >> /home/kitchen/.ssh/authorized_keys
+I, [2019-07-05T17:09:07.750144 #28378]  INFO -- default-centos-7:  ---> Using cache
+I, [2019-07-05T17:09:07.750160 #28378]  INFO -- default-centos-7:  ---> a5a6e0a202a9
+I, [2019-07-05T17:09:07.754068 #28378]  INFO -- default-centos-7: Successfully built a5a6e0a202a9
+I, [2019-07-05T17:09:08.119816 #28378]  INFO -- default-centos-7: c11e12c72001b12700362178cf29815822e129d11061d2ca30d106aea4f0e129
+I, [2019-07-05T17:09:09.348954 #28378]  INFO -- default-centos-7: 0.0.0.0:32769
+I, [2019-07-05T17:09:09.374880 #28378]  INFO -- default-centos-7: Waiting for SSH service on localhost:32769, retrying in 3 seconds
+I, [2019-07-05T17:09:13.444898 #28378]  INFO -- default-centos-7: [SSH] Established
+I, [2019-07-05T17:09:13.446396 #28378]  INFO -- default-centos-7: Finished creating <default-centos-7> (0m6.15s).
+I, [2019-07-05T17:09:13.446499 #28378]  INFO -- default-centos-7: -----> Converging <default-centos-7>...
+I, [2019-07-05T17:09:13.447508 #28378]  INFO -- default-centos-7: Preparing files for transfer
+I, [2019-07-05T17:09:13.447666 #28378]  INFO -- default-centos-7: Preparing dna.json
+I, [2019-07-05T17:09:13.448276 #28378]  INFO -- default-centos-7: Resolving cookbook dependencies with Berkshelf 6.3.4...
+I, [2019-07-05T17:09:16.529181 #28378]  INFO -- default-centos-7: Removing non-cookbook files before transfer
+I, [2019-07-05T17:09:16.534876 #28378]  INFO -- default-centos-7: Preparing validation.pem
+I, [2019-07-05T17:09:16.535222 #28378]  INFO -- default-centos-7: Preparing client.rb
+I, [2019-07-05T17:09:16.804782 #28378]  INFO -- default-centos-7: el 7 x86_64
+I, [2019-07-05T17:09:16.804996 #28378]  INFO -- default-centos-7: Getting information for chef stable 13.10.4 for el...
+I, [2019-07-05T17:09:16.805024 #28378]  INFO -- default-centos-7: downloading https://omnitruck.chef.io/stable/chef/metadata?v=13.10.4&p=el&pv=7&m=x86_64
+I, [2019-07-05T17:09:16.805044 #28378]  INFO -- default-centos-7:   to file /tmp/install.sh.1769/metadata.txt
+I, [2019-07-05T17:09:16.805061 #28378]  INFO -- default-centos-7: trying curl...
+I, [2019-07-05T17:09:17.026186 #28378]  INFO -- default-centos-7: sha1	a15c7f41d2cf409759d8c12e6ceef13b21954783
+I, [2019-07-05T17:09:17.026666 #28378]  INFO -- default-centos-7: sha256	ecb09e328ba3b9cc2163fa1f2422cbb2a748da43db05d9850df0a5d2ad6a6353
+I, [2019-07-05T17:09:17.026693 #28378]  INFO -- default-centos-7: url	https://packages.chef.io/files/stable/chef/13.10.4/el/7/chef-13.10.4-1.el7.x86_64.rpm
+I, [2019-07-05T17:09:17.026713 #28378]  INFO -- default-centos-7: version	13.10.4
+I, [2019-07-05T17:09:17.028543 #28378]  INFO -- default-centos-7: downloaded metadata file looks valid...
+I, [2019-07-05T17:09:17.045470 #28378]  INFO -- default-centos-7: downloading https://packages.chef.io/files/stable/chef/13.10.4/el/7/chef-13.10.4-1.el7.x86_64.rpm
+I, [2019-07-05T17:09:17.045546 #28378]  INFO -- default-centos-7:   to file /tmp/install.sh.1769/chef-13.10.4-1.el7.x86_64.rpm
+I, [2019-07-05T17:09:17.045574 #28378]  INFO -- default-centos-7: trying curl...
+I, [2019-07-05T17:09:18.332661 #28378]  INFO -- default-centos-7: Comparing checksum with sha256sum...
+I, [2019-07-05T17:09:18.496459 #28378]  INFO -- default-centos-7: Installing chef 13.10.4
+I, [2019-07-05T17:09:18.496547 #28378]  INFO -- default-centos-7: installing with rpm...
+I, [2019-07-05T17:09:18.618870 #28378]  INFO -- default-centos-7: warning: /tmp/install.sh.1769/chef-13.10.4-1.el7.x86_64.rpm: Header V4 DSA/SHA1 Signature, key ID 83ef826a: NOKEY
+I, [2019-07-05T17:09:18.779236 #28378]  INFO -- default-centos-7: Preparing...                                                            (100%)#                                 (100%)##                                (100%)###                               (100%)####                              (100%)#####                             (100%)######                            (100%)#######                           (100%)########                          (100%)#########                         (100%)##########                        (100%)###########                       (100%)############                      (100%)#############                     (100%)##############                    (100%)###############                   (100%)################                  (100%)#################                 (100%)##################                (100%)###################               (100%)####################              (100%)#####################             (100%)######################            (100%)#######################           (100%)########################          (100%)#########################         (100%)##########################        (100%)###########################       (100%)############################      (100%)#############################     (100%)##############################    (100%)###############################   (100%)################################  (100%)################################# (100%)################################# [100%]
+I, [2019-07-05T17:09:18.781904 #28378]  INFO -- default-centos-7: Updating / installing...
+I, [2019-07-05T17:09:28.452347 #28378]  INFO -- default-centos-7:    1:chef-13.10.4-1.el7                                                 (  2%)#                                 (  4%)##                                (  7%)###                               ( 10%)####                              ( 13%)#####                             ( 16%)######                            ( 19%)#######                           ( 22%)########                          ( 25%)#########                         ( 28%)##########                        ( 31%)###########                       ( 34%)############                      ( 37%)#############                     ( 40%)##############                    ( 43%)###############                   ( 46%)################                  ( 49%)#################                 ( 52%)##################                ( 54%)###################               ( 57%)####################              ( 60%)#####################             ( 63%)######################            ( 66%)#######################           ( 69%)########################          ( 72%)#########################         ( 75%)##########################        ( 78%)###########################       ( 81%)############################      ( 84%)#############################     ( 87%)##############################    ( 90%)###############################   ( 93%)################################  ( 96%)################################# ( 99%)################################# [100%]
+I, [2019-07-05T17:09:29.266965 #28378]  INFO -- default-centos-7: Thank you for installing Chef!
+I, [2019-07-05T17:09:29.371510 #28378]  INFO -- default-centos-7: Transferring files to <default-centos-7>
+I, [2019-07-05T17:09:31.890197 #28378]  INFO -- default-centos-7: Starting Chef Client, version 13.10.4
+I, [2019-07-05T17:09:32.231826 #28378]  INFO -- default-centos-7: [2019-07-05T17:09:32+00:00] WARN: Plugin Network: unable to detect ipaddress
+I, [2019-07-05T17:09:32.231910 #28378]  INFO -- default-centos-7: [2019-07-05T17:09:32+00:00] WARN: Plugin Network: unable to detect ipaddress
+I, [2019-07-05T17:09:33.017671 #28378]  INFO -- default-centos-7: Creating a new client identity for default-centos-7 using the validator key.
+I, [2019-07-05T17:09:33.145239 #28378]  INFO -- default-centos-7: resolving cookbooks for run list: ["ext_dev_setup::default"]
+I, [2019-07-05T17:09:33.195150 #28378]  INFO -- default-centos-7: Synchronizing Cookbooks:
+I, [2019-07-05T17:09:33.202966 #28378]  INFO -- default-centos-7:   - ext_exploring_resources (0.1.0)
+I, [2019-07-05T17:09:33.211000 #28378]  INFO -- default-centos-7:   - ext_ec_nginx (0.1.1)
+I, [2019-07-05T17:09:33.224139 #28378]  INFO -- default-centos-7:   - ohai (5.2.5)
+I, [2019-07-05T17:09:33.224214 #28378]  INFO -- default-centos-7:   - ext_dev_setup (0.1.0)
+I, [2019-07-05T17:09:33.234568 #28378]  INFO -- default-centos-7: Installing Cookbook Gems:
+I, [2019-07-05T17:09:33.234637 #28378]  INFO -- default-centos-7: Compiling Cookbooks...
+I, [2019-07-05T17:09:33.235273 #28378]  INFO -- default-centos-7: Converging 2 resources
+I, [2019-07-05T17:09:33.235336 #28378]  INFO -- default-centos-7: Recipe: ext_dev_setup::default
+I, [2019-07-05T17:09:37.206166 #28378]  INFO -- default-centos-7:   * yum_package[epel-release] action install
+I, [2019-07-05T17:09:37.206259 #28378]  INFO -- default-centos-7:     - install version 7-11 of package epel-release
+I, [2019-07-05T17:09:37.239158 #28378]  INFO -- default-centos-7:   * ext_dev_setup_init[www.example.com] action create
+I, [2019-07-05T17:09:37.249120 #28378]  INFO -- default-centos-7:     * nginx_server[www.example.com] action create
+I, [2019-07-05T17:10:15.857175 #28378]  INFO -- default-centos-7:       * yum_package[nginx] action install
+I, [2019-07-05T17:10:15.857281 #28378]  INFO -- default-centos-7:  - install version 1.12.2-3.el7 of package nginx
+I, [2019-07-05T17:10:16.096539 #28378]  INFO -- default-centos-7:       * service[nginx] action start
+I, [2019-07-05T17:10:16.096639 #28378]  INFO -- default-centos-7:  - start service service[nginx]
+I, [2019-07-05T17:10:16.215664 #28378]  INFO -- default-centos-7:       * service[nginx] action enable
+I, [2019-07-05T17:10:16.215808 #28378]  INFO -- default-centos-7:  - enable service service[nginx]
+I, [2019-07-05T17:10:16.215856 #28378]  INFO -- default-centos-7:       * directory[/var/www/www.example.com] action create
+I, [2019-07-05T17:10:16.215887 #28378]  INFO -- default-centos-7:  - create new directory /var/www/www.example.com
+I, [2019-07-05T17:10:16.218397 #28378]  INFO -- default-centos-7:       * template[/etc/nginx/conf.d/www.example.com.conf] action create
+I, [2019-07-05T17:10:16.234175 #28378]  INFO -- default-centos-7:  - create new file /etc/nginx/conf.d/www.example.com.conf
+I, [2019-07-05T17:10:16.234267 #28378]  INFO -- default-centos-7:  - update content in file /etc/nginx/conf.d/www.example.com.conf from none to e31b09
+I, [2019-07-05T17:10:16.234302 #28378]  INFO -- default-centos-7:  --- /etc/nginx/conf.d/www.example.com.conf	2019-07-05 17:10:16.216216571 +0000
+I, [2019-07-05T17:10:16.234339 #28378]  INFO -- default-centos-7:  +++ /etc/nginx/conf.d/.chef-www20190705-1899-2jcgqg.example.com.conf	2019-07-05 17:10:16.216216571 +0000
+I, [2019-07-05T17:10:16.234368 #28378]  INFO -- default-centos-7:  @@ -1 +1,11 @@
+I, [2019-07-05T17:10:16.234390 #28378]  INFO -- default-centos-7:  +server {
+I, [2019-07-05T17:10:16.234427 #28378]  INFO -- default-centos-7:  +  listen 80;
+I, [2019-07-05T17:10:16.234448 #28378]  INFO -- default-centos-7:  +  listen [::]:80;
+I, [2019-07-05T17:10:16.234468 #28378]  INFO -- default-centos-7:  +  server_name www.example.com;
+I, [2019-07-05T17:10:16.234487 #28378]  INFO -- default-centos-7:  +
+I, [2019-07-05T17:10:16.234507 #28378]  INFO -- default-centos-7:  +  root /var/www/www.example.com;
+I, [2019-07-05T17:10:16.234526 #28378]  INFO -- default-centos-7:  +
+I, [2019-07-05T17:10:16.234547 #28378]  INFO -- default-centos-7:  +  location / {
+I, [2019-07-05T17:10:16.234566 #28378]  INFO -- default-centos-7:  +  }
+I, [2019-07-05T17:10:16.234585 #28378]  INFO -- default-centos-7:  +}
+I, [2019-07-05T17:10:16.375099 #28378]  INFO -- default-centos-7:       * service[nginx] action reload
+I, [2019-07-05T17:10:16.375191 #28378]  INFO -- default-centos-7:  - reload service service[nginx]
+I, [2019-07-05T17:10:16.375220 #28378]  INFO -- default-centos-7:     
+I, [2019-07-05T17:10:16.375255 #28378]  INFO -- default-centos-7:     * directory[/etc/chef/ohai/hints] action create
+I, [2019-07-05T17:10:16.375274 #28378]  INFO -- default-centos-7:       - create new directory /etc/chef/ohai/hints
+I, [2019-07-05T17:10:16.375825 #28378]  INFO -- default-centos-7:     * json_config[/etc/chef/ohai/hints/www.example.com.json] action createSetting up the config with {"host"=>"www.example.com"}
+I, [2019-07-05T17:10:16.381618 #28378]  INFO -- default-centos-7: 
+I, [2019-07-05T17:10:16.381686 #28378]  INFO -- default-centos-7:       - update /etc/chef/ohai/hints/www.example.com.json
+I, [2019-07-05T17:10:16.381733 #28378]  INFO -- default-centos-7:       -   set content to {"host"=>"www.example.com"} (was nil)
+I, [2019-07-05T17:10:16.381770 #28378]  INFO -- default-centos-7:   
+I, [2019-07-05T17:10:16.444435 #28378]  INFO -- default-centos-7: 
+I, [2019-07-05T17:10:16.444515 #28378]  INFO -- default-centos-7: Running handlers:
+I, [2019-07-05T17:10:16.444541 #28378]  INFO -- default-centos-7: Running handlers complete
+I, [2019-07-05T17:10:16.465211 #28378]  INFO -- default-centos-7: Chef Client finished, 11/11 resources updated in 44 seconds
+I, [2019-07-05T17:10:16.800533 #28378]  INFO -- default-centos-7: Downloading files from <default-centos-7>
+I, [2019-07-05T17:10:16.817903 #28378]  INFO -- default-centos-7: Finished converging <default-centos-7> (1m3.37s).

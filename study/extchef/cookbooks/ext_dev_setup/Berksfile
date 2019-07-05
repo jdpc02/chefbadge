@@ -1,0 +1,8 @@
+# frozen_string_literal: true
+source 'https://supermarket.chef.io'
+
+metadata
+
+cookbook 'ext_exploring_resources', path: '../ext_exploring_resources'
+cookbook 'ext_ec_nginx', path: '../ext_ec_nginx'
+

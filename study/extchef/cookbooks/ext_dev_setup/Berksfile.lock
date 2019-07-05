@@ -1,0 +1,17 @@
+DEPENDENCIES
+  ext_dev_setup
+    path: .
+    metadata: true
+  ext_ec_nginx
+    path: ../ext_ec_nginx
+  ext_exploring_resources
+    path: ../ext_exploring_resources
+
+GRAPH
+  ext_dev_setup (0.1.0)
+    ext_ec_nginx (>= 0.0.0)
+    ext_exploring_resources (>= 0.0.0)
+  ext_ec_nginx (0.1.1)
+    ohai (~> 5.2.3)
+  ext_exploring_resources (0.1.0)
+  ohai (5.2.5)
