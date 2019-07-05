@@ -15,3 +15,8 @@ chef_handler 'ExtEcHandlers::JsonLogger' do
   type ({ exception: true, report: true })
   action :nothing
 end.run_action(:enable)
+
+cookbook_file '/etc/chef/client.d/event_handlers.rb' do
+  source 'event_handlers.rb'
+  action :nothing
+end.run_action(:create)
