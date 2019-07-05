@@ -1,0 +1,9 @@
+DEPENDENCIES
+  ext_ec_handlers
+    path: .
+    metadata: true
+
+GRAPH
+  chef_handler (3.0.3)
+  ext_ec_handlers (0.1.0)
+    chef_handler (~> 3.0.3)
