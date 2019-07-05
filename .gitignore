@@ -6,6 +6,8 @@ Gemfile.lock
 *.*~
 syntaxcache/*
 trusted_certs/*
+nodes/*
+local-mode-cache/*
 
 ## Below are example of common git excludes.
 ## Please note that /cookbooks folder is ignored. This allows users to
@@ -21,6 +23,7 @@ trusted_certs/*
 .chef
 .chef/*.pem
 .chef/encrypted_data_bag_secret
+.chef/local-mode-cache/*
 
 ## Ignore Chef-Zero files
 clients
