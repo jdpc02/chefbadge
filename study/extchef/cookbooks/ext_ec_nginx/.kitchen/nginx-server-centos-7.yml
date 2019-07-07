@@ -1,0 +1,9 @@
+---
+username: kitchen
+ssh_key: "/home/cloud_user/chefbadge/study/extchef/cookbooks/ext_ec_nginx/.kitchen/docker_id_rsa"
+image_id: c6e29a6be2b6
+container_id: d55df786e1e8d8882a513f25dff29bf19d79f8771482a921c93ce3ba1415ba9d
+hostname: localhost
+port: 32785
+last_action: setup
+last_error: Kitchen::ActionFailed

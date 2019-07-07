@@ -1,0 +1,279 @@
+I, [2019-07-07T21:14:41.134553 #32363]  INFO -- nginx-server-ubuntu-1604: -----> Cleaning up any prior instances of <nginx-server-ubuntu-1604>
+I, [2019-07-07T21:14:41.134714 #32363]  INFO -- nginx-server-ubuntu-1604: -----> Destroying <nginx-server-ubuntu-1604>...
+I, [2019-07-07T21:14:41.135258 #32363]  INFO -- nginx-server-ubuntu-1604: Finished destroying <nginx-server-ubuntu-1604> (0m0.00s).
+I, [2019-07-07T21:14:41.135409 #32363]  INFO -- nginx-server-ubuntu-1604: -----> Testing <nginx-server-ubuntu-1604>
+I, [2019-07-07T21:14:41.135473 #32363]  INFO -- nginx-server-ubuntu-1604: -----> Creating <nginx-server-ubuntu-1604>...
+I, [2019-07-07T21:14:41.226920 #32363]  INFO -- nginx-server-ubuntu-1604: Sending build context to Docker daemon    170kB
+I, [2019-07-07T21:14:41.433868 #32363]  INFO -- nginx-server-ubuntu-1604: Step 1/16 : FROM ubuntu:16.04
+I, [2019-07-07T21:14:41.434998 #32363]  INFO -- nginx-server-ubuntu-1604:  ---> 13c9f1285025
+I, [2019-07-07T21:14:41.435041 #32363]  INFO -- nginx-server-ubuntu-1604: Step 2/16 : RUN [ ! -f "/sbin/initctl" ] || dpkg-divert --local --rename --add /sbin/initctl && ln -sf /bin/true /sbin/initctl
+I, [2019-07-07T21:14:41.436132 #32363]  INFO -- nginx-server-ubuntu-1604:  ---> Using cache
+I, [2019-07-07T21:14:41.436172 #32363]  INFO -- nginx-server-ubuntu-1604:  ---> b0711eba819e
+I, [2019-07-07T21:14:41.436209 #32363]  INFO -- nginx-server-ubuntu-1604: Step 3/16 : ENV DEBIAN_FRONTEND noninteractive
+I, [2019-07-07T21:14:41.438375 #32363]  INFO -- nginx-server-ubuntu-1604:  ---> Using cache
+I, [2019-07-07T21:14:41.438442 #32363]  INFO -- nginx-server-ubuntu-1604:  ---> c9668f06c9a5
+I, [2019-07-07T21:14:41.438470 #32363]  INFO -- nginx-server-ubuntu-1604: Step 4/16 : ENV container docker
+I, [2019-07-07T21:14:41.439557 #32363]  INFO -- nginx-server-ubuntu-1604:  ---> Using cache
+I, [2019-07-07T21:14:41.439618 #32363]  INFO -- nginx-server-ubuntu-1604:  ---> cff801c5fd38
+I, [2019-07-07T21:14:41.439647 #32363]  INFO -- nginx-server-ubuntu-1604: Step 5/16 : RUN apt-get update
+I, [2019-07-07T21:14:41.440820 #32363]  INFO -- nginx-server-ubuntu-1604:  ---> Using cache
+I, [2019-07-07T21:14:41.440860 #32363]  INFO -- nginx-server-ubuntu-1604:  ---> 263830ebfdd4
+I, [2019-07-07T21:14:41.440897 #32363]  INFO -- nginx-server-ubuntu-1604: Step 6/16 : RUN apt-get install -y sudo openssh-server curl lsb-release
+I, [2019-07-07T21:14:41.460735 #32363]  INFO -- nginx-server-ubuntu-1604:  ---> Using cache
+I, [2019-07-07T21:14:41.460799 #32363]  INFO -- nginx-server-ubuntu-1604:  ---> d3bc67e96e28
+I, [2019-07-07T21:14:41.460838 #32363]  INFO -- nginx-server-ubuntu-1604: Step 7/16 : RUN if ! getent passwd kitchen; then                 useradd -d /home/kitchen -m -s /bin/bash -p '*' kitchen;               fi
+I, [2019-07-07T21:14:41.462210 #32363]  INFO -- nginx-server-ubuntu-1604:  ---> Using cache
+I, [2019-07-07T21:14:41.462250 #32363]  INFO -- nginx-server-ubuntu-1604:  ---> 46df517d2786
+I, [2019-07-07T21:14:41.462272 #32363]  INFO -- nginx-server-ubuntu-1604: Step 8/16 : RUN echo "kitchen ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+I, [2019-07-07T21:14:41.466312 #32363]  INFO -- nginx-server-ubuntu-1604:  ---> Using cache
+I, [2019-07-07T21:14:41.466353 #32363]  INFO -- nginx-server-ubuntu-1604:  ---> b8853c9ec20c
+I, [2019-07-07T21:14:41.466374 #32363]  INFO -- nginx-server-ubuntu-1604: Step 9/16 : RUN echo "Defaults !requiretty" >> /etc/sudoers
+I, [2019-07-07T21:14:41.468361 #32363]  INFO -- nginx-server-ubuntu-1604:  ---> Using cache
+I, [2019-07-07T21:14:41.468401 #32363]  INFO -- nginx-server-ubuntu-1604:  ---> 801fa0977289
+I, [2019-07-07T21:14:41.468438 #32363]  INFO -- nginx-server-ubuntu-1604: Step 10/16 : RUN mkdir -p /home/kitchen/.ssh
+I, [2019-07-07T21:14:41.469531 #32363]  INFO -- nginx-server-ubuntu-1604:  ---> Using cache
+I, [2019-07-07T21:14:41.469571 #32363]  INFO -- nginx-server-ubuntu-1604:  ---> e877580a32ba
+I, [2019-07-07T21:14:41.469617 #32363]  INFO -- nginx-server-ubuntu-1604: Step 11/16 : RUN chown -R kitchen /home/kitchen/.ssh
+I, [2019-07-07T21:14:41.472003 #32363]  INFO -- nginx-server-ubuntu-1604:  ---> Using cache
+I, [2019-07-07T21:14:41.472049 #32363]  INFO -- nginx-server-ubuntu-1604:  ---> dc2b982f4008
+I, [2019-07-07T21:14:41.472088 #32363]  INFO -- nginx-server-ubuntu-1604: Step 12/16 : RUN chmod 0700 /home/kitchen/.ssh
+I, [2019-07-07T21:14:41.473742 #32363]  INFO -- nginx-server-ubuntu-1604:  ---> Using cache
+I, [2019-07-07T21:14:41.473796 #32363]  INFO -- nginx-server-ubuntu-1604:  ---> 2d2c3a661e09
+I, [2019-07-07T21:14:41.473821 #32363]  INFO -- nginx-server-ubuntu-1604: Step 13/16 : RUN touch /home/kitchen/.ssh/authorized_keys
+I, [2019-07-07T21:14:41.493395 #32363]  INFO -- nginx-server-ubuntu-1604:  ---> Using cache
+I, [2019-07-07T21:14:41.493439 #32363]  INFO -- nginx-server-ubuntu-1604:  ---> c0fb20a0b7c3
+I, [2019-07-07T21:14:41.493479 #32363]  INFO -- nginx-server-ubuntu-1604: Step 14/16 : RUN chown kitchen /home/kitchen/.ssh/authorized_keys
+I, [2019-07-07T21:14:41.494606 #32363]  INFO -- nginx-server-ubuntu-1604:  ---> Using cache
+I, [2019-07-07T21:14:41.494656 #32363]  INFO -- nginx-server-ubuntu-1604:  ---> 1c4ad355f88f
+I, [2019-07-07T21:14:41.494679 #32363]  INFO -- nginx-server-ubuntu-1604: Step 15/16 : RUN chmod 0600 /home/kitchen/.ssh/authorized_keys
+I, [2019-07-07T21:14:41.496758 #32363]  INFO -- nginx-server-ubuntu-1604:  ---> Using cache
+I, [2019-07-07T21:14:41.496812 #32363]  INFO -- nginx-server-ubuntu-1604:  ---> f1a54c66514d
+I, [2019-07-07T21:14:41.496839 #32363]  INFO -- nginx-server-ubuntu-1604: Step 16/16 : RUN echo ssh-rsa\ AAAAB3NzaC1yc2EAAAADAQABAAABAQDsB6ntv7po6CD7gUmTVWTBgkG3G1h7Bh5kXh0KjcVkYO2\+stPoKYszudnNtfSsLyWRdZrxmjH5XQ0pCnpRzImqE8EuBZm6DtR92GLeQf2gBifhgGUW3EG8Pm3PwxsP\+18d2yW9CxdkeLSNQfQE8Hg/1qzTmRPBKorunCQkjfV5\+wRoqJffmNqD3gviLBW2HHBFNbgsvzQEW4EadAbVv7tX/dTLu82XIHv2vwy4r92rhtcOgIdfvwZvf2VQOxXI91ycN8p/xvQ5NaNqbLkKXvijywA0DLlTZfXyTJbLFokI6Y/98oLHVAs916L4TOijLVBRBLYJiB7rkBysmtVf9BR7\ kitchen_docker_key >> /home/kitchen/.ssh/authorized_keys
+I, [2019-07-07T21:14:41.501093 #32363]  INFO -- nginx-server-ubuntu-1604:  ---> Using cache
+I, [2019-07-07T21:14:41.501134 #32363]  INFO -- nginx-server-ubuntu-1604:  ---> 46017337fbbe
+I, [2019-07-07T21:14:41.501156 #32363]  INFO -- nginx-server-ubuntu-1604: Successfully built 46017337fbbe
+I, [2019-07-07T21:14:42.181175 #32363]  INFO -- nginx-server-ubuntu-1604: 6e566438a9e3e3815120ce575cba33e3beebab517995538d48c0a638ab476417
+I, [2019-07-07T21:14:42.628267 #32363]  INFO -- nginx-server-ubuntu-1604: 0.0.0.0:32784
+I, [2019-07-07T21:14:42.648968 #32363]  INFO -- nginx-server-ubuntu-1604: Waiting for SSH service on localhost:32784, retrying in 3 seconds
+I, [2019-07-07T21:14:45.843885 #32363]  INFO -- nginx-server-ubuntu-1604: [SSH] Established
+I, [2019-07-07T21:14:45.845249 #32363]  INFO -- nginx-server-ubuntu-1604: Finished creating <nginx-server-ubuntu-1604> (0m4.71s).
+I, [2019-07-07T21:14:45.845348 #32363]  INFO -- nginx-server-ubuntu-1604: -----> Converging <nginx-server-ubuntu-1604>...
+I, [2019-07-07T21:14:45.846405 #32363]  INFO -- nginx-server-ubuntu-1604: Preparing files for transfer
+I, [2019-07-07T21:14:45.846521 #32363]  INFO -- nginx-server-ubuntu-1604: Preparing dna.json
+I, [2019-07-07T21:14:45.847234 #32363]  INFO -- nginx-server-ubuntu-1604: Resolving cookbook dependencies with Berkshelf 6.3.4...
+I, [2019-07-07T21:14:47.876162 #32363]  INFO -- nginx-server-ubuntu-1604: Removing non-cookbook files before transfer
+I, [2019-07-07T21:14:47.882143 #32363]  INFO -- nginx-server-ubuntu-1604: Preparing validation.pem
+I, [2019-07-07T21:14:47.901562 #32363]  INFO -- nginx-server-ubuntu-1604: Preparing client.rb
+I, [2019-07-07T21:14:48.247937 #32363]  INFO -- nginx-server-ubuntu-1604: ubuntu 16.04 x86_64
+I, [2019-07-07T21:14:48.248013 #32363]  INFO -- nginx-server-ubuntu-1604: Getting information for chef stable 13.10.4 for ubuntu...
+I, [2019-07-07T21:14:48.248040 #32363]  INFO -- nginx-server-ubuntu-1604: downloading https://omnitruck.chef.io/stable/chef/metadata?v=13.10.4&p=ubuntu&pv=16.04&m=x86_64
+I, [2019-07-07T21:14:48.248061 #32363]  INFO -- nginx-server-ubuntu-1604:   to file /tmp/install.sh.84/metadata.txt
+I, [2019-07-07T21:14:48.248080 #32363]  INFO -- nginx-server-ubuntu-1604: trying wget...
+I, [2019-07-07T21:14:48.308615 #32363]  INFO -- nginx-server-ubuntu-1604: sha1	f954a20840df3ff5b00fa586cbf6ae2dc75d3fae
+I, [2019-07-07T21:14:48.308684 #32363]  INFO -- nginx-server-ubuntu-1604: sha256	a58763b6ce12ea012e5a8a5f545406d5ee11f97ec64f2e1bcdfae86b58469fde
+I, [2019-07-07T21:14:48.308708 #32363]  INFO -- nginx-server-ubuntu-1604: url	https://packages.chef.io/files/stable/chef/13.10.4/ubuntu/16.04/chef_13.10.4-1_amd64.deb
+I, [2019-07-07T21:14:48.308727 #32363]  INFO -- nginx-server-ubuntu-1604: version	13.10.4
+I, [2019-07-07T21:14:48.309410 #32363]  INFO -- nginx-server-ubuntu-1604: downloaded metadata file looks valid...
+I, [2019-07-07T21:14:48.325431 #32363]  INFO -- nginx-server-ubuntu-1604: downloading https://packages.chef.io/files/stable/chef/13.10.4/ubuntu/16.04/chef_13.10.4-1_amd64.deb
+I, [2019-07-07T21:14:48.325480 #32363]  INFO -- nginx-server-ubuntu-1604:   to file /tmp/install.sh.84/chef_13.10.4-1_amd64.deb
+I, [2019-07-07T21:14:48.325503 #32363]  INFO -- nginx-server-ubuntu-1604: trying wget...
+I, [2019-07-07T21:14:50.554016 #32363]  INFO -- nginx-server-ubuntu-1604: Comparing checksum with sha256sum...
+I, [2019-07-07T21:14:50.877362 #32363]  INFO -- nginx-server-ubuntu-1604: Installing chef 13.10.4
+I, [2019-07-07T21:14:50.877442 #32363]  INFO -- nginx-server-ubuntu-1604: installing with dpkg...
+I, [2019-07-07T21:14:50.983785 #32363]  INFO -- nginx-server-ubuntu-1604: Selecting previously unselected package chef.
+I, [2019-07-07T21:14:51.232928 #32363]  INFO -- nginx-server-ubuntu-1604: (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9655 files and directories currently installed.)
+I, [2019-07-07T21:14:51.232999 #32363]  INFO -- nginx-server-ubuntu-1604: Preparing to unpack .../chef_13.10.4-1_amd64.deb ...
+I, [2019-07-07T21:14:51.250105 #32363]  INFO -- nginx-server-ubuntu-1604: Unpacking chef (13.10.4-1) ...
+I, [2019-07-07T21:14:59.985712 #32363]  INFO -- nginx-server-ubuntu-1604: Setting up chef (13.10.4-1) ...
+I, [2019-07-07T21:15:00.150378 #32363]  INFO -- nginx-server-ubuntu-1604: Thank you for installing Chef!
+I, [2019-07-07T21:15:00.277487 #32363]  INFO -- nginx-server-ubuntu-1604: Transferring files to <nginx-server-ubuntu-1604>
+I, [2019-07-07T21:15:02.437014 #32363]  INFO -- nginx-server-ubuntu-1604: Starting Chef Client, version 13.10.4
+I, [2019-07-07T21:15:03.311790 #32363]  INFO -- nginx-server-ubuntu-1604: [2019-07-07T21:15:03+00:00] WARN: Plugin Network: unable to detect ipaddress
+I, [2019-07-07T21:15:03.311870 #32363]  INFO -- nginx-server-ubuntu-1604: [2019-07-07T21:15:03+00:00] WARN: Plugin Network: unable to detect ipaddress
+I, [2019-07-07T21:15:03.754945 #32363]  INFO -- nginx-server-ubuntu-1604: Creating a new client identity for nginx-server-ubuntu-1604 using the validator key.
+I, [2019-07-07T21:15:04.047297 #32363]  INFO -- nginx-server-ubuntu-1604: resolving cookbooks for run list: ["ext_ec_nginx_test::default"]
+I, [2019-07-07T21:15:04.088934 #32363]  INFO -- nginx-server-ubuntu-1604: Synchronizing Cookbooks:
+I, [2019-07-07T21:15:04.089002 #32363]  INFO -- nginx-server-ubuntu-1604:   - ext_ec_nginx_test (1.0.0)
+I, [2019-07-07T21:15:04.111966 #32363]  INFO -- nginx-server-ubuntu-1604:   - ohai (5.2.5)
+I, [2019-07-07T21:15:04.112027 #32363]  INFO -- nginx-server-ubuntu-1604:   - ext_ec_nginx (0.1.3)
+I, [2019-07-07T21:15:04.115643 #32363]  INFO -- nginx-server-ubuntu-1604: Installing Cookbook Gems:
+I, [2019-07-07T21:15:04.115687 #32363]  INFO -- nginx-server-ubuntu-1604: Compiling Cookbooks...
+I, [2019-07-07T21:15:04.132176 #32363]  INFO -- nginx-server-ubuntu-1604: Converging 4 resources
+I, [2019-07-07T21:15:04.132252 #32363]  INFO -- nginx-server-ubuntu-1604: Recipe: ext_ec_nginx_test::default
+I, [2019-07-07T21:15:04.135021 #32363]  INFO -- nginx-server-ubuntu-1604:   * nginx_server[www.example.com] action create
+I, [2019-07-07T21:15:04.233471 #32363]  INFO -- nginx-server-ubuntu-1604:     * apt_repository[nginx] action add
+I, [2019-07-07T21:15:04.677725 #32363]  INFO -- nginx-server-ubuntu-1604:       * remote_file[/tmp/kitchen/cache/http___nginx_org_keys_nginx_signing_key] action create
+I, [2019-07-07T21:15:04.677811 #32363]  INFO -- nginx-server-ubuntu-1604:  - create new file /tmp/kitchen/cache/http___nginx_org_keys_nginx_signing_key
+I, [2019-07-07T21:15:04.677843 #32363]  INFO -- nginx-server-ubuntu-1604:  - update content in file /tmp/kitchen/cache/http___nginx_org_keys_nginx_signing_key from none to dd4da5
+I, [2019-07-07T21:15:04.677873 #32363]  INFO -- nginx-server-ubuntu-1604:  --- /tmp/kitchen/cache/http___nginx_org_keys_nginx_signing_key	2019-07-07 21:15:04.668724319 +0000
+I, [2019-07-07T21:15:04.677903 #32363]  INFO -- nginx-server-ubuntu-1604:  +++ /tmp/kitchen/cache/.chef-http___nginx_org_keys_nginx_signing_key20190707-170-10o3sw4	2019-07-07 21:15:04.667724318 +0000
+I, [2019-07-07T21:15:04.677927 #32363]  INFO -- nginx-server-ubuntu-1604:  @@ -1 +1,29 @@
+I, [2019-07-07T21:15:04.677953 #32363]  INFO -- nginx-server-ubuntu-1604:  +-----BEGIN PGP PUBLIC KEY BLOCK-----
+I, [2019-07-07T21:15:04.677976 #32363]  INFO -- nginx-server-ubuntu-1604:  +Version: GnuPG v2.0.22 (GNU/Linux)
+I, [2019-07-07T21:15:04.678001 #32363]  INFO -- nginx-server-ubuntu-1604:  +
+I, [2019-07-07T21:15:04.678022 #32363]  INFO -- nginx-server-ubuntu-1604:  +mQENBE5OMmIBCAD+FPYKGriGGf7NqwKfWC83cBV01gabgVWQmZbMcFzeW+hMsgxH
+I, [2019-07-07T21:15:04.678044 #32363]  INFO -- nginx-server-ubuntu-1604:  +W6iimD0RsfZ9oEbfJCPG0CRSZ7ppq5pKamYs2+EJ8Q2ysOFHHwpGrA2C8zyNAs4I
+I, [2019-07-07T21:15:04.678068 #32363]  INFO -- nginx-server-ubuntu-1604:  +QxnZZIbETgcSwFtDun0XiqPwPZgyuXVm9PAbLZRbfBzm8wR/3SWygqZBBLdQk5TE
+I, [2019-07-07T21:15:04.678091 #32363]  INFO -- nginx-server-ubuntu-1604:  +fDR+Eny/M1RVR4xClECONF9UBB2ejFdI1LD45APbP2hsN/piFByU1t7yK2gpFyRt
+I, [2019-07-07T21:15:04.678116 #32363]  INFO -- nginx-server-ubuntu-1604:  +97WzGHn9MV5/TL7AmRPM4pcr3JacmtCnxXeCZ8nLqedoSuHFuhwyDnlAbu8I16O5
+I, [2019-07-07T21:15:04.678138 #32363]  INFO -- nginx-server-ubuntu-1604:  +XRrfzhrHRJFM1JnIiGmzZi6zBvH0ItfyX6ttABEBAAG0KW5naW54IHNpZ25pbmcg
+I, [2019-07-07T21:15:04.678162 #32363]  INFO -- nginx-server-ubuntu-1604:  +a2V5IDxzaWduaW5nLWtleUBuZ2lueC5jb20+iQE+BBMBAgAoAhsDBgsJCAcDAgYV
+I, [2019-07-07T21:15:04.678184 #32363]  INFO -- nginx-server-ubuntu-1604:  +CAIJCgsEFgIDAQIeAQIXgAUCV2K1+AUJGB4fQQAKCRCr9b2Ce9m/YloaB/9XGrol
+I, [2019-07-07T21:15:04.678205 #32363]  INFO -- nginx-server-ubuntu-1604:  +kocm7l/tsVjaBQCteXKuwsm4XhCuAQ6YAwA1L1UheGOG/aa2xJvrXE8X32tgcTjr
+I, [2019-07-07T21:15:04.678229 #32363]  INFO -- nginx-server-ubuntu-1604:  +KoYoXWcdxaFjlXGTt6jV85qRguUzvMOxxSEM2Dn115etN9piPl0Zz+4rkx8+2vJG
+I, [2019-07-07T21:15:04.678250 #32363]  INFO -- nginx-server-ubuntu-1604:  +F+eMlruPXg/zd88NvyLq5gGHEsFRBMVufYmHtNfcp4okC1klWiRIRSdp4QY1wdrN
+I, [2019-07-07T21:15:04.678270 #32363]  INFO -- nginx-server-ubuntu-1604:  +1O+/oCTl8Bzy6hcHjLIq3aoumcLxMjtBoclc/5OTioLDwSDfVx7rWyfRhcBzVbwD
+I, [2019-07-07T21:15:04.678291 #32363]  INFO -- nginx-server-ubuntu-1604:  +oe/PD08AoAA6fxXvWjSxy+dGhEaXoTHjkCbz/l6NxrK3JFyauDgU4K4MytsZ1HDi
+I, [2019-07-07T21:15:04.678311 #32363]  INFO -- nginx-server-ubuntu-1604:  +MgMW8hZXxszoICTTiQEcBBABAgAGBQJOTkelAAoJEKZP1bF62zmo79oH/1XDb29S
+I, [2019-07-07T21:15:04.678335 #32363]  INFO -- nginx-server-ubuntu-1604:  +YtWp+MTJTPFEwlWRiyRuDXy3wBd/BpwBRIWfWzMs1gnCjNjk0EVBVGa2grvy9Jtx
+I, [2019-07-07T21:15:04.678357 #32363]  INFO -- nginx-server-ubuntu-1604:  +JKMd6l/PWXVucSt+U/+GO8rBkw14SdhqxaS2l14v6gyMeUrSbY3XfToGfwHC4sa/
+I, [2019-07-07T21:15:04.678376 #32363]  INFO -- nginx-server-ubuntu-1604:  +Thn8X4jFaQ2XN5dAIzJGU1s5JA0tjEzUwCnmrKmyMlXZaoQVrmORGjCuH0I0aAFk
+I, [2019-07-07T21:15:04.678401 #32363]  INFO -- nginx-server-ubuntu-1604:  +RS0UtnB9HPpxhGVbs24xXZQnZDNbUQeulFxS4uP3OLDBAeCHl+v4t/uotIad8v6J
+I, [2019-07-07T21:15:04.678429 #32363]  INFO -- nginx-server-ubuntu-1604:  +SO93vc1evIje6lguE81HHmJn9noxPItvOvSMb2yPsE8mH4cJHRTFNSEhPW6ghmlf
+I, [2019-07-07T21:15:04.678450 #32363]  INFO -- nginx-server-ubuntu-1604:  +Wa9ZwiVX5igxcvaIRgQQEQIABgUCTk5b0gAKCRDs8OkLLBcgg1G+AKCnacLb/+W6
+I, [2019-07-07T21:15:04.678470 #32363]  INFO -- nginx-server-ubuntu-1604:  +cflirUIExgZdUJqoogCeNPVwXiHEIVqithAM1pdY/gcaQZmIRgQQEQIABgUCTk5f
+I, [2019-07-07T21:15:04.678490 #32363]  INFO -- nginx-server-ubuntu-1604:  +YQAKCRCpN2E5pSTFPnNWAJ9gUozyiS+9jf2rJvqmJSeWuCgVRwCcCUFhXRCpQO2Y
+I, [2019-07-07T21:15:04.678509 #32363]  INFO -- nginx-server-ubuntu-1604:  +Va3l3WuB+rgKjsQ=
+I, [2019-07-07T21:15:04.678528 #32363]  INFO -- nginx-server-ubuntu-1604:  +=EWWI
+I, [2019-07-07T21:15:04.678548 #32363]  INFO -- nginx-server-ubuntu-1604:  +-----END PGP PUBLIC KEY BLOCK-----
+I, [2019-07-07T21:15:04.678586 #32363]  INFO -- nginx-server-ubuntu-1604:  - change mode from '' to '0644'
+I, [2019-07-07T21:15:05.549258 #32363]  INFO -- nginx-server-ubuntu-1604:       * execute[apt-key add /tmp/kitchen/cache/http___nginx_org_keys_nginx_signing_key] action run
+I, [2019-07-07T21:15:05.549347 #32363]  INFO -- nginx-server-ubuntu-1604:  - execute apt-key add /tmp/kitchen/cache/http___nginx_org_keys_nginx_signing_key
+I, [2019-07-07T21:15:06.889182 #32363]  INFO -- nginx-server-ubuntu-1604:       * execute[apt-cache gencaches] action run
+I, [2019-07-07T21:15:06.889267 #32363]  INFO -- nginx-server-ubuntu-1604:  - execute apt-cache gencaches
+I, [2019-07-07T21:15:06.889300 #32363]  INFO -- nginx-server-ubuntu-1604:       * execute[apt-cache gencaches] action nothing (skipped due to action :nothing)
+I, [2019-07-07T21:15:06.889322 #32363]  INFO -- nginx-server-ubuntu-1604:       * apt_update[nginx] action nothing (skipped due to action :nothing)
+I, [2019-07-07T21:15:06.889339 #32363]  INFO -- nginx-server-ubuntu-1604:       * file[/etc/apt/sources.list.d/nginx.list] action create
+I, [2019-07-07T21:15:06.889362 #32363]  INFO -- nginx-server-ubuntu-1604:  - create new file /etc/apt/sources.list.d/nginx.list
+I, [2019-07-07T21:15:06.889385 #32363]  INFO -- nginx-server-ubuntu-1604:  - update content in file /etc/apt/sources.list.d/nginx.list from none to dd2151
+I, [2019-07-07T21:15:06.889407 #32363]  INFO -- nginx-server-ubuntu-1604:  --- /etc/apt/sources.list.d/nginx.list	2019-07-07 21:15:06.880727483 +0000
+I, [2019-07-07T21:15:06.889430 #32363]  INFO -- nginx-server-ubuntu-1604:  +++ /etc/apt/sources.list.d/.chef-nginx20190707-170-9y8h0s.list	2019-07-07 21:15:06.880727483 +0000
+I, [2019-07-07T21:15:06.889452 #32363]  INFO -- nginx-server-ubuntu-1604:  @@ -1 +1,2 @@
+I, [2019-07-07T21:15:06.889474 #32363]  INFO -- nginx-server-ubuntu-1604:  +deb      "http://nginx.org/packages/ubuntu" xenial nginx
+I, [2019-07-07T21:15:06.889495 #32363]  INFO -- nginx-server-ubuntu-1604:  - change mode from '' to '0644'
+I, [2019-07-07T21:15:06.889515 #32363]  INFO -- nginx-server-ubuntu-1604:  - change owner from '' to 'root'
+I, [2019-07-07T21:15:06.889537 #32363]  INFO -- nginx-server-ubuntu-1604:  - change group from '' to 'root'
+I, [2019-07-07T21:15:07.881037 #32363]  INFO -- nginx-server-ubuntu-1604:       * execute[apt-cache gencaches] action run
+I, [2019-07-07T21:15:07.881124 #32363]  INFO -- nginx-server-ubuntu-1604:  - execute apt-cache gencaches
+I, [2019-07-07T21:15:07.881151 #32363]  INFO -- nginx-server-ubuntu-1604:       * apt_update[nginx] action update
+I, [2019-07-07T21:15:07.881182 #32363]  INFO -- nginx-server-ubuntu-1604:  - force update new lists of packages
+I, [2019-07-07T21:15:07.881207 #32363]  INFO -- nginx-server-ubuntu-1604:  * directory[/var/lib/apt/periodic] action create (up to date)
+I, [2019-07-07T21:15:07.881230 #32363]  INFO -- nginx-server-ubuntu-1604:  * directory[/etc/apt/apt.conf.d] action create (up to date)
+I, [2019-07-07T21:15:07.881252 #32363]  INFO -- nginx-server-ubuntu-1604:  * file[/etc/apt/apt.conf.d/15update-stamp] action create_if_missing
+I, [2019-07-07T21:15:07.881282 #32363]  INFO -- nginx-server-ubuntu-1604:    - create new file /etc/apt/apt.conf.d/15update-stamp
+I, [2019-07-07T21:15:07.881307 #32363]  INFO -- nginx-server-ubuntu-1604:    - update content in file /etc/apt/apt.conf.d/15update-stamp from none to 174cdb
+I, [2019-07-07T21:15:07.881329 #32363]  INFO -- nginx-server-ubuntu-1604:    --- /etc/apt/apt.conf.d/15update-stamp	2019-07-07 21:15:07.874728905 +0000
+I, [2019-07-07T21:15:07.881350 #32363]  INFO -- nginx-server-ubuntu-1604:    +++ /etc/apt/apt.conf.d/.chef-15update-stamp20190707-170-9w1tql	2019-07-07 21:15:07.874728905 +0000
+I, [2019-07-07T21:15:07.881371 #32363]  INFO -- nginx-server-ubuntu-1604:    @@ -1 +1,2 @@
+I, [2019-07-07T21:15:07.881393 #32363]  INFO -- nginx-server-ubuntu-1604:    +APT::Update::Post-Invoke-Success {"touch /var/lib/apt/periodic/update-success-stamp 2>/dev/null || true";};
+I, [2019-07-07T21:15:10.073871 #32363]  INFO -- nginx-server-ubuntu-1604:  * execute[apt-get -q update] action run
+I, [2019-07-07T21:15:10.073955 #32363]  INFO -- nginx-server-ubuntu-1604:    - execute apt-get -q update
+I, [2019-07-07T21:15:10.073980 #32363]  INFO -- nginx-server-ubuntu-1604:       
+I, [2019-07-07T21:15:10.073998 #32363]  INFO -- nginx-server-ubuntu-1604:     
+I, [2019-07-07T21:15:17.421023 #32363]  INFO -- nginx-server-ubuntu-1604:     * apt_package[nginx] action install
+I, [2019-07-07T21:15:17.421096 #32363]  INFO -- nginx-server-ubuntu-1604:       - install version 1.16.0-1~xenial of package nginx
+I, [2019-07-07T21:15:17.530923 #32363]  INFO -- nginx-server-ubuntu-1604:     * service[nginx] action start
+I, [2019-07-07T21:15:17.530998 #32363]  INFO -- nginx-server-ubuntu-1604:       - start service service[nginx]
+I, [2019-07-07T21:15:17.587377 #32363]  INFO -- nginx-server-ubuntu-1604:     * service[nginx] action enable (up to date)
+I, [2019-07-07T21:15:17.587449 #32363]  INFO -- nginx-server-ubuntu-1604:     * directory[/var/www/www.example.com] action create
+I, [2019-07-07T21:15:17.587473 #32363]  INFO -- nginx-server-ubuntu-1604:       - create new directory /var/www/www.example.com
+I, [2019-07-07T21:15:17.587492 #32363]  INFO -- nginx-server-ubuntu-1604:     * template[/etc/nginx/conf.d/www.example.com.conf] action create
+I, [2019-07-07T21:15:17.587509 #32363]  INFO -- nginx-server-ubuntu-1604:       - create new file /etc/nginx/conf.d/www.example.com.conf
+I, [2019-07-07T21:15:17.587526 #32363]  INFO -- nginx-server-ubuntu-1604:       - update content in file /etc/nginx/conf.d/www.example.com.conf from none to e31b09
+I, [2019-07-07T21:15:17.587543 #32363]  INFO -- nginx-server-ubuntu-1604:       --- /etc/nginx/conf.d/www.example.com.conf	2019-07-07 21:15:17.580742790 +0000
+I, [2019-07-07T21:15:17.587577 #32363]  INFO -- nginx-server-ubuntu-1604:       +++ /etc/nginx/conf.d/.chef-www20190707-170-1nfenm7.example.com.conf	2019-07-07 21:15:17.580742790 +0000
+I, [2019-07-07T21:15:17.587604 #32363]  INFO -- nginx-server-ubuntu-1604:       @@ -1 +1,11 @@
+I, [2019-07-07T21:15:17.587622 #32363]  INFO -- nginx-server-ubuntu-1604:       +server {
+I, [2019-07-07T21:15:17.587637 #32363]  INFO -- nginx-server-ubuntu-1604:       +  listen 80;
+I, [2019-07-07T21:15:17.587652 #32363]  INFO -- nginx-server-ubuntu-1604:       +  listen [::]:80;
+I, [2019-07-07T21:15:17.587668 #32363]  INFO -- nginx-server-ubuntu-1604:       +  server_name www.example.com;
+I, [2019-07-07T21:15:17.587683 #32363]  INFO -- nginx-server-ubuntu-1604:       +
+I, [2019-07-07T21:15:17.587698 #32363]  INFO -- nginx-server-ubuntu-1604:       +  root /var/www/www.example.com;
+I, [2019-07-07T21:15:17.587713 #32363]  INFO -- nginx-server-ubuntu-1604:       +
+I, [2019-07-07T21:15:17.587728 #32363]  INFO -- nginx-server-ubuntu-1604:       +  location / {
+I, [2019-07-07T21:15:17.587743 #32363]  INFO -- nginx-server-ubuntu-1604:       +  }
+I, [2019-07-07T21:15:17.587758 #32363]  INFO -- nginx-server-ubuntu-1604:       +}
+I, [2019-07-07T21:15:17.668066 #32363]  INFO -- nginx-server-ubuntu-1604:     * service[nginx] action reload
+I, [2019-07-07T21:15:17.668140 #32363]  INFO -- nginx-server-ubuntu-1604:       - reload service service[nginx]
+I, [2019-07-07T21:15:17.668172 #32363]  INFO -- nginx-server-ubuntu-1604:   
+I, [2019-07-07T21:15:17.668191 #32363]  INFO -- nginx-server-ubuntu-1604:   * nginx_server[notes] action create
+I, [2019-07-07T21:15:17.713357 #32363]  INFO -- nginx-server-ubuntu-1604:     * apt_repository[nginx] action add
+I, [2019-07-07T21:15:18.001792 #32363]  INFO -- nginx-server-ubuntu-1604:       * remote_file[/tmp/kitchen/cache/http___nginx_org_keys_nginx_signing_key] action create (up to date)
+I, [2019-07-07T21:15:18.333468 #32363]  INFO -- nginx-server-ubuntu-1604:       * execute[apt-key add /tmp/kitchen/cache/http___nginx_org_keys_nginx_signing_key] action run (skipped due to not_if)
+I, [2019-07-07T21:15:18.333544 #32363]  INFO -- nginx-server-ubuntu-1604:       * execute[apt-cache gencaches] action nothing (skipped due to action :nothing)
+I, [2019-07-07T21:15:18.333595 #32363]  INFO -- nginx-server-ubuntu-1604:       * apt_update[nginx] action nothing (skipped due to action :nothing)
+I, [2019-07-07T21:15:18.333620 #32363]  INFO -- nginx-server-ubuntu-1604:       * file[/etc/apt/sources.list.d/nginx.list] action create (up to date)
+I, [2019-07-07T21:15:18.333650 #32363]  INFO -- nginx-server-ubuntu-1604: (up to date)
+I, [2019-07-07T21:15:19.287866 #32363]  INFO -- nginx-server-ubuntu-1604:     * apt_package[nginx] action install (up to date)
+I, [2019-07-07T21:15:19.338406 #32363]  INFO -- nginx-server-ubuntu-1604:     * service[nginx] action start (up to date)
+I, [2019-07-07T21:15:19.389543 #32363]  INFO -- nginx-server-ubuntu-1604:     * service[nginx] action enable (up to date)
+I, [2019-07-07T21:15:19.389763 #32363]  INFO -- nginx-server-ubuntu-1604:     * directory[/var/www/notes/] action create
+I, [2019-07-07T21:15:19.389791 #32363]  INFO -- nginx-server-ubuntu-1604:       - create new directory /var/www/notes/
+I, [2019-07-07T21:15:19.401243 #32363]  INFO -- nginx-server-ubuntu-1604:     * template[/etc/nginx/conf.d/notes.example.com.conf] action create
+I, [2019-07-07T21:15:19.401297 #32363]  INFO -- nginx-server-ubuntu-1604:       - create new file /etc/nginx/conf.d/notes.example.com.conf
+I, [2019-07-07T21:15:19.401322 #32363]  INFO -- nginx-server-ubuntu-1604:       - update content in file /etc/nginx/conf.d/notes.example.com.conf from none to 46e25a
+I, [2019-07-07T21:15:19.401346 #32363]  INFO -- nginx-server-ubuntu-1604:       --- /etc/nginx/conf.d/notes.example.com.conf	2019-07-07 21:15:19.390745379 +0000
+I, [2019-07-07T21:15:19.401371 #32363]  INFO -- nginx-server-ubuntu-1604:       +++ /etc/nginx/conf.d/.chef-notes20190707-170-1ljfp94.example.com.conf	2019-07-07 21:15:19.390745379 +0000
+I, [2019-07-07T21:15:19.401391 #32363]  INFO -- nginx-server-ubuntu-1604:       @@ -1 +1,11 @@
+I, [2019-07-07T21:15:19.401406 #32363]  INFO -- nginx-server-ubuntu-1604:       +server {
+I, [2019-07-07T21:15:19.401422 #32363]  INFO -- nginx-server-ubuntu-1604:       +  listen 80;
+I, [2019-07-07T21:15:19.401437 #32363]  INFO -- nginx-server-ubuntu-1604:       +  listen [::]:80;
+I, [2019-07-07T21:15:19.401454 #32363]  INFO -- nginx-server-ubuntu-1604:       +  server_name notes.example.com;
+I, [2019-07-07T21:15:19.401474 #32363]  INFO -- nginx-server-ubuntu-1604:       +
+I, [2019-07-07T21:15:19.401491 #32363]  INFO -- nginx-server-ubuntu-1604:       +  root /var/www/notes/;
+I, [2019-07-07T21:15:19.401507 #32363]  INFO -- nginx-server-ubuntu-1604:       +
+I, [2019-07-07T21:15:19.401521 #32363]  INFO -- nginx-server-ubuntu-1604:       +  location / {
+I, [2019-07-07T21:15:19.401536 #32363]  INFO -- nginx-server-ubuntu-1604:       +  }
+I, [2019-07-07T21:15:19.401551 #32363]  INFO -- nginx-server-ubuntu-1604:       +}
+I, [2019-07-07T21:15:19.401594 #32363]  INFO -- nginx-server-ubuntu-1604:     * file[/var/www/notes//index.html] action create
+I, [2019-07-07T21:15:19.401617 #32363]  INFO -- nginx-server-ubuntu-1604:       - create new file /var/www/notes//index.html
+I, [2019-07-07T21:15:19.401634 #32363]  INFO -- nginx-server-ubuntu-1604:       - update content in file /var/www/notes//index.html from none to fb233d
+I, [2019-07-07T21:15:19.401657 #32363]  INFO -- nginx-server-ubuntu-1604:       --- /var/www/notes//index.html	2019-07-07 21:15:19.393745383 +0000
+I, [2019-07-07T21:15:19.401674 #32363]  INFO -- nginx-server-ubuntu-1604:       +++ /var/www/notes/.chef-index20190707-170-1faxnfh.html	2019-07-07 21:15:19.393745383 +0000
+I, [2019-07-07T21:15:19.401690 #32363]  INFO -- nginx-server-ubuntu-1604:       @@ -1 +1,2 @@
+I, [2019-07-07T21:15:19.401705 #32363]  INFO -- nginx-server-ubuntu-1604:       +<h1>Come back to this again</h1>
+I, [2019-07-07T21:15:19.491081 #32363]  INFO -- nginx-server-ubuntu-1604:     * service[nginx] action reload
+I, [2019-07-07T21:15:19.491162 #32363]  INFO -- nginx-server-ubuntu-1604:       - reload service service[nginx]
+I, [2019-07-07T21:15:19.491191 #32363]  INFO -- nginx-server-ubuntu-1604:   
+I, [2019-07-07T21:15:19.491210 #32363]  INFO -- nginx-server-ubuntu-1604:   * nginx_server[blog] action delete
+I, [2019-07-07T21:15:19.491227 #32363]  INFO -- nginx-server-ubuntu-1604:     * directory[/var/www/blog] action delete (up to date)
+I, [2019-07-07T21:15:19.491245 #32363]  INFO -- nginx-server-ubuntu-1604:     * file[/etc/nginx/conf.d/blog.conf] action delete (up to date)
+I, [2019-07-07T21:15:19.491262 #32363]  INFO -- nginx-server-ubuntu-1604:      (up to date)
+I, [2019-07-07T21:15:19.491278 #32363]  INFO -- nginx-server-ubuntu-1604:   * nginx_server[status_site] action delete
+I, [2019-07-07T21:15:19.491334 #32363]  INFO -- nginx-server-ubuntu-1604:     * directory[/var/www/status] action delete (up to date)
+I, [2019-07-07T21:15:19.491356 #32363]  INFO -- nginx-server-ubuntu-1604:     * file[/etc/nginx/conf.d/status.example.com.conf] action delete (up to date)
+I, [2019-07-07T21:15:19.491372 #32363]  INFO -- nginx-server-ubuntu-1604:      (up to date)
+I, [2019-07-07T21:15:19.530490 #32363]  INFO -- nginx-server-ubuntu-1604: 
+I, [2019-07-07T21:15:19.530590 #32363]  INFO -- nginx-server-ubuntu-1604: Running handlers:
+I, [2019-07-07T21:15:19.530621 #32363]  INFO -- nginx-server-ubuntu-1604: Running handlers complete
+I, [2019-07-07T21:15:19.530641 #32363]  INFO -- nginx-server-ubuntu-1604: Chef Client finished, 20/40 resources updated in 17 seconds
+I, [2019-07-07T21:15:19.546772 #32363]  INFO -- nginx-server-ubuntu-1604: Downloading files from <nginx-server-ubuntu-1604>
+I, [2019-07-07T21:15:19.549517 #32363]  INFO -- nginx-server-ubuntu-1604: Finished converging <nginx-server-ubuntu-1604> (0m33.70s).
+I, [2019-07-07T21:15:19.549634 #32363]  INFO -- nginx-server-ubuntu-1604: -----> Setting up <nginx-server-ubuntu-1604>...
+I, [2019-07-07T21:15:19.550503 #32363]  INFO -- nginx-server-ubuntu-1604: Finished setting up <nginx-server-ubuntu-1604> (0m0.00s).
+I, [2019-07-07T21:15:19.550629 #32363]  INFO -- nginx-server-ubuntu-1604: -----> Verifying <nginx-server-ubuntu-1604>...
+I, [2019-07-07T21:15:19.837339 #32363]  INFO -- nginx-server-ubuntu-1604: Loaded tests from {:path=>".home.cloud_user.chefbadge.study.extchef.cookbooks.ext_ec_nginx.test.integration.default"} 
+E, [2019-07-07T21:15:19.941139 #32363] ERROR -- nginx-server-ubuntu-1604: Verify failed on instance <nginx-server-ubuntu-1604>.
+E, [2019-07-07T21:15:19.941248 #32363] ERROR -- nginx-server-ubuntu-1604: ------Exception-------
+E, [2019-07-07T21:15:19.941273 #32363] ERROR -- nginx-server-ubuntu-1604: Class: Kitchen::ActionFailed
+E, [2019-07-07T21:15:19.941288 #32363] ERROR -- nginx-server-ubuntu-1604: Message: Inspec Runner returns 1
+E, [2019-07-07T21:15:19.941301 #32363] ERROR -- nginx-server-ubuntu-1604: ----------------------
+E, [2019-07-07T21:15:19.941313 #32363] ERROR -- nginx-server-ubuntu-1604: ------Backtrace-------
+E, [2019-07-07T21:15:19.941325 #32363] ERROR -- nginx-server-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/kitchen-inspec-0.23.1/lib/kitchen/verifier/inspec.rb:98:in `call'
+E, [2019-07-07T21:15:19.941338 #32363] ERROR -- nginx-server-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.22.1/lib/kitchen/instance.rb:443:in `block in verify_action'
+E, [2019-07-07T21:15:19.941350 #32363] ERROR -- nginx-server-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.22.1/lib/kitchen/instance.rb:536:in `synchronize_or_call'
+E, [2019-07-07T21:15:19.941372 #32363] ERROR -- nginx-server-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.22.1/lib/kitchen/instance.rb:498:in `block in action'
+E, [2019-07-07T21:15:19.941386 #32363] ERROR -- nginx-server-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/2.4.0/benchmark.rb:293:in `measure'
+E, [2019-07-07T21:15:19.941399 #32363] ERROR -- nginx-server-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.22.1/lib/kitchen/instance.rb:497:in `action'
+E, [2019-07-07T21:15:19.941421 #32363] ERROR -- nginx-server-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.22.1/lib/kitchen/instance.rb:435:in `verify_action'
+E, [2019-07-07T21:15:19.941434 #32363] ERROR -- nginx-server-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.22.1/lib/kitchen/instance.rb:368:in `block in transition_to'
+E, [2019-07-07T21:15:19.941445 #32363] ERROR -- nginx-server-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.22.1/lib/kitchen/instance.rb:367:in `each'
+E, [2019-07-07T21:15:19.941457 #32363] ERROR -- nginx-server-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.22.1/lib/kitchen/instance.rb:367:in `transition_to'
+E, [2019-07-07T21:15:19.941469 #32363] ERROR -- nginx-server-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.22.1/lib/kitchen/instance.rb:157:in `verify'
+E, [2019-07-07T21:15:19.941481 #32363] ERROR -- nginx-server-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.22.1/lib/kitchen/instance.rb:186:in `block in test'
+E, [2019-07-07T21:15:19.941493 #32363] ERROR -- nginx-server-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/2.4.0/benchmark.rb:293:in `measure'
+E, [2019-07-07T21:15:19.941504 #32363] ERROR -- nginx-server-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.22.1/lib/kitchen/instance.rb:182:in `test'
+E, [2019-07-07T21:15:19.941516 #32363] ERROR -- nginx-server-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.22.1/lib/kitchen/command.rb:197:in `public_send'
+E, [2019-07-07T21:15:19.941528 #32363] ERROR -- nginx-server-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.22.1/lib/kitchen/command.rb:197:in `run_action_in_thread'
+E, [2019-07-07T21:15:19.941540 #32363] ERROR -- nginx-server-ubuntu-1604: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.22.1/lib/kitchen/command.rb:169:in `block (2 levels) in run_action'
+E, [2019-07-07T21:15:19.941552 #32363] ERROR -- nginx-server-ubuntu-1604: ----End Backtrace-----
