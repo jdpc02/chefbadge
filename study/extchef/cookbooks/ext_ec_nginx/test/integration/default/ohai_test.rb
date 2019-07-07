@@ -4,5 +4,5 @@
 # found at http://inspec.io/docs/reference/resources/
 
 describe command('ohai -d /tmp/kitchen/ohai/plugins extnginx') do
-  its(:stdout) { should include('nginx version: nginx/1.12.2') }
+  its(:stdout) { should include('nginx version: nginx/1.14.0') }
 end

@@ -6,7 +6,24 @@ property :static_path, String
 property :landing_page_content, String
 property :srcbook, String, default: 'ext_ec_nginx'
 
+action_class { include ExtEcNginx::Helpers }
+
 action :create do
+  if debian_based?
+    apt_repository 'nginx' do
+      extend ExtEcNginx::Helpers
+      uri "http://nginx.org/packages/#{node['platform']}"
+      components ['nginx']
+      key nginx_key_url
+    end
+  elsif rhel_based?
+    yum_repository 'nginx' do
+      extend ExtEcNginx::Helpers
+      baseurl "http://nginx.org/packages/#{node['platform']}/#{node['platform_version'][0]}/$basearch/"
+      gpgkey nginx_key_url
+    end
+  end
+
   package 'nginx'
 
   service 'nginx' do

@@ -1,0 +1,15 @@
+I, [2019-07-07T20:23:26.770083 #28937]  INFO -- default-ubuntu-1604: -----> Destroying <default-ubuntu-1604>...
+I, [2019-07-07T20:23:27.133467 #28937]  INFO -- default-ubuntu-1604: UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD
+I, [2019-07-07T20:23:27.133668 #28937]  INFO -- default-ubuntu-1604: root                22177               22163               0                   20:21               ?                   00:00:00            /bin/systemd
+I, [2019-07-07T20:23:27.133710 #28937]  INFO -- default-ubuntu-1604: root                23984               22177               0                   20:22               ?                   00:00:00            nginx: master process /usr/sbin/nginx -c /etc/nginx/nginx.conf
+I, [2019-07-07T20:23:27.133733 #28937]  INFO -- default-ubuntu-1604: 106                 23985               23984               0                   20:22               ?                   00:00:00            nginx: worker process
+I, [2019-07-07T20:23:27.133753 #28937]  INFO -- default-ubuntu-1604: root                22279               22177               0                   20:21               ?                   00:00:00            /usr/sbin/sshd -D
+I, [2019-07-07T20:23:27.133775 #28937]  INFO -- default-ubuntu-1604: root                22263               22177               0                   20:21               tty2                00:00:00            /sbin/agetty --noclear tty2 linux
+I, [2019-07-07T20:23:27.133794 #28937]  INFO -- default-ubuntu-1604: root                22264               22177               0                   20:21               tty3                00:00:00            /sbin/agetty --noclear tty3 linux
+I, [2019-07-07T20:23:27.133812 #28937]  INFO -- default-ubuntu-1604: root                22265               22177               0                   20:21               tty4                00:00:00            /sbin/agetty --noclear tty4 linux
+I, [2019-07-07T20:23:27.133829 #28937]  INFO -- default-ubuntu-1604: root                22266               22177               0                   20:21               tty5                00:00:00            /sbin/agetty --noclear tty5 linux
+I, [2019-07-07T20:23:27.133846 #28937]  INFO -- default-ubuntu-1604: root                22267               22177               0                   20:21               tty6                00:00:00            /sbin/agetty --noclear tty6 linux
+I, [2019-07-07T20:23:27.133862 #28937]  INFO -- default-ubuntu-1604: root                22237               22177               0                   20:21               ?                   00:00:00            /lib/systemd/systemd-journald
+I, [2019-07-07T20:23:28.111224 #28937]  INFO -- default-ubuntu-1604: 228cffe8c5e0d7cc41089c795b1415347036cc718570b4b16a347cbf917ea010
+I, [2019-07-07T20:23:28.736587 #28937]  INFO -- default-ubuntu-1604: 228cffe8c5e0d7cc41089c795b1415347036cc718570b4b16a347cbf917ea010
+I, [2019-07-07T20:23:28.749130 #28937]  INFO -- default-ubuntu-1604: Finished destroying <default-ubuntu-1604> (0m1.98s).
