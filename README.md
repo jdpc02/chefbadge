@@ -11,7 +11,7 @@ Utilized the following as a basis for my code.
 * [Script to move IIS](https://gallery.technet.microsoft.com/scriptcenter/Script-to-move-the-IIS-f1fb62a5)
 * [Self Signed Cert Creation](https://stackoverflow.com/questions/10175812/how-to-create-a-self-signed-certificate-with-openssl)
 
-Work on, and pass, one of the following badges before July 2019 EOM
+Work on, and pass, one of the following badges before November 2019 EOM
 * [Extending Chef Badge](https://training.chef.io/extending-chef-badge)
 * [Deploying Cookbooks Badge](https://training.chef.io/deploying-cookbooks-badge)
 * [Auditing with InSpec Badge](https://training.chef.io/auditing-with-inspec-badge)
