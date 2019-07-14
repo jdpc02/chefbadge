@@ -1,0 +1,42 @@
+# https://github.com/dotless-de/vagrant-vbguest
+# vagrant plugin install vagrant-vbguest
+
+$uptodate = <<-SCRIPT
+  sudo yum upgrade -y
+  sudo yum update -y
+
+  echo 'Setup timezone'
+  sudo timedatectl set-timezone America/New_York
+
+  echo 'Enable chronyd'
+  sudo systemctl enable chronyd
+  sudo systemctl start chronyd
+
+  echo 'Ensure NTP syncs auto'
+  sudo timedatectl set-ntp 1 
+SCRIPT
+
+$installdocker = <<-SCRIPT
+  echo 'Install docker'
+  sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+  sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+  sudo yum install -y docker-ce docker-ce-cli containerd.io
+  sudo systemctl restart docker
+  sudo systemctl enable docker.service
+  usermod -aG docker vagrant
+SCRIPT
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "centos/7"
+  config.vm.box_check_update = false
+  config.vm.network 'private_network', ip: '192.168.33.25'
+  config.vm.hostname = "integcomplywrk.test"
+  config.vm.provider "virtualbox" do |inspec|
+    inspec.memory = "4096"
+    inspec.cpus = 2
+  end
+  config.vm.synced_folder ".", "/home/vagrant/locfolder", type: "smb", mount_options: ['vers=3.0']#, smb_username: ENV['VAGRANT_SMB_USER'], smb_password: ENV['VAGRANT_SMB_PWD']
+  config.vm.boot_timeout = 1800
+  config.vm.provision "shell", inline: $uptodate
+  config.vm.provision "shell", inline: $installdocker
+end
