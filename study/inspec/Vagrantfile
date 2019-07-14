@@ -4,15 +4,20 @@
 $uptodate = <<-SCRIPT
   sudo yum upgrade -y
   sudo yum update -y
+
+  echo 'Setup timezone'
   sudo timedatectl set-timezone America/New_York
+
+  echo 'Enable chronyd'
   sudo systemctl enable chronyd
   sudo systemctl start chronyd
+
+  echo 'Ensure NTP syncs auto'
   sudo timedatectl set-ntp 1 
-  sudo chronyc -a 'burst 4/4'
-  sudo chronyc -a makestepc
 SCRIPT
 
 $installdocker = <<-SCRIPT
+  echo 'Install docker'
   sudo yum install -y yum-utils device-mapper-persistent-data lvm2
   sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
   sudo yum install -y docker-ce docker-ce-cli containerd.io
@@ -22,14 +27,17 @@ $installdocker = <<-SCRIPT
 SCRIPT
 
 $setupinspec = <<-SCRIPT
+  echo 'Setup Inspec Env'
   mkdir /home/vagrant/learn-inspec
   sudo chown vagrant:vagrant /home/vagrant/learn-inspec
   cd /home/vagrant/learn-inspec
   sudo yum install -y wget tree unzip
-  wget https://raw.githubusercontent.com/learn-chef/inspec/master/docker-compose.yml
   sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
   sudo chmod +x /usr/local/bin/docker-compose
+  wget https://raw.githubusercontent.com/learn-chef/inspec/master/docker-compose.yml
   wget -O docker-compose-nginx.yml https://raw.githubusercontent.com/learn-chef/inspec/master/docker-compose-nginx.yml
+  sudo chown vagrant:vagrant ./docker-compose.yml
+  sudo chown vagrant:vagrant ./docker-compose-nginx.yml
   wget -O /tmp/terraform.zip https://releases.hashicorp.com/terraform/0.11.14/terraform_0.11.14_linux_amd64.zip
   unzip /tmp/terraform.zip -d /home/vagrant/learn-inspec
   sudo chown vagrant:vagrant /home/vagrant/learn-inspec/terraform
