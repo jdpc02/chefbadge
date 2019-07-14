@@ -1,0 +1,6 @@
+nginxver: 1.10.3
+nginxmod:
+  - http_ssl
+  - stream_ssl
+  - mail_ssl
+  

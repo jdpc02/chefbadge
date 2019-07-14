@@ -1,0 +1,30 @@
+$setupdocker = <<-SCRIPT
+echo Setup docker environment
+sudo yum -y update
+ sudo yum install -y yum-utils \
+  device-mapper-persistent-data \
+  lvm2
+sudo yum-config-manager \
+    --add-repo \
+    https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum install -y docker-ce docker-ce-cli containerd.io
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo usermod -aG docker vagrant
+echo Completed docker environment setup
+# echo Setup python 3.6 environment
+# sudo yum -y install https://centos7.iuscommunity.org/ius-release.rpm
+# sudo yum -y install python36u
+# sudo yum -y install python36u-pip
+# sudo pip3.6 install flask
+# sudo pip3.6 install gunicorn
+# echo Completed python 3.7 environment
+SCRIPT
+
+Vagrant.configure("2") do |config|
+  config.vm.network "forwarded_port", guest:5050, host:9999, auto_correct: true
+  config.vm.usable_port_range = 9050..10050
+  config.vm.box = "centos/7"
+  config.vm.synced_folder "D:/repos/myvirts/flask-snap", "/vagrant"
+  config.vm.provision "shell", inline: $setupdocker
+end

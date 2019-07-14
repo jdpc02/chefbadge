@@ -1,0 +1,92 @@
+{
+    "ec2_instance.database": {
+      "sensitive": false,
+      "type": "string",
+      "value": "i-0aaea04aa0b9687c2"
+    },
+    "ec2_instance.database.ami": {
+      "sensitive": false,
+      "type": "string",
+      "value": "ami-9c56efe3"
+    },
+    "ec2_instance.database.instance_type": {
+      "sensitive": false,
+      "type": "string",
+      "value": "t2.micro"
+    },
+    "ec2_instance.database.name": {
+      "sensitive": false,
+      "type": "string",
+      "value": "database"
+    },
+    "ec2_instance.database.private_ip": {
+      "sensitive": false,
+      "type": "string",
+      "value": "10.0.100.243"
+    },
+    "ec2_instance.webserver": {
+      "sensitive": false,
+      "type": "string",
+      "value": "i-088e37de12eb2ab02"
+    },
+    "ec2_instance.webserver.ami": {
+      "sensitive": false,
+      "type": "string",
+      "value": "ami-9c56efe3"
+    },
+    "ec2_instance.webserver.instance_type": {
+      "sensitive": false,
+      "type": "string",
+      "value": "t2.micro"
+    },
+    "ec2_instance.webserver.name": {
+      "sensitive": false,
+      "type": "string",
+      "value": "webserver"
+    },
+    "ec2_instance.webserver.public_ip": {
+      "sensitive": false,
+      "type": "string",
+      "value": "52.207.210.245"
+    },
+    "image_id": {
+      "sensitive": false,
+      "type": "string",
+      "value": "ami-9c56efe3"
+    },
+    "route.internet_access.id": {
+      "sensitive": false,
+      "type": "string",
+      "value": "rtb-59aea825"
+    },
+    "security_group.mysql.id": {
+      "sensitive": false,
+      "type": "string",
+      "value": "sg-b78464ff"
+    },
+    "security_group.ssh.id": {
+      "sensitive": false,
+      "type": "string",
+      "value": "sg-73b8583b"
+    },
+    "security_group.web.id": {
+      "sensitive": false,
+      "type": "string",
+      "value": "sg-5fbc5c17"
+    },
+    "subnet.private.id": {
+      "sensitive": false,
+      "type": "string",
+      "value": "subnet-bb778295"
+    },
+    "subnet.public.id": {
+      "sensitive": false,
+      "type": "string",
+      "value": "subnet-6007f24e"
+    },
+    "vpc.id": {
+      "sensitive": false,
+      "type": "string",
+      "value": "vpc-30712f4b"
+    }
+}

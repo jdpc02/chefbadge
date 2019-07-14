@@ -1,0 +1,52 @@
+# https://github.com/dotless-de/vagrant-vbguest
+# vagrant plugin install vagrant-vbguest
+
+$uptodate = <<-SCRIPT
+  sudo yum upgrade -y
+  sudo yum update -y
+  sudo timedatectl set-timezone America/New_York
+  sudo systemctl enable chronyd
+  sudo systemctl start chronyd
+  sudo timedatectl set-ntp 1 
+  sudo chronyc -a 'burst 4/4'
+  sudo chronyc -a makestepc
+SCRIPT
+
+$installdocker = <<-SCRIPT
+  sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+  sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+  sudo yum install -y docker-ce docker-ce-cli containerd.io
+  sudo systemctl restart docker
+  sudo systemctl enable docker.service
+  usermod -aG docker vagrant
+SCRIPT
+
+$setupinspec = <<-SCRIPT
+  mkdir /home/vagrant/learn-inspec
+  sudo chown vagrant:vagrant /home/vagrant/learn-inspec
+  cd /home/vagrant/learn-inspec
+  sudo yum install -y wget tree unzip
+  wget https://raw.githubusercontent.com/learn-chef/inspec/master/docker-compose.yml
+  sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  sudo chmod +x /usr/local/bin/docker-compose
+  wget -O docker-compose-nginx.yml https://raw.githubusercontent.com/learn-chef/inspec/master/docker-compose-nginx.yml
+  wget -O /tmp/terraform.zip https://releases.hashicorp.com/terraform/0.11.14/terraform_0.11.14_linux_amd64.zip
+  unzip /tmp/terraform.zip -d /home/vagrant/learn-inspec
+  sudo chown vagrant:vagrant /home/vagrant/learn-inspec/terraform
+  wget -O /tmp/inspec-2.0.32-1.el7.x86_64.rpm https://packages.chef.io/files/stable/inspec/2.0.32/el/7/inspec-2.0.32-1.el7.x86_64.rpm
+  sudo rpm -iv /tmp/inspec-2.0.32-1.el7.x86_64.rpm
+SCRIPT
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "centos/7"
+  config.vm.box_check_update = true
+  config.vm.hostname = "inspecplaybox"
+  config.vm.provider "virtualbox" do |inspec|
+    inspec.memory = "4096"
+    inspec.cpus = 4
+  end
+  config.vm.synced_folder "D:/tmp1/temp", "/home/vagrant/locfolder", type: "smb"
+  config.vm.provision "shell", inline: $uptodate
+  config.vm.provision "shell", inline: $installdocker
+  config.vm.provision "shell", inline: $setupinspec
+end
