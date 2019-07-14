@@ -39,13 +39,14 @@ SCRIPT
 
 Vagrant.configure("2") do |config|
   config.vm.box = "centos/7"
-  config.vm.box_check_update = true
+  config.vm.box_check_update = false
   config.vm.hostname = "inspecplaybox"
   config.vm.provider "virtualbox" do |inspec|
     inspec.memory = "4096"
     inspec.cpus = 4
   end
-  config.vm.synced_folder "D:/tmp1/temp", "/home/vagrant/locfolder", type: "smb"
+  config.vm.synced_folder ".", "/home/vagrant/locfolder", type: "smb", mount_options: ['vers=3.0'], smb_username: ENV['VAGRANT_SMB_USER'], smb_password: ENV['VAGRANT_SMB_PWD']
+  config.vm.boot_timeout = 1800
   config.vm.provision "shell", inline: $uptodate
   config.vm.provision "shell", inline: $installdocker
   config.vm.provision "shell", inline: $setupinspec
