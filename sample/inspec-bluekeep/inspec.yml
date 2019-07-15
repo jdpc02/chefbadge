@@ -1,0 +1,10 @@
+name: inspec-bluekeep
+title: bluekeep Inspec profile
+maintainer: D Camara
+copyright: D Camara
+copyright_email: jdpcii@gmail.com
+license: Apache-2.0
+summary: Covers CVE-2019-0708 for Windows nodes
+version: 0.1.0
+supports:
+  - platform-family: windows
