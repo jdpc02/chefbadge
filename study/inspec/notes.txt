@@ -1,0 +1,7 @@
+$ inspec compliance profiles
+$ inspec init profile <something>
+$ inspec compliance upload <something>
+
+$ chef-automate maintenance <on/off>
+$ chef-automate stop/start/status
+$ chef-automate system-logs
