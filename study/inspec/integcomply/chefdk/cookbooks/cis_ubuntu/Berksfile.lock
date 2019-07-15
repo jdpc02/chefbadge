@@ -1,0 +1,9 @@
+DEPENDENCIES
+  cis_ubuntu
+    path: .
+    metadata: true
+
+GRAPH
+  audit (8.0.0)
+  cis_ubuntu (0.1.0)
+    audit (>= 0.0.0)
