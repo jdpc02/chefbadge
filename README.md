@@ -38,6 +38,11 @@ The different system bus and controller chipsets are as follows:
 > [--controller LSILogic|LSILogicSAS|BusLogic|
 >    IntelAhci|PIIX3|PIIX4|ICH6|I82078|USB|NVMe]
 
+To automatically update virtualbox additions on a box, install the following plugin:
+```
+$ vagrant plugin install vagrant-vbguest
+```
+[dotless-de/vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest)
 
 The main thing about generating self signed certs in Linux is getting the -subj parameter just right. Here is an example:
 ```
