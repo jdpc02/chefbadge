@@ -1,0 +1,7 @@
+DEPENDENCIES
+  testupgrade
+    path: .
+    metadata: true
+
+GRAPH
+  testupgrade (0.1.0)
