@@ -5,7 +5,8 @@ Useful cookbooks/resources under Sample.
 - lazytest utilized lazy for picking up updated attributes
 - resourcetest is a custom resource to setup web servers
 - mycookbook calls the custom resources
-
+- inspec-bluekeep checks if your windows node is protected against bluekeep
+- setupmyenv installs chocolatey and the corresponding software I use
 
 Utilized the following as a basis for my code.
 * [Script to move IIS](https://gallery.technet.microsoft.com/scriptcenter/Script-to-move-the-IIS-f1fb62a5)
