@@ -25,6 +25,7 @@ local-mode-cache/*
 .chef/encrypted_data_bag_secret
 .chef/local-mode-cache/*
 .chef/trusted_certs/*
+*.pem
 
 ## Ignore Chef-Zero files
 clients
