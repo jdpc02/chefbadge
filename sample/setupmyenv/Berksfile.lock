@@ -1,0 +1,7 @@
+DEPENDENCIES
+  setupmyenv
+    path: .
+    metadata: true
+
+GRAPH
+  setupmyenv (0.1.0)
