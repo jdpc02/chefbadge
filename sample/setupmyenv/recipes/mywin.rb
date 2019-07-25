@@ -11,7 +11,7 @@ powershell_script 'Install Chocolatey' do
   not_if { File.exist?('C:/ProgramData/chocolatey/bin/choco.exe') }
 end
 
-packagelist = node['setupmyenv']['packages']['win']
+packagelist = node['setupmyenv']['win']['packages']
 
 packagelist.each do |instpkg|
   chocolatey_package instpkg do
@@ -20,9 +20,10 @@ packagelist.each do |instpkg|
 end
 
 windows_package 'Chef Workstation Install' do
-  checksum node['setupmyenv']['chefwrkchk']['win']
-  source node['setupmyenv']['chefwrk']['win']
+  checksum node['setupmyenv']['win']['cwrkchk']
+  source node['setupmyenv']['win']['cwrk']
   installer_type :msi
   options '/quiet /passive'
   action :install
+  not_if { File.exist?('C:/opscode/chef-workstation/bin/start-chefws.ps1') }
 end
