@@ -1,0 +1,11 @@
+DEPENDENCIES
+  mycookbook
+    path: .
+    metadata: true
+  resourcetest
+    path: ../resourcetest
+
+GRAPH
+  mycookbook (0.1.0)
+    resourcetest (>= 0.0.0)
+  resourcetest (0.1.0)
