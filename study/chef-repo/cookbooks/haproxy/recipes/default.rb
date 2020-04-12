@@ -6,8 +6,7 @@
 
 package 'haproxy'
 
-nodeips = search(:node, 'name:*',
-  :filter_result => { 'ip' => [ 'ipaddress' ] }
+nodeips = search(:node, 'name:*', :filter_result => { 'ip' => [ 'ipaddress' ] })
 
 template '/etc/haproxy/haproxy.cfg' do
   source 'haproxy.cfg.erb'
