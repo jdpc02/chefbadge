@@ -170,3 +170,8 @@ if powershell_exec('(Get-Service "W3SVC").Name').result == 'W3SVC'
   <<< Chef Resources >>>
 end
 ```
+
+Reminder on EC2 related ohai hints. If this file does not exist, ec2 ohai related attributes won't be present.
+```
+$ touch /etc/chef/ohai/hints/ec2.json
+```
