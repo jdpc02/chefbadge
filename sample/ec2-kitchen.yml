@@ -1,0 +1,39 @@
+---
+provisioner:
+  name: chef_zero
+  always_update_cookbooks: true
+  log_level: <%= ENV['CHEF_LOG_LEVEL'] || "auto" %>
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: myec2
+    driver:
+	  name: ec2
+	  image_id: ami-<insert_id_here>
+	  aws_ssh_key_id: <keypair_name>
+	  region: us-west-1
+	  availability_zone: us-west-2e
+	  security_group_ids: sg-<insert_id_here>
+	  subnet_id: subnet-<insert_id_here>
+	  associate_public_ip: false
+	  interface: private_dns
+	  instance_type: m2.large
+	  block_device_mappings:
+	    - device_name: /dev/xda1
+		  ebs:
+		    volume_type: gp3
+			volume_size: 50
+			delete_on_termination: true
+	transport:
+	  username: ec2-username
+	  ssh_key: <pem_file_with_full_path>
+
+suites:
+  - name: default
+    run_list:
+	  - recipe[mytestcb::default]
+	verifier:
+	  inspec_tests:
+	    - test/inspec/default
