@@ -1,0 +1,108 @@
+I, [2019-07-25T13:43:30.379703 #15100]  INFO -- default-tas50-windows-2019: -----> Cleaning up any prior instances of <default-tas50-windows-2019>
+I, [2019-07-25T13:43:30.381358 #15100]  INFO -- default-tas50-windows-2019: -----> Destroying <default-tas50-windows-2019>...
+I, [2019-07-25T13:43:30.384009 #15100]  INFO -- default-tas50-windows-2019: Finished destroying <default-tas50-windows-2019> (0m0.00s).
+I, [2019-07-25T13:43:30.385908 #15100]  INFO -- default-tas50-windows-2019: -----> Testing <default-tas50-windows-2019>
+I, [2019-07-25T13:43:30.387781 #15100]  INFO -- default-tas50-windows-2019: -----> Creating <default-tas50-windows-2019>...
+I, [2019-07-25T13:43:33.654735 #15100]  INFO -- default-tas50-windows-2019: Bringing machine 'default' up with 'virtualbox' provider...
+I, [2019-07-25T13:43:36.081301 #15100]  INFO -- default-tas50-windows-2019: ==> default: Box 'tas50/windows_2019' could not be found. Attempting to find and install...
+I, [2019-07-25T13:43:36.081569 #15100]  INFO -- default-tas50-windows-2019:     default: Box Provider: virtualbox
+I, [2019-07-25T13:43:36.081814 #15100]  INFO -- default-tas50-windows-2019:     default: Box Version: >= 0
+I, [2019-07-25T13:43:36.641057 #15100]  INFO -- default-tas50-windows-2019: ==> default: Loading metadata for box 'tas50/windows_2019'
+I, [2019-07-25T13:43:36.641212 #15100]  INFO -- default-tas50-windows-2019:     default: URL: https://vagrantcloud.com/tas50/windows_2019
+I, [2019-07-25T13:43:37.119374 #15100]  INFO -- default-tas50-windows-2019: ==> default: Adding box 'tas50/windows_2019' (v1.2.0) for provider: virtualbox
+I, [2019-07-25T13:43:37.132057 #15100]  INFO -- default-tas50-windows-2019:     default: Downloading: https://vagrantcloud.com/tas50/boxes/windows_2019/versions/1.2.0/providers/virtualbox.box
+I, [2019-07-25T13:43:39.167409 #15100]  INFO -- default-tas50-windows-2019: [K    default: Download redirected to host: vagrantcloud-files-production.s3.amazonaws.com
+I, [2019-07-25T13:48:53.029463 #15100]  INFO -- default-tas50-windows-2019: [K    default: Progress: 6% (Rate: 16.4M/s, Estimated time remaining: 0:04:59)[K    default: Progress: 8% (Rate: 12.6M/s, Estimated time remaining: 0:05:09)[K    default: Progress: 13% (Rate: 17.9M/s, Estimated time remaining: 0:04:44)[K    default: Progress: 36% (Rate: 20.6M/s, Estimated time remaining: 0:03:18)[K    default: Progress: 40% (Rate: 16.7M/s, Estimated time remaining: 0:03:05)[K    default: Progress: 54% (Rate: 17.0M/s, Estimated time remaining: 0:02:22)[K    default: Progress: 56% (Rate: 17.4M/s, Estimated time remaining: 0:02:14)[K    default: Progress: 59% (Rate: 17.3M/s, Estimated time remaining: 0:02:06)[K    default: Progress: 62% (Rate: 14.9M/s, Estimated time remaining: 0:01:56)[K    default: Progress: 64% (Rate: 16.2M/s, Estimated time remaining: 0:01:50)[K    default: Progress: 70% (Rate: 15.2M/s, Estimated time remaining: 0:01:33)[K    default: Progress: 74% (Rate: 18.6M/s, Estimated time remaining: 0:01:21)[K    default: Progress: 76% (Rate: 13.5M/s, Estimated time remaining: 0:01:15)[K    default: Progress: 80% (Rate: 19.3M/s, Estimated time remaining: 0:01:03)[K    default: Progress: 88% (Rate: 20.5M/s, Estimated time remaining: 0:00:38)[K    default: Progress: 88% (Rate: 20.9M/s, Estimated time remaining: 0:00:35)[K    default: Progress: 90% (Rate: 15.5M/s, Estimated time remaining: 0:00:30)[K    default: Progress: 98% (Rate: 17.7M/s, Estimated time remaining: 0:00:04)[K    default: Progress: 99% (Rate: 18.6M/s, Estimated time remaining: 0:00:01)[K    default: Progress: 100% (Rate: 18.7M/s, Estimated time remaining: --:--:--)[K    default: 
+I, [2019-07-25T13:50:17.667297 #15100]  INFO -- default-tas50-windows-2019: ==> default: Successfully added box 'tas50/windows_2019' (v1.2.0) for 'virtualbox'!
+I, [2019-07-25T13:50:20.931516 #15100]  INFO -- default-tas50-windows-2019: ==> default: Importing base box 'tas50/windows_2019'...
+I, [2019-07-25T13:54:18.496742 #15100]  INFO -- default-tas50-windows-2019: [KProgress: 10%[KProgress: 20%[KProgress: 90%[K==> default: Matching MAC address for NAT networking...
+I, [2019-07-25T13:54:19.427374 #15100]  INFO -- default-tas50-windows-2019: ==> default: Checking if box 'tas50/windows_2019' version '1.2.0' is up to date...
+I, [2019-07-25T13:54:21.721869 #15100]  INFO -- default-tas50-windows-2019: ==> default: Setting the name of the VM: kitchen-setupmyenv-default-tas50-windows-2019-66dd1eed-bb6e-4f01-aaa1-0715f8a4939e
+I, [2019-07-25T13:54:28.809242 #15100]  INFO -- default-tas50-windows-2019: ==> default: Clearing any previously set network interfaces...
+I, [2019-07-25T13:54:29.293381 #15100]  INFO -- default-tas50-windows-2019: ==> default: Preparing network interfaces based on configuration...
+I, [2019-07-25T13:54:29.293617 #15100]  INFO -- default-tas50-windows-2019:     default: Adapter 1: nat
+I, [2019-07-25T13:54:29.590415 #15100]  INFO -- default-tas50-windows-2019: ==> default: Forwarding ports...
+I, [2019-07-25T13:54:29.864244 #15100]  INFO -- default-tas50-windows-2019:     default: 3389 (guest) => 3389 (host) (adapter 1)
+I, [2019-07-25T13:54:29.864541 #15100]  INFO -- default-tas50-windows-2019:     default: 5985 (guest) => 55985 (host) (adapter 1)
+I, [2019-07-25T13:54:29.864776 #15100]  INFO -- default-tas50-windows-2019:     default: 5986 (guest) => 55986 (host) (adapter 1)
+I, [2019-07-25T13:54:29.865135 #15100]  INFO -- default-tas50-windows-2019:     default: 22 (guest) => 2222 (host) (adapter 1)
+I, [2019-07-25T13:54:30.372166 #15100]  INFO -- default-tas50-windows-2019: ==> default: Running 'pre-boot' VM customizations...
+I, [2019-07-25T13:54:31.047961 #15100]  INFO -- default-tas50-windows-2019: ==> default: Booting VM...
+I, [2019-07-25T13:54:38.545656 #15100]  INFO -- default-tas50-windows-2019: ==> default: Waiting for machine to boot. This may take a few minutes...
+I, [2019-07-25T13:54:40.027184 #15100]  INFO -- default-tas50-windows-2019:     default: WinRM address: 127.0.0.1:55985
+I, [2019-07-25T13:54:40.027343 #15100]  INFO -- default-tas50-windows-2019:     default: WinRM username: vagrant
+I, [2019-07-25T13:54:40.027422 #15100]  INFO -- default-tas50-windows-2019:     default: WinRM execution_time_limit: PT2H
+I, [2019-07-25T13:54:40.027639 #15100]  INFO -- default-tas50-windows-2019:     default: WinRM transport: negotiate
+I, [2019-07-25T13:55:45.664032 #15100]  INFO -- default-tas50-windows-2019: ==> default: Machine booted and ready!
+I, [2019-07-25T13:55:45.664302 #15100]  INFO -- default-tas50-windows-2019: ==> default: Checking for guest additions in VM...
+I, [2019-07-25T13:55:46.193411 #15100]  INFO -- default-tas50-windows-2019: ==> default: Setting hostname...
+I, [2019-07-25T13:56:25.821554 #15100]  INFO -- default-tas50-windows-2019: ==> default: Waiting for machine to reboot...
+I, [2019-07-25T13:57:07.229797 #15100]  INFO -- default-tas50-windows-2019: ==> default: Machine not provisioned because `--no-provision` is specified.
+I, [2019-07-25T13:58:40.639546 #15100]  INFO -- default-tas50-windows-2019: [WinRM] Established
+I, [2019-07-25T13:58:40.657211 #15100]  INFO -- default-tas50-windows-2019: 
+I, [2019-07-25T13:58:40.845609 #15100]  INFO -- default-tas50-windows-2019: Vagrant instance <default-tas50-windows-2019> created.
+I, [2019-07-25T13:58:40.850691 #15100]  INFO -- default-tas50-windows-2019: Finished creating <default-tas50-windows-2019> (15m10.46s).
+I, [2019-07-25T13:58:40.852059 #15100]  INFO -- default-tas50-windows-2019: -----> Converging <default-tas50-windows-2019>...
+I, [2019-07-25T13:58:40.878933 #15100]  INFO -- default-tas50-windows-2019: Preparing files for transfer
+I, [2019-07-25T13:58:40.880523 #15100]  INFO -- default-tas50-windows-2019: Preparing dna.json
+I, [2019-07-25T13:58:40.889961 #15100]  INFO -- default-tas50-windows-2019: Resolving cookbook dependencies with Berkshelf 7.0.8...
+I, [2019-07-25T13:58:48.306806 #15100]  INFO -- default-tas50-windows-2019: Removing non-cookbook files before transfer
+I, [2019-07-25T13:58:48.330601 #15100]  INFO -- default-tas50-windows-2019: Preparing validation.pem
+I, [2019-07-25T13:58:48.340852 #15100]  INFO -- default-tas50-windows-2019: Preparing client.rb
+I, [2019-07-25T13:59:03.989267 #15100]  INFO -- default-tas50-windows-2019: 
+I, [2019-07-25T13:59:04.006992 #15100]  INFO -- default-tas50-windows-2019: ModuleType Version    Name                                ExportedCommands                                             
+I, [2019-07-25T13:59:04.026467 #15100]  INFO -- default-tas50-windows-2019: ---------- -------    ----                                ----------------                                             
+I, [2019-07-25T13:59:04.044718 #15100]  INFO -- default-tas50-windows-2019: Script     0.0        Omnitruck                           {Get-ProjectMetadata, Install-Project, install}              
+I, [2019-07-25T13:59:25.292361 #15100]  INFO -- default-tas50-windows-2019: Installing chef from C:\Users\vagrant\AppData\Local\Temp\chef-client-14.13.11-1-x64.msi
+I, [2019-07-25T14:00:21.738013 #15100]  INFO -- default-tas50-windows-2019: 
+I, [2019-07-25T14:00:21.755306 #15100]  INFO -- default-tas50-windows-2019: 
+I, [2019-07-25T14:00:34.315105 #15100]  INFO -- default-tas50-windows-2019: Transferring files to <default-tas50-windows-2019>
+I, [2019-07-25T14:01:00.400618 #15100]  INFO -- default-tas50-windows-2019: Starting Chef Client, version 14.13.11
+I, [2019-07-25T14:01:09.254401 #15100]  INFO -- default-tas50-windows-2019: Creating a new client identity for default-tas50-windows-2019 using the validator key.
+I, [2019-07-25T14:01:09.271880 #15100]  INFO -- default-tas50-windows-2019: resolving cookbooks for run list: ["setupmyenv::default"]
+I, [2019-07-25T14:01:09.291763 #15100]  INFO -- default-tas50-windows-2019: Synchronizing Cookbooks:
+I, [2019-07-25T14:01:09.310859 #15100]  INFO -- default-tas50-windows-2019:   - setupmyenv (0.1.0)
+I, [2019-07-25T14:01:09.327576 #15100]  INFO -- default-tas50-windows-2019: Installing Cookbook Gems:
+I, [2019-07-25T14:01:09.348254 #15100]  INFO -- default-tas50-windows-2019: Compiling Cookbooks...
+I, [2019-07-25T14:01:09.364944 #15100]  INFO -- default-tas50-windows-2019: Converging 9 resources
+I, [2019-07-25T14:01:09.382283 #15100]  INFO -- default-tas50-windows-2019: Recipe: setupmyenv::mywin
+I, [2019-07-25T14:01:09.400447 #15100]  INFO -- default-tas50-windows-2019:   * powershell_script[Install Chocolatey] action run
+I, [2019-07-25T14:01:23.213043 #15100]  INFO -- default-tas50-windows-2019:     - execute "C:\Windows\system32\WindowsPowerShell\v1.0\powershell.exe" -NoLogo -NonInteractive -NoProfile -ExecutionPolicy Bypass -InputFormat None -File "C:/Users/vagrant/AppData/Local/Temp/chef-script20190725-2720-s02d76.ps1"
+I, [2019-07-25T14:01:23.244727 #15100]  INFO -- default-tas50-windows-2019:   * chocolatey_package[7zip] action install
+I, [2019-07-25T14:01:45.906685 #15100]  INFO -- default-tas50-windows-2019:     - install version 19.0 of package 7zip
+I, [2019-07-25T14:01:45.924259 #15100]  INFO -- default-tas50-windows-2019:   * chocolatey_package[wget] action install
+I, [2019-07-25T14:02:12.668201 #15100]  INFO -- default-tas50-windows-2019:     - install version 1.20.3.20190531 of package wget
+I, [2019-07-25T14:02:13.192157 #15100]  INFO -- default-tas50-windows-2019:   * chocolatey_package[putty] action install
+I, [2019-07-25T14:02:35.840411 #15100]  INFO -- default-tas50-windows-2019:     - install version 0.72 of package putty
+I, [2019-07-25T14:02:35.942892 #15100]  INFO -- default-tas50-windows-2019:   * chocolatey_package[sysinternals] action install
+I, [2019-07-25T14:04:01.887929 #15100]  INFO -- default-tas50-windows-2019:     - install version 2019.6.29 of package sysinternals
+I, [2019-07-25T14:04:01.903549 #15100]  INFO -- default-tas50-windows-2019:   * chocolatey_package[winscp] action install
+I, [2019-07-25T14:04:27.478918 #15100]  INFO -- default-tas50-windows-2019:     - install version 5.15.2 of package winscp
+I, [2019-07-25T14:04:27.497348 #15100]  INFO -- default-tas50-windows-2019:   * chocolatey_package[jq] action install
+I, [2019-07-25T14:04:53.171311 #15100]  INFO -- default-tas50-windows-2019:     - install version 1.5 of package jq
+I, [2019-07-25T14:04:53.190229 #15100]  INFO -- default-tas50-windows-2019:   * chocolatey_package[git] action install
+I, [2019-07-25T14:05:40.566744 #15100]  INFO -- default-tas50-windows-2019:     - install version 2.22.0 of package git
+I, [2019-07-25T14:05:40.589527 #15100]  INFO -- default-tas50-windows-2019:   * windows_package[Chef Workstation Install] action install
+I, [2019-07-25T14:05:40.610128 #15100]  INFO -- default-tas50-windows-2019:   Recipe: <Dynamically Defined Resource>
+I, [2019-07-25T14:05:40.630253 #15100]  INFO -- default-tas50-windows-2019:     * remote_file[C:\Users\vagrant\AppData\Local\Temp\kitchen\cache\package\chef-workstation-0.4.2-1-x64.msi] action create
+I, [2019-07-25T14:06:22.105717 #15100]  INFO -- default-tas50-windows-2019:       - create new file C:\Users\vagrant\AppData\Local\Temp\kitchen\cache\package\chef-workstation-0.4.2-1-x64.msi
+I, [2019-07-25T14:06:27.334013 #15100]  INFO -- default-tas50-windows-2019:       - update content in file C:\Users\vagrant\AppData\Local\Temp\kitchen\cache\package\chef-workstation-0.4.2-1-x64.msi from none to eb2c98
+I, [2019-07-25T14:06:27.352418 #15100]  INFO -- default-tas50-windows-2019:       (file sizes exceed 10000000 bytes, diff output suppressed)
+I, [2019-07-25T14:09:00.990641 #15100]  INFO -- default-tas50-windows-2019:     - install version 0.4.2.1 of package Chef Workstation Install
+I, [2019-07-25T14:09:01.018984 #15100]  INFO -- default-tas50-windows-2019: 
+I, [2019-07-25T14:09:01.046593 #15100]  INFO -- default-tas50-windows-2019: Running handlers:
+I, [2019-07-25T14:09:01.075325 #15100]  INFO -- default-tas50-windows-2019: Running handlers complete
+I, [2019-07-25T14:09:01.103084 #15100]  INFO -- default-tas50-windows-2019: Chef Client finished, 10/10 resources updated in 07 minutes 57 seconds
+I, [2019-07-25T14:09:02.922306 #15100]  INFO -- default-tas50-windows-2019: Downloading files from <default-tas50-windows-2019>
+I, [2019-07-25T14:09:02.958361 #15100]  INFO -- default-tas50-windows-2019: Finished converging <default-tas50-windows-2019> (10m22.07s).
+I, [2019-07-25T14:09:02.961456 #15100]  INFO -- default-tas50-windows-2019: -----> Setting up <default-tas50-windows-2019>...
+I, [2019-07-25T14:09:02.970157 #15100]  INFO -- default-tas50-windows-2019: Finished setting up <default-tas50-windows-2019> (0m0.00s).
+I, [2019-07-25T14:09:02.972835 #15100]  INFO -- default-tas50-windows-2019: -----> Verifying <default-tas50-windows-2019>...
+I, [2019-07-25T14:09:18.295422 #15100]  INFO -- default-tas50-windows-2019: Loaded tests from {:path=>"D:.repos.chefbadge.sample.setupmyenv.test.integration.default"} 
+I, [2019-07-25T14:09:25.969507 #15100]  INFO -- default-tas50-windows-2019: Finished verifying <default-tas50-windows-2019> (0m22.99s).
+I, [2019-07-25T14:09:25.971244 #15100]  INFO -- default-tas50-windows-2019: -----> Destroying <default-tas50-windows-2019>...
+I, [2019-07-25T14:10:19.738238 #15100]  INFO -- default-tas50-windows-2019: ==> default: Forcing shutdown of VM...
+I, [2019-07-25T14:10:22.858316 #15100]  INFO -- default-tas50-windows-2019: ==> default: Destroying VM and associated drives...
+I, [2019-07-25T14:10:25.357468 #15100]  INFO -- default-tas50-windows-2019: Vagrant instance <default-tas50-windows-2019> destroyed.
+I, [2019-07-25T14:10:25.360475 #15100]  INFO -- default-tas50-windows-2019: Finished destroying <default-tas50-windows-2019> (0m59.39s).
+I, [2019-07-25T14:10:25.362047 #15100]  INFO -- default-tas50-windows-2019: Finished testing <default-tas50-windows-2019> (26m54.98s).

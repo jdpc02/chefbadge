@@ -27,7 +27,7 @@ module LcdWebCookbook
   end
 end
 
-Chef::Recipe.include(LcdWebCookbook::Helpers)
+Chef::DSL::Recipe.include(LcdWebCookbook::Helpers)
 Chef::Resource.include(LcdWebCookbook::Helpers)
 
 #

@@ -4,7 +4,7 @@
 #
 # Copyright:: 2019, The Authors, All Rights Reserved.
 extend ExtEcNginx::Helpers
-#Chef::Resource.class_eval { include ExtEcNginx::Helpers }
+# Chef::Resource.class_eval { include ExtEcNginx::Helpers }
 
 if debian_based?
   apt_repository 'nginx' do

@@ -14,7 +14,7 @@ template '/etc/httpd/conf/httpd.conf' do
 end
 
 service 'httpd' do
-  action %i[enable start]
+  action %i(enable start)
 end
 
 template 'var/www/html/index.html' do

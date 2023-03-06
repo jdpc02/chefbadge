@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-context = ChefDK::Generator.context
+context = ChefCLI::Generator.context
 delivery_project_dir = context.delivery_project_dir
 pipeline = context.pipeline
 dot_delivery_dir = File.join(delivery_project_dir, '.delivery')
@@ -13,13 +13,13 @@ directory dot_delivery_dir
 
 cookbook_file config_json do
   source 'delivery-config.json'
-  not_if { File.exist?(config_json) }
+  not_if { ::File.exist?(config_json) }
 end
 
 # Adding a new prototype file for delivery-cli local commands
 cookbook_file project_toml do
   source 'delivery-project.toml'
-  not_if { File.exist?(project_toml) }
+  not_if { ::File.exist?(project_toml) }
 end
 
 generator_desc('Ensuring correct delivery build cookbook content')
@@ -32,7 +32,7 @@ directory build_cookbook_dir
 # metadata.rb
 template "#{build_cookbook_dir}/metadata.rb" do
   source 'build_cookbook/metadata.rb.erb'
-  helpers(ChefDK::Generator::TemplateHelper)
+  helpers(ChefCLI::Generator::TemplateHelper)
   action :create_if_missing
 end
 
@@ -45,7 +45,7 @@ end
 # LICENSE
 template "#{build_cookbook_dir}/LICENSE" do
   source "LICENSE.#{context.license}.erb"
-  helpers(ChefDK::Generator::TemplateHelper)
+  helpers(ChefCLI::Generator::TemplateHelper)
   action :create_if_missing
 end
 
@@ -55,7 +55,7 @@ cookbook_file "#{build_cookbook_dir}/chefignore"
 # Berksfile
 template "#{build_cookbook_dir}/Berksfile" do
   source 'build_cookbook/Berksfile.erb'
-  helpers(ChefDK::Generator::TemplateHelper)
+  helpers(ChefCLI::Generator::TemplateHelper)
   action :create_if_missing
 end
 
@@ -65,7 +65,7 @@ directory "#{build_cookbook_dir}/recipes"
 %w(default deploy functional lint provision publish quality security smoke syntax unit).each do |phase|
   template "#{build_cookbook_dir}/recipes/#{phase}.rb" do
     source 'build_cookbook/recipe.rb.erb'
-    helpers(ChefDK::Generator::TemplateHelper)
+    helpers(ChefCLI::Generator::TemplateHelper)
     variables phase: phase
     action :create_if_missing
   end

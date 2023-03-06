@@ -1,0 +1,208 @@
+I, [2019-07-25T12:55:43.868827 #1988]  INFO -- default-debian-stretch64: -----> Cleaning up any prior instances of <default-debian-stretch64>
+I, [2019-07-25T12:55:43.871984 #1988]  INFO -- default-debian-stretch64: -----> Destroying <default-debian-stretch64>...
+I, [2019-07-25T12:55:48.365577 #1988]  INFO -- default-debian-stretch64: ==> default: Forcing shutdown of VM...
+I, [2019-07-25T12:55:49.675845 #1988]  INFO -- default-debian-stretch64: ==> default: Destroying VM and associated drives...
+I, [2019-07-25T12:55:50.292320 #1988]  INFO -- default-debian-stretch64: Vagrant instance <default-debian-stretch64> destroyed.
+I, [2019-07-25T12:55:50.297400 #1988]  INFO -- default-debian-stretch64: Finished destroying <default-debian-stretch64> (0m6.42s).
+I, [2019-07-25T12:55:50.300576 #1988]  INFO -- default-debian-stretch64: -----> Testing <default-debian-stretch64>
+I, [2019-07-25T12:55:50.302285 #1988]  INFO -- default-debian-stretch64: -----> Creating <default-debian-stretch64>...
+I, [2019-07-25T12:55:52.336974 #1988]  INFO -- default-debian-stretch64: Bringing machine 'default' up with 'virtualbox' provider...
+I, [2019-07-25T12:55:53.608280 #1988]  INFO -- default-debian-stretch64: ==> default: Importing base box 'debian/stretch64'...
+I, [2019-07-25T12:56:06.279766 #1988]  INFO -- default-debian-stretch64: [KProgress: 90%[K==> default: Matching MAC address for NAT networking...
+I, [2019-07-25T12:56:06.575451 #1988]  INFO -- default-debian-stretch64: ==> default: Checking if box 'debian/stretch64' version '9.9.1' is up to date...
+I, [2019-07-25T12:56:07.271509 #1988]  INFO -- default-debian-stretch64: ==> default: Setting the name of the VM: kitchen-setupmyenv-default-debian-stretch64-456eab47-fb5a-4958-9d28-9bb29305f5ab
+I, [2019-07-25T12:56:09.866184 #1988]  INFO -- default-debian-stretch64: ==> default: Clearing any previously set network interfaces...
+I, [2019-07-25T12:56:09.997569 #1988]  INFO -- default-debian-stretch64: ==> default: Preparing network interfaces based on configuration...
+I, [2019-07-25T12:56:09.997891 #1988]  INFO -- default-debian-stretch64:     default: Adapter 1: nat
+I, [2019-07-25T12:56:10.141538 #1988]  INFO -- default-debian-stretch64: ==> default: Forwarding ports...
+I, [2019-07-25T12:56:10.271966 #1988]  INFO -- default-debian-stretch64:     default: 22 (guest) => 2222 (host) (adapter 1)
+I, [2019-07-25T12:56:10.608803 #1988]  INFO -- default-debian-stretch64: ==> default: Running 'pre-boot' VM customizations...
+I, [2019-07-25T12:56:10.879770 #1988]  INFO -- default-debian-stretch64: ==> default: Booting VM...
+I, [2019-07-25T12:56:13.720188 #1988]  INFO -- default-debian-stretch64: ==> default: Waiting for machine to boot. This may take a few minutes...
+I, [2019-07-25T12:56:14.118714 #1988]  INFO -- default-debian-stretch64:     default: SSH address: 127.0.0.1:2222
+I, [2019-07-25T12:56:14.118886 #1988]  INFO -- default-debian-stretch64:     default: SSH username: vagrant
+I, [2019-07-25T12:56:14.119003 #1988]  INFO -- default-debian-stretch64:     default: SSH auth method: private key
+I, [2019-07-25T12:56:29.960657 #1988]  INFO -- default-debian-stretch64:     default: 
+I, [2019-07-25T12:56:29.960793 #1988]  INFO -- default-debian-stretch64:     default: Vagrant insecure key detected. Vagrant will automatically replace
+I, [2019-07-25T12:56:29.960890 #1988]  INFO -- default-debian-stretch64:     default: this with a newly generated keypair for better security.
+I, [2019-07-25T12:56:31.796404 #1988]  INFO -- default-debian-stretch64:     default: 
+I, [2019-07-25T12:56:31.796533 #1988]  INFO -- default-debian-stretch64:     default: Inserting generated public key within guest...
+I, [2019-07-25T12:56:32.540649 #1988]  INFO -- default-debian-stretch64:     default: Removing insecure key from the guest if it's present...
+I, [2019-07-25T12:56:32.874586 #1988]  INFO -- default-debian-stretch64:     default: Key inserted! Disconnecting and reconnecting using new SSH key...
+I, [2019-07-25T12:56:33.767342 #1988]  INFO -- default-debian-stretch64: ==> default: Machine booted and ready!
+I, [2019-07-25T12:56:33.767427 #1988]  INFO -- default-debian-stretch64: ==> default: Checking for guest additions in VM...
+I, [2019-07-25T12:56:33.963588 #1988]  INFO -- default-debian-stretch64:     default: No guest additions were detected on the base box for this VM! Guest
+I, [2019-07-25T12:56:33.963739 #1988]  INFO -- default-debian-stretch64:     default: additions are required for forwarded ports, shared folders, host only
+I, [2019-07-25T12:56:33.963802 #1988]  INFO -- default-debian-stretch64:     default: networking, and more. If SSH fails on this machine, please install
+I, [2019-07-25T12:56:33.963862 #1988]  INFO -- default-debian-stretch64:     default: the guest additions and repackage the box to continue.
+I, [2019-07-25T12:56:33.963930 #1988]  INFO -- default-debian-stretch64:     default: 
+I, [2019-07-25T12:56:33.963989 #1988]  INFO -- default-debian-stretch64:     default: This is not an error message; everything may continue to work properly,
+I, [2019-07-25T12:56:33.964049 #1988]  INFO -- default-debian-stretch64:     default: in which case you may ignore this message.
+I, [2019-07-25T12:56:33.964108 #1988]  INFO -- default-debian-stretch64: ==> default: Setting hostname...
+I, [2019-07-25T12:56:43.192144 #1988]  INFO -- default-debian-stretch64: ==> default: Machine not provisioned because `--no-provision` is specified.
+I, [2019-07-25T12:56:43.192316 #1988]  INFO -- default-debian-stretch64: 
+I, [2019-07-25T12:56:43.194552 #1988]  INFO -- default-debian-stretch64: ==> default: Machine 'default' has a post `vagrant up` message. This is a message
+I, [2019-07-25T12:56:43.194682 #1988]  INFO -- default-debian-stretch64: ==> default: from the creator of the Vagrantfile, and not from Vagrant itself:
+I, [2019-07-25T12:56:43.194742 #1988]  INFO -- default-debian-stretch64: ==> default: 
+I, [2019-07-25T12:56:43.194798 #1988]  INFO -- default-debian-stretch64: ==> default: Vanilla Debian box. See https://app.vagrantup.com/debian for help and bug reports
+I, [2019-07-25T12:56:46.879548 #1988]  INFO -- default-debian-stretch64: [SSH] Established
+I, [2019-07-25T12:56:46.881126 #1988]  INFO -- default-debian-stretch64: Vagrant instance <default-debian-stretch64> created.
+I, [2019-07-25T12:56:46.883525 #1988]  INFO -- default-debian-stretch64: Finished creating <default-debian-stretch64> (0m56.58s).
+I, [2019-07-25T12:56:46.887171 #1988]  INFO -- default-debian-stretch64: -----> Converging <default-debian-stretch64>...
+I, [2019-07-25T12:56:46.892187 #1988]  INFO -- default-debian-stretch64: Preparing files for transfer
+I, [2019-07-25T12:56:46.893215 #1988]  INFO -- default-debian-stretch64: Preparing dna.json
+I, [2019-07-25T12:56:46.898838 #1988]  INFO -- default-debian-stretch64: Resolving cookbook dependencies with Berkshelf 7.0.8...
+I, [2019-07-25T12:56:50.096594 #1988]  INFO -- default-debian-stretch64: Removing non-cookbook files before transfer
+I, [2019-07-25T12:56:50.112007 #1988]  INFO -- default-debian-stretch64: Preparing validation.pem
+I, [2019-07-25T12:56:50.114704 #1988]  INFO -- default-debian-stretch64: Preparing client.rb
+I, [2019-07-25T12:56:50.207519 #1988]  INFO -- default-debian-stretch64: debian 9 x86_64
+I, [2019-07-25T12:56:50.208744 #1988]  INFO -- default-debian-stretch64: Getting information for chef stable 14.13.11 for debian...
+I, [2019-07-25T12:56:50.208979 #1988]  INFO -- default-debian-stretch64: downloading https://omnitruck.chef.io/stable/chef/metadata?v=14.13.11&p=debian&pv=9&m=x86_64
+I, [2019-07-25T12:56:50.209120 #1988]  INFO -- default-debian-stretch64:   to file /tmp/install.sh.1153/metadata.txt
+I, [2019-07-25T12:56:50.212556 #1988]  INFO -- default-debian-stretch64: trying wget...
+I, [2019-07-25T12:56:50.475406 #1988]  INFO -- default-debian-stretch64: sha1	81f0be52e0eee545711bda0a15446d4b078fa66f
+I, [2019-07-25T12:56:50.476400 #1988]  INFO -- default-debian-stretch64: sha256	f808296dd3b48e60de25ff6a277f7505372227ee6686acaaa7595aaeb8bc1b34
+I, [2019-07-25T12:56:50.477068 #1988]  INFO -- default-debian-stretch64: url	https://packages.chef.io/files/stable/chef/14.13.11/debian/9/chef_14.13.11-1_amd64.deb
+I, [2019-07-25T12:56:50.477724 #1988]  INFO -- default-debian-stretch64: version	14.13.11
+I, [2019-07-25T12:56:50.478419 #1988]  INFO -- default-debian-stretch64: downloaded metadata file looks valid...
+I, [2019-07-25T12:56:50.490052 #1988]  INFO -- default-debian-stretch64: downloading https://packages.chef.io/files/stable/chef/14.13.11/debian/9/chef_14.13.11-1_amd64.deb
+I, [2019-07-25T12:56:50.490286 #1988]  INFO -- default-debian-stretch64:   to file /tmp/install.sh.1153/chef_14.13.11-1_amd64.deb
+I, [2019-07-25T12:56:50.492869 #1988]  INFO -- default-debian-stretch64: trying wget...
+I, [2019-07-25T12:56:53.474739 #1988]  INFO -- default-debian-stretch64: Comparing checksum with sha256sum...
+I, [2019-07-25T12:56:53.626088 #1988]  INFO -- default-debian-stretch64: Installing chef 14.13.11
+I, [2019-07-25T12:56:53.626328 #1988]  INFO -- default-debian-stretch64: installing with dpkg...
+I, [2019-07-25T12:56:53.660499 #1988]  INFO -- default-debian-stretch64: Selecting previously unselected package chef.
+I, [2019-07-25T12:56:53.790578 #1988]  INFO -- default-debian-stretch64: (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 32387 files and directories currently installed.)
+I, [2019-07-25T12:56:53.794469 #1988]  INFO -- default-debian-stretch64: Preparing to unpack .../chef_14.13.11-1_amd64.deb ...
+I, [2019-07-25T12:56:53.795662 #1988]  INFO -- default-debian-stretch64: Unpacking chef (14.13.11-1) ...
+I, [2019-07-25T12:56:59.845995 #1988]  INFO -- default-debian-stretch64: Setting up chef (14.13.11-1) ...
+I, [2019-07-25T12:56:59.922633 #1988]  INFO -- default-debian-stretch64: Thank you for installing Chef Infra Client! For help getting started visit https://learn.chef.io
+I, [2019-07-25T12:56:59.967496 #1988]  INFO -- default-debian-stretch64: Transferring files to <default-debian-stretch64>
+I, [2019-07-25T12:57:02.334796 #1988]  INFO -- default-debian-stretch64: Starting Chef Client, version 14.13.11
+I, [2019-07-25T12:57:03.532932 #1988]  INFO -- default-debian-stretch64: Creating a new client identity for default-debian-stretch64 using the validator key.
+I, [2019-07-25T12:57:03.599323 #1988]  INFO -- default-debian-stretch64: resolving cookbooks for run list: ["setupmyenv::default"]
+I, [2019-07-25T12:57:03.632726 #1988]  INFO -- default-debian-stretch64: Synchronizing Cookbooks:
+I, [2019-07-25T12:57:03.666616 #1988]  INFO -- default-debian-stretch64:   - setupmyenv (0.1.0)
+I, [2019-07-25T12:57:03.668134 #1988]  INFO -- default-debian-stretch64: Installing Cookbook Gems:
+I, [2019-07-25T12:57:03.668332 #1988]  INFO -- default-debian-stretch64: Compiling Cookbooks...
+I, [2019-07-25T12:57:03.670195 #1988]  INFO -- default-debian-stretch64: Working on the linux version
+I, [2019-07-25T12:57:03.682619 #1988]  INFO -- default-debian-stretch64: Converging 4 resources
+I, [2019-07-25T12:57:03.684405 #1988]  INFO -- default-debian-stretch64: Recipe: setupmyenv::mylinux
+I, [2019-07-25T12:57:03.879406 #1988]  INFO -- default-debian-stretch64:   * apt_package[dnsutils] action install (up to date)
+I, [2019-07-25T12:57:05.985655 #1988]  INFO -- default-debian-stretch64:   * apt_package[jq] action install
+I, [2019-07-25T12:57:05.987367 #1988]  INFO -- default-debian-stretch64:     - install version 1.5+dfsg-1.3 of package jq
+I, [2019-07-25T12:57:14.490645 #1988]  INFO -- default-debian-stretch64:   * remote_file[/tmp/chef-workstation.deb] action create
+I, [2019-07-25T12:57:14.932439 #1988]  INFO -- default-debian-stretch64:     - create new file /tmp/chef-workstation.deb
+I, [2019-07-25T12:57:14.932748 #1988]  INFO -- default-debian-stretch64:     - update content in file /tmp/chef-workstation.deb from none to 8bc682
+I, [2019-07-25T12:57:14.935814 #1988]  INFO -- default-debian-stretch64:     (file sizes exceed 10000000 bytes, diff output suppressed)
+I, [2019-07-25T12:57:15.087895 #1988]  INFO -- default-debian-stretch64:   * apt_package[chef-workstation] action install
+I, [2019-07-25T12:57:15.088762 #1988]  INFO -- default-debian-stretch64:     * apt package provider cannot handle source property. Use dpkg provider instead
+I, [2019-07-25T12:57:15.088965 #1988]  INFO -- default-debian-stretch64:     ================================================================================
+I, [2019-07-25T12:57:15.089124 #1988]  INFO -- default-debian-stretch64:     Error executing action `install` on resource 'apt_package[chef-workstation]'
+I, [2019-07-25T12:57:15.089214 #1988]  INFO -- default-debian-stretch64:     ================================================================================
+I, [2019-07-25T12:57:15.089299 #1988]  INFO -- default-debian-stretch64:     
+I, [2019-07-25T12:57:15.094670 #1988]  INFO -- default-debian-stretch64:     Chef::Exceptions::Package
+I, [2019-07-25T12:57:15.096963 #1988]  INFO -- default-debian-stretch64:     -------------------------
+I, [2019-07-25T12:57:15.098046 #1988]  INFO -- default-debian-stretch64:     apt package provider cannot handle source property. Use dpkg provider instead
+I, [2019-07-25T12:57:15.101127 #1988]  INFO -- default-debian-stretch64:     
+I, [2019-07-25T12:57:15.102105 #1988]  INFO -- default-debian-stretch64:     Resource Declaration:
+I, [2019-07-25T12:57:15.102263 #1988]  INFO -- default-debian-stretch64:     ---------------------
+I, [2019-07-25T12:57:15.106330 #1988]  INFO -- default-debian-stretch64:     # In /tmp/kitchen/cache/cookbooks/setupmyenv/recipes/mylinux.rb
+I, [2019-07-25T12:57:15.106508 #1988]  INFO -- default-debian-stretch64:     
+I, [2019-07-25T12:57:15.108201 #1988]  INFO -- default-debian-stretch64:      32: package 'chef-workstation' do
+I, [2019-07-25T12:57:15.108338 #1988]  INFO -- default-debian-stretch64:      33:   source cwfile
+I, [2019-07-25T12:57:15.109993 #1988]  INFO -- default-debian-stretch64:      34: end
+I, [2019-07-25T12:57:15.111181 #1988]  INFO -- default-debian-stretch64:     
+I, [2019-07-25T12:57:15.112090 #1988]  INFO -- default-debian-stretch64:     Compiled Resource:
+I, [2019-07-25T12:57:15.113909 #1988]  INFO -- default-debian-stretch64:     ------------------
+I, [2019-07-25T12:57:15.115424 #1988]  INFO -- default-debian-stretch64:     # Declared in /tmp/kitchen/cache/cookbooks/setupmyenv/recipes/mylinux.rb:32:in `from_file'
+I, [2019-07-25T12:57:15.115678 #1988]  INFO -- default-debian-stretch64:     
+I, [2019-07-25T12:57:15.117614 #1988]  INFO -- default-debian-stretch64:     apt_package("chef-workstation") do
+I, [2019-07-25T12:57:15.117714 #1988]  INFO -- default-debian-stretch64:       package_name "chef-workstation"
+I, [2019-07-25T12:57:15.117770 #1988]  INFO -- default-debian-stretch64:       action [:install]
+I, [2019-07-25T12:57:15.119065 #1988]  INFO -- default-debian-stretch64:       default_guard_interpreter :default
+I, [2019-07-25T12:57:15.119442 #1988]  INFO -- default-debian-stretch64:       declared_type :package
+I, [2019-07-25T12:57:15.119587 #1988]  INFO -- default-debian-stretch64:       cookbook_name "setupmyenv"
+I, [2019-07-25T12:57:15.120677 #1988]  INFO -- default-debian-stretch64:       recipe_name "mylinux"
+I, [2019-07-25T12:57:15.120780 #1988]  INFO -- default-debian-stretch64:       source "/tmp/chef-workstation.deb"
+I, [2019-07-25T12:57:15.121523 #1988]  INFO -- default-debian-stretch64:     end
+I, [2019-07-25T12:57:15.121883 #1988]  INFO -- default-debian-stretch64:     
+I, [2019-07-25T12:57:15.122310 #1988]  INFO -- default-debian-stretch64:     System Info:
+I, [2019-07-25T12:57:15.122764 #1988]  INFO -- default-debian-stretch64:     ------------
+I, [2019-07-25T12:57:15.123203 #1988]  INFO -- default-debian-stretch64:     chef_version=14.13.11
+I, [2019-07-25T12:57:15.123308 #1988]  INFO -- default-debian-stretch64:     platform=debian
+I, [2019-07-25T12:57:15.123399 #1988]  INFO -- default-debian-stretch64:     platform_version=9.9
+I, [2019-07-25T12:57:15.123456 #1988]  INFO -- default-debian-stretch64:     ruby=ruby 2.5.5p157 (2019-03-15 revision 67260) [x86_64-linux]
+I, [2019-07-25T12:57:15.123540 #1988]  INFO -- default-debian-stretch64:     program_name=/opt/chef/bin/chef-client
+I, [2019-07-25T12:57:15.123596 #1988]  INFO -- default-debian-stretch64:     executable=/opt/chef/bin/chef-client
+I, [2019-07-25T12:57:15.125820 #1988]  INFO -- default-debian-stretch64:     
+I, [2019-07-25T12:57:15.126463 #1988]  INFO -- default-debian-stretch64: 
+I, [2019-07-25T12:57:15.126591 #1988]  INFO -- default-debian-stretch64: Running handlers:
+I, [2019-07-25T12:57:15.127617 #1988]  INFO -- default-debian-stretch64: [2019-07-25T16:57:14+00:00] ERROR: Running exception handlers
+I, [2019-07-25T12:57:15.130282 #1988]  INFO -- default-debian-stretch64: Running handlers complete
+I, [2019-07-25T12:57:15.131575 #1988]  INFO -- default-debian-stretch64: [2019-07-25T16:57:14+00:00] ERROR: Exception handlers complete
+I, [2019-07-25T12:57:15.132382 #1988]  INFO -- default-debian-stretch64: Chef Client failed. 2 resources updated in 12 seconds
+I, [2019-07-25T12:57:15.133153 #1988]  INFO -- default-debian-stretch64: [2019-07-25T16:57:14+00:00] FATAL: Stacktrace dumped to /tmp/kitchen/cache/chef-stacktrace.out
+I, [2019-07-25T12:57:15.133911 #1988]  INFO -- default-debian-stretch64: [2019-07-25T16:57:14+00:00] FATAL: Please provide the contents of the stacktrace.out file if you file a bug report
+I, [2019-07-25T12:57:15.134474 #1988]  INFO -- default-debian-stretch64: [2019-07-25T16:57:14+00:00] FATAL: Chef::Exceptions::Package: apt_package[chef-workstation] (setupmyenv::mylinux line 32) had an error: Chef::Exceptions::Package: apt package provider cannot handle source property. Use dpkg provider instead
+E, [2019-07-25T12:57:15.164785 #1988] ERROR -- default-debian-stretch64: Converge failed on instance <default-debian-stretch64>.
+E, [2019-07-25T12:57:15.165088 #1988] ERROR -- default-debian-stretch64: ------Exception-------
+E, [2019-07-25T12:57:15.165204 #1988] ERROR -- default-debian-stretch64: Class: Kitchen::ActionFailed
+E, [2019-07-25T12:57:15.165354 #1988] ERROR -- default-debian-stretch64: Message: SSH exited (1) for command: [sh -c '
+TEST_KITCHEN="1"; export TEST_KITCHEN
+sudo -E /opt/chef/bin/chef-client --local-mode --config /tmp/kitchen/client.rb --log_level auto --force-formatter --no-color --json-attributes /tmp/kitchen/dna.json --chef-zero-port 8889 
+']
+E, [2019-07-25T12:57:15.165530 #1988] ERROR -- default-debian-stretch64: ----------------------
+E, [2019-07-25T12:57:15.165667 #1988] ERROR -- default-debian-stretch64: ------Backtrace-------
+E, [2019-07-25T12:57:15.165805 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/provisioner/base.rb:95:in `rescue in call'
+E, [2019-07-25T12:57:15.165972 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/provisioner/base.rb:71:in `call'
+E, [2019-07-25T12:57:15.166112 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/instance.rb:409:in `block in converge_action'
+E, [2019-07-25T12:57:15.166216 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/instance.rb:552:in `synchronize_or_call'
+E, [2019-07-25T12:57:15.166409 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/instance.rb:514:in `block in action'
+E, [2019-07-25T12:57:15.166532 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/2.5.0/benchmark.rb:293:in `measure'
+E, [2019-07-25T12:57:15.166672 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/instance.rb:513:in `action'
+E, [2019-07-25T12:57:15.166804 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/instance.rb:404:in `converge_action'
+E, [2019-07-25T12:57:15.166876 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/instance.rb:382:in `block (2 levels) in transition_to'
+E, [2019-07-25T12:57:15.167002 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/lifecycle_hooks.rb:45:in `run_with_hooks'
+E, [2019-07-25T12:57:15.167064 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/instance.rb:381:in `block in transition_to'
+E, [2019-07-25T12:57:15.167167 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/instance.rb:380:in `each'
+E, [2019-07-25T12:57:15.167264 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/instance.rb:380:in `transition_to'
+E, [2019-07-25T12:57:15.167412 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/instance.rb:162:in `verify'
+E, [2019-07-25T12:57:15.167524 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/instance.rb:191:in `block in test'
+E, [2019-07-25T12:57:15.167582 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/2.5.0/benchmark.rb:293:in `measure'
+E, [2019-07-25T12:57:15.167637 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/instance.rb:187:in `test'
+E, [2019-07-25T12:57:15.167693 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/command.rb:198:in `public_send'
+E, [2019-07-25T12:57:15.167749 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/command.rb:198:in `run_action_in_thread'
+E, [2019-07-25T12:57:15.167804 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/command.rb:169:in `block (2 levels) in run_action'
+E, [2019-07-25T12:57:15.167859 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/logging-2.2.2/lib/logging/diagnostic_context.rb:474:in `block in create_with_logging_context'
+E, [2019-07-25T12:57:15.167914 #1988] ERROR -- default-debian-stretch64: ----End Backtrace-----
+E, [2019-07-25T12:57:15.167969 #1988] ERROR -- default-debian-stretch64: ---Nested Exception---
+E, [2019-07-25T12:57:15.168023 #1988] ERROR -- default-debian-stretch64: Class: Kitchen::Transport::SshFailed
+E, [2019-07-25T12:57:15.168074 #1988] ERROR -- default-debian-stretch64: Message: SSH exited (1) for command: [sh -c '
+TEST_KITCHEN="1"; export TEST_KITCHEN
+sudo -E /opt/chef/bin/chef-client --local-mode --config /tmp/kitchen/client.rb --log_level auto --force-formatter --no-color --json-attributes /tmp/kitchen/dna.json --chef-zero-port 8889 
+']
+E, [2019-07-25T12:57:15.168126 #1988] ERROR -- default-debian-stretch64: ----------------------
+E, [2019-07-25T12:57:15.168181 #1988] ERROR -- default-debian-stretch64: ------Backtrace-------
+E, [2019-07-25T12:57:15.168245 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/provisioner/base.rb:95:in `rescue in call'
+E, [2019-07-25T12:57:15.168348 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/provisioner/base.rb:71:in `call'
+E, [2019-07-25T12:57:15.168408 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/instance.rb:409:in `block in converge_action'
+E, [2019-07-25T12:57:15.168465 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/instance.rb:552:in `synchronize_or_call'
+E, [2019-07-25T12:57:15.168520 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/instance.rb:514:in `block in action'
+E, [2019-07-25T12:57:15.168576 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/2.5.0/benchmark.rb:293:in `measure'
+E, [2019-07-25T12:57:15.168631 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/instance.rb:513:in `action'
+E, [2019-07-25T12:57:15.168686 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/instance.rb:404:in `converge_action'
+E, [2019-07-25T12:57:15.168741 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/instance.rb:382:in `block (2 levels) in transition_to'
+E, [2019-07-25T12:57:15.168796 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/lifecycle_hooks.rb:45:in `run_with_hooks'
+E, [2019-07-25T12:57:15.168851 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/instance.rb:381:in `block in transition_to'
+E, [2019-07-25T12:57:15.168906 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/instance.rb:380:in `each'
+E, [2019-07-25T12:57:15.168961 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/instance.rb:380:in `transition_to'
+E, [2019-07-25T12:57:15.169012 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/instance.rb:162:in `verify'
+E, [2019-07-25T12:57:15.169063 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/instance.rb:191:in `block in test'
+E, [2019-07-25T12:57:15.169114 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/2.5.0/benchmark.rb:293:in `measure'
+E, [2019-07-25T12:57:15.169170 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/instance.rb:187:in `test'
+E, [2019-07-25T12:57:15.169362 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/command.rb:198:in `public_send'
+E, [2019-07-25T12:57:15.169434 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/command.rb:198:in `run_action_in_thread'
+E, [2019-07-25T12:57:15.169589 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.25.0/lib/kitchen/command.rb:169:in `block (2 levels) in run_action'
+E, [2019-07-25T12:57:15.169741 #1988] ERROR -- default-debian-stretch64: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.5.0/gems/logging-2.2.2/lib/logging/diagnostic_context.rb:474:in `block in create_with_logging_context'
+E, [2019-07-25T12:57:15.169831 #1988] ERROR -- default-debian-stretch64: ----End Backtrace-----

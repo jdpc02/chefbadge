@@ -3,9 +3,8 @@ maintainer 'Student Name'
 maintainer_email 'you@example.com'
 license 'All Rights Reserved'
 description 'Installs/Configures lcd_haproxy'
-long_description 'Installs/Configures lcd_haproxy'
 version '0.1.0'
-chef_version '>= 12.1' if respond_to?(:chef_version)
+chef_version '>= 12.1'
 
 depends 'haproxy', '= 3.0.2'
 

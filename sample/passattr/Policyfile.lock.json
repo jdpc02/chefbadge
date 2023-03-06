@@ -1,0 +1,52 @@
+{
+  "revision_id": "25f1df78a1b46bd0a308441b25c6e5f97367c4aa2831f1e676993de8e86afca9",
+  "name": "passattr",
+  "run_list": [
+    "recipe[passattr::default]"
+  ],
+  "included_policy_locks": [
+
+  ],
+  "cookbook_locks": {
+    "passattr": {
+      "version": "0.1.0",
+      "identifier": "faa0bc4f5909ea3990a953013b210e73f7d5337b",
+      "dotted_decimal_identifier": "70545474823195114.16203130588969761.15891241972603",
+      "source": ".",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": "git@github.com:jdpc02/chefbadge.git",
+        "revision": "6bbacbde7b53d1fefd940a29bbf779ef1d60d4a0",
+        "working_tree_clean": false,
+        "published": true,
+        "synchronized_remote_branches": [
+          "origin/HEAD -> origin/master",
+          "origin/master"
+        ]
+      },
+      "source_options": {
+        "path": "."
+      }
+    }
+  },
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "solution_dependencies": {
+    "Policyfile": [
+      [
+        "passattr",
+        ">= 0.0.0"
+      ]
+    ],
+    "dependencies": {
+      "passattr (0.1.0)": [
+
+      ]
+    }
+  }
+}

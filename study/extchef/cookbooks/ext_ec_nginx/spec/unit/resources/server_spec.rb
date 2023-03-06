@@ -5,7 +5,7 @@ describe 'ext_ec_nginx_test::default' do
     let(:chef_run) do
       ChefSpec::SoloRunner.new(
         platform: 'centos',
-        version: '7.4.1708',
+        version: '7',
         step_into: ['nginx_server']
       ).converge(described_recipe)
     end
@@ -35,6 +35,5 @@ describe 'ext_ec_nginx_test::default' do
       expect(chef_run).to delete_directory('/var/www/blog')
       expect(chef_run).to delete_directory('/var/www/status')
     end
-
   end
 end

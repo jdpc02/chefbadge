@@ -7,5 +7,5 @@ control 'cis-ubuntu-lts-5.4.4' do
   end
   describe file('/etc/profile') do
     its('content') { should match /^umask 027/ }
-  end  
+  end
 end

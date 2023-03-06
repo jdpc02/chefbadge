@@ -1,5 +1,6 @@
 # To learn more about Custom Resources, see https://docs.chef.io/custom_resources.html
 resource_name :nginx_server
+provides :nginx_server
 
 property :host, String, name_property: true
 property :static_path, String
@@ -37,7 +38,7 @@ action :create do
   end
 
   template "/etc/nginx/conf.d/#{new_resource.host}.conf" do
-    source "nginx-server.conf.erb"
+    source 'nginx-server.conf.erb'
     cookbook new_resource.srcbook
     variables(
       host: new_resource.host,

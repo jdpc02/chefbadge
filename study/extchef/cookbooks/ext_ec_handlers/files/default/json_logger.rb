@@ -3,7 +3,7 @@ require 'chef/handler'
 
 module ExtEcHandlers
   class JsonLogger < Chef::Handler
-    def initialize(log_directory="/var/log")
+    def initialize(log_directory = '/var/log')
       @log_directory = log_directory
     end
 
@@ -13,7 +13,7 @@ module ExtEcHandlers
         success: run_status.success?,
         start_time: run_status.start_time,
         node_name: run_status.node.name,
-        end_time: run_status.end_time
+        end_time: run_status.end_time,
       }.to_json + "\n")
       log_file.close()
     end

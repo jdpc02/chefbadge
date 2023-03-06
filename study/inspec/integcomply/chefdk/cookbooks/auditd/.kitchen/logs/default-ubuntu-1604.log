@@ -1,0 +1,31 @@
+I, [2019-07-14T19:38:32.295072 #9594]  INFO -- default-ubuntu-1604: -----> Cleaning up any prior instances of <default-ubuntu-1604>
+I, [2019-07-14T19:38:32.295247 #9594]  INFO -- default-ubuntu-1604: -----> Destroying <default-ubuntu-1604>...
+I, [2019-07-14T19:38:32.322300 #9594]  INFO -- default-ubuntu-1604: Deleting kitchen sandbox at /home/vagrant/.dokken/kitchen_sandbox/7f1b7ca734-default-ubuntu-1604
+I, [2019-07-14T19:38:32.323039 #9594]  INFO -- default-ubuntu-1604: Deleting verifier sandbox at /home/vagrant/.dokken/verifier_sandbox/7f1b7ca734-default-ubuntu-1604
+I, [2019-07-14T19:38:32.323626 #9594]  INFO -- default-ubuntu-1604: Finished destroying <default-ubuntu-1604> (0m0.03s).
+I, [2019-07-14T19:38:32.323755 #9594]  INFO -- default-ubuntu-1604: -----> Testing <default-ubuntu-1604>
+I, [2019-07-14T19:38:32.323827 #9594]  INFO -- default-ubuntu-1604: -----> Creating <default-ubuntu-1604>...
+I, [2019-07-14T19:38:33.439951 #9594]  INFO -- default-ubuntu-1604: Creating kitchen sandbox at /home/vagrant/.dokken/kitchen_sandbox/7f1b7ca734-default-ubuntu-1604
+I, [2019-07-14T19:38:33.440346 #9594]  INFO -- default-ubuntu-1604: Creating verifier sandbox at /home/vagrant/.dokken/verifier_sandbox/7f1b7ca734-default-ubuntu-1604
+I, [2019-07-14T19:38:33.440490 #9594]  INFO -- default-ubuntu-1604: Building work image..
+I, [2019-07-14T19:38:33.621465 #9594]  INFO -- default-ubuntu-1604: Creating container 7f1b7ca734-default-ubuntu-1604
+I, [2019-07-14T19:38:34.050387 #9594]  INFO -- default-ubuntu-1604: Finished creating <default-ubuntu-1604> (0m1.72s).
+I, [2019-07-14T19:38:34.050491 #9594]  INFO -- default-ubuntu-1604: -----> Converging <default-ubuntu-1604>...
+I, [2019-07-14T19:38:34.057177 #9594]  INFO -- default-ubuntu-1604: Creating kitchen sandbox in /home/vagrant/.dokken/kitchen_sandbox/7f1b7ca734-default-ubuntu-1604
+I, [2019-07-14T19:38:34.057354 #9594]  INFO -- default-ubuntu-1604: Preparing dna.json
+I, [2019-07-14T19:38:34.057623 #9594]  INFO -- default-ubuntu-1604: Preparing current project directory as a cookbook
+I, [2019-07-14T19:38:34.060163 #9594]  INFO -- default-ubuntu-1604: Removing non-cookbook files before transfer
+I, [2019-07-14T19:38:34.061725 #9594]  INFO -- default-ubuntu-1604: Preparing validation.pem
+I, [2019-07-14T19:38:34.062016 #9594]  INFO -- default-ubuntu-1604: Preparing client.rb
+I, [2019-07-14T19:39:01.969944 #9594]  INFO -- default-ubuntu-1604: Finished converging <default-ubuntu-1604> (0m27.91s).
+I, [2019-07-14T19:39:01.970089 #9594]  INFO -- default-ubuntu-1604: -----> Setting up <default-ubuntu-1604>...
+I, [2019-07-14T19:39:01.978035 #9594]  INFO -- default-ubuntu-1604: Finished setting up <default-ubuntu-1604> (0m0.00s).
+I, [2019-07-14T19:39:01.978250 #9594]  INFO -- default-ubuntu-1604: -----> Verifying <default-ubuntu-1604>...
+I, [2019-07-14T19:39:04.622814 #9594]  INFO -- default-ubuntu-1604: Loaded tests from {:path=>".home.vagrant.learn.cookbooks.auditd.test.integration.default"} 
+I, [2019-07-14T19:39:04.622920 #9594]  INFO -- default-ubuntu-1604: Loaded linux-baseline 
+I, [2019-07-14T19:39:10.888756 #9594]  INFO -- default-ubuntu-1604: Finished verifying <default-ubuntu-1604> (0m8.90s).
+I, [2019-07-14T19:39:10.892584 #9594]  INFO -- default-ubuntu-1604: -----> Destroying <default-ubuntu-1604>...
+I, [2019-07-14T19:39:21.179198 #9594]  INFO -- default-ubuntu-1604: Deleting kitchen sandbox at /home/vagrant/.dokken/kitchen_sandbox/7f1b7ca734-default-ubuntu-1604
+I, [2019-07-14T19:39:21.180172 #9594]  INFO -- default-ubuntu-1604: Deleting verifier sandbox at /home/vagrant/.dokken/verifier_sandbox/7f1b7ca734-default-ubuntu-1604
+I, [2019-07-14T19:39:21.187392 #9594]  INFO -- default-ubuntu-1604: Finished destroying <default-ubuntu-1604> (0m10.28s).
+I, [2019-07-14T19:39:21.187622 #9594]  INFO -- default-ubuntu-1604: Finished testing <default-ubuntu-1604> (0m48.89s).

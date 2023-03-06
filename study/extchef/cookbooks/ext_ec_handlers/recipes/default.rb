@@ -12,7 +12,7 @@ end.run_action(:create)
 
 chef_handler 'ExtEcHandlers::JsonLogger' do
   source handlerp
-  type ({ exception: true, report: true })
+  type({ exception: true, report: true })
   action :nothing
 end.run_action(:enable)
 

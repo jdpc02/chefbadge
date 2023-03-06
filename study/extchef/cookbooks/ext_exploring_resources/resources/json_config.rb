@@ -1,31 +1,32 @@
 # To learn more about Custom Resources, see https://docs.chef.io/custom_resources.html
 resource_name :json_config
+provides :json_config
 
 property :path, String, name_property: true
 property :content, [Hash, String], callbacks: {
   'check valid JSON' => lambda { |content|
-     content.is_a?(Mash)
-  }
+    content.is_a?(Mash)
+  },
 }, coerce: lambda { |content|
-   return Mash.new(content) if content.is_a?(Hash)
-   begin
-     Mash.new(JSON.parse(content))
-   rescue
-     content
-   end
+  return Mash.new(content) if content.is_a?(Hash)
+  begin
+    Mash.new(JSON.parse(content))
+  rescue
+    content
+  end
 }
 
 default_action :create
 
 load_current_value do
-  if ::File.exists?(path)
+  if ::File.exist?(path)
     myjson = ::File.open(path, 'r')
     content JSON.parse(myjson.read)
   end
 end
 
 action :delete do
-  if ::File.exists?(new_resource.path)
+  if ::File.exist?(new_resource.path)
     converge_by "Removing the config #{new_resource.path}" do
       ::FileUtils.rm(new_resource.path)
     end

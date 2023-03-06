@@ -1,0 +1,10 @@
+Vagrant.configure("2") do |c|
+  c.berkshelf.enabled = false if Vagrant.has_plugin?("vagrant-berkshelf")
+  c.vm.box = "debian/stretch64"
+  c.vm.hostname = "setupmyenvhost"
+  c.vm.synced_folder ".", "/vagrant", disabled: true
+  c.vm.provider :virtualbox do |p|
+    p.name = "kitchen-setupmyenv-default-debian-stretch64-456eab47-fb5a-4958-9d28-9bb29305f5ab"
+    p.customize ["modifyvm", :id, "--audio", "none"]
+  end
+end

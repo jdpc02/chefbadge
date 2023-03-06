@@ -11,7 +11,7 @@ describe 'lcd_web::default' do
     let(:chef_run) do
       # for a complete list of available platforms and versions see:
       # https://github.com/customink/fauxhai/blob/master/PLATFORMS.md
-      runner = ChefSpec::ServerRunner.new(platform: 'centos', version: '7.2.1511')
+      runner = ChefSpec::ServerRunner.new(platform: 'centos', version: '7')
       runner.converge(described_recipe)
     end
 

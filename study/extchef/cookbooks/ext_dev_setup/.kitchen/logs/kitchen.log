@@ -1,0 +1,60 @@
+E, [2020-02-23T17:58:14.079251 #1316] ERROR -- Kitchen: ------Exception-------
+E, [2020-02-23T17:58:14.079475 #1316] ERROR -- Kitchen: Class: Kitchen::ClientError
+E, [2020-02-23T17:58:14.079529 #1316] ERROR -- Kitchen: Message: Could not load the 'docker' driver from the load path. Did you mean: azurerm, digitalocean, dokken, dummy, ec2, exec, gce, hyperv, proxy, vagrant, vcenter ? Please ensure that your driver is installed as a gem or included in your Gemfile if using Bundler.
+E, [2020-02-23T17:58:14.079573 #1316] ERROR -- Kitchen: ----------------------
+E, [2020-02-23T17:58:14.079613 #1316] ERROR -- Kitchen: ------Backtrace-------
+E, [2020-02-23T17:58:14.079659 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/plugin.rb:56:in `rescue in load'
+E, [2020-02-23T17:58:14.081268 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/plugin.rb:34:in `load'
+E, [2020-02-23T17:58:14.081305 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/driver.rb:38:in `for_plugin'
+E, [2020-02-23T17:58:14.081336 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/config.rb:236:in `new_driver'
+E, [2020-02-23T17:58:14.081367 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/config.rb:249:in `new_instance'
+E, [2020-02-23T17:58:14.081398 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/config.rb:144:in `block in build_instances'
+E, [2020-02-23T17:58:14.081428 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/config.rb:143:in `map'
+E, [2020-02-23T17:58:14.081458 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/config.rb:143:in `with_index'
+E, [2020-02-23T17:58:14.081488 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/config.rb:143:in `build_instances'
+E, [2020-02-23T17:58:14.081518 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/config.rb:117:in `instances'
+E, [2020-02-23T17:58:14.081549 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/command.rb:112:in `filtered_instances'
+E, [2020-02-23T17:58:14.081580 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/command.rb:142:in `parse_subcommand'
+E, [2020-02-23T17:58:14.081611 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/command/list.rb:30:in `call'
+E, [2020-02-23T17:58:14.081641 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/cli.rb:52:in `perform'
+E, [2020-02-23T17:58:14.081672 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/cli.rb:120:in `list'
+E, [2020-02-23T17:58:14.081702 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/thor-0.20.3/lib/thor/command.rb:27:in `run'
+E, [2020-02-23T17:58:14.081732 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/thor-0.20.3/lib/thor/invocation.rb:126:in `invoke_command'
+E, [2020-02-23T17:58:14.081763 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/thor-0.20.3/lib/thor.rb:387:in `dispatch'
+E, [2020-02-23T17:58:14.081794 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/thor-0.20.3/lib/thor/base.rb:466:in `start'
+E, [2020-02-23T17:58:14.081824 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/bin/kitchen:13:in `block in <top (required)>'
+E, [2020-02-23T17:58:14.081873 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/errors.rb:171:in `with_friendly_errors'
+E, [2020-02-23T17:58:14.081908 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/bin/kitchen:13:in `<top (required)>'
+E, [2020-02-23T17:58:14.081939 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/bin/kitchen:377:in `load'
+E, [2020-02-23T17:58:14.081970 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/bin/kitchen:377:in `<main>'
+E, [2020-02-23T17:58:14.082000 #1316] ERROR -- Kitchen: ----End Backtrace-----
+E, [2020-02-23T17:58:14.082031 #1316] ERROR -- Kitchen: ---Nested Exception---
+E, [2020-02-23T17:58:14.082103 #1316] ERROR -- Kitchen: Class: LoadError
+E, [2020-02-23T17:58:14.082133 #1316] ERROR -- Kitchen: Message: cannot load such file -- kitchen/driver/docker
+E, [2020-02-23T17:58:14.082163 #1316] ERROR -- Kitchen: ----------------------
+E, [2020-02-23T17:58:14.082192 #1316] ERROR -- Kitchen: ------Backtrace-------
+E, [2020-02-23T17:58:14.082221 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/plugin.rb:56:in `rescue in load'
+E, [2020-02-23T17:58:14.082251 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/plugin.rb:34:in `load'
+E, [2020-02-23T17:58:14.082281 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/driver.rb:38:in `for_plugin'
+E, [2020-02-23T17:58:14.082312 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/config.rb:236:in `new_driver'
+E, [2020-02-23T17:58:14.082342 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/config.rb:249:in `new_instance'
+E, [2020-02-23T17:58:14.082372 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/config.rb:144:in `block in build_instances'
+E, [2020-02-23T17:58:14.082402 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/config.rb:143:in `map'
+E, [2020-02-23T17:58:14.082432 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/config.rb:143:in `with_index'
+E, [2020-02-23T17:58:14.082462 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/config.rb:143:in `build_instances'
+E, [2020-02-23T17:58:14.082492 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/config.rb:117:in `instances'
+E, [2020-02-23T17:58:14.082522 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/command.rb:112:in `filtered_instances'
+E, [2020-02-23T17:58:14.082553 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/command.rb:142:in `parse_subcommand'
+E, [2020-02-23T17:58:14.082582 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/command/list.rb:30:in `call'
+E, [2020-02-23T17:58:14.082612 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/cli.rb:52:in `perform'
+E, [2020-02-23T17:58:14.082642 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/cli.rb:120:in `list'
+E, [2020-02-23T17:58:14.082672 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/thor-0.20.3/lib/thor/command.rb:27:in `run'
+E, [2020-02-23T17:58:14.082702 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/thor-0.20.3/lib/thor/invocation.rb:126:in `invoke_command'
+E, [2020-02-23T17:58:14.082765 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/thor-0.20.3/lib/thor.rb:387:in `dispatch'
+E, [2020-02-23T17:58:14.082799 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/thor-0.20.3/lib/thor/base.rb:466:in `start'
+E, [2020-02-23T17:58:14.082830 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/bin/kitchen:13:in `block in <top (required)>'
+E, [2020-02-23T17:58:14.082861 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/errors.rb:171:in `with_friendly_errors'
+E, [2020-02-23T17:58:14.082893 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/bin/kitchen:13:in `<top (required)>'
+E, [2020-02-23T17:58:14.082928 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/bin/kitchen:377:in `load'
+E, [2020-02-23T17:58:14.082962 #1316] ERROR -- Kitchen: C:/opscode/chef-workstation/bin/kitchen:377:in `<main>'
+E, [2020-02-23T17:58:14.085512 #1316] ERROR -- Kitchen: ----End Backtrace-----

@@ -3,7 +3,6 @@ maintainer 'The Authors'
 maintainer_email 'you@example.com'
 license 'All Rights Reserved'
 description 'Installs/Configures ext_ec_nginx'
-long_description 'Installs/Configures ext_ec_nginx'
 version '0.1.3'
 chef_version '>= 13.0'
 

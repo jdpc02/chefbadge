@@ -7,7 +7,7 @@
 extend ExtEcNginx::Helpers
 
 if rhel_based?
-  execute "Key Info Printed" do
+  execute 'Key Info Printed' do
     extend ExtEcNginx::Helpers
     command "echo 'NGINX GPG key #{nginx_key_url}'"
   end

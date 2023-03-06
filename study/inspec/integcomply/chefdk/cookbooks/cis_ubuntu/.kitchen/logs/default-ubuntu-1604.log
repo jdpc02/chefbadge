@@ -1,0 +1,4 @@
+I, [2019-07-14T20:49:17.761563 #18495]  INFO -- default-ubuntu-1604: -----> Destroying <default-ubuntu-1604>...
+I, [2019-07-14T20:49:28.186699 #18495]  INFO -- default-ubuntu-1604: Deleting kitchen sandbox at /home/vagrant/.dokken/kitchen_sandbox/fe64278a25-default-ubuntu-1604
+I, [2019-07-14T20:49:28.187469 #18495]  INFO -- default-ubuntu-1604: Deleting verifier sandbox at /home/vagrant/.dokken/verifier_sandbox/fe64278a25-default-ubuntu-1604
+I, [2019-07-14T20:49:28.208193 #18495]  INFO -- default-ubuntu-1604: Finished destroying <default-ubuntu-1604> (0m10.42s).
