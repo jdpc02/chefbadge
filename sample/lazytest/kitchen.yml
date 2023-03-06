@@ -1,0 +1,50 @@
+---
+driver:
+  name: vagrant
+provisioner:
+  name: chef_zero
+  always_update_cookbooks: true
+  log_level: <%= ENV['CHEF_LOG_LEVEL'] || "auto" %>
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: ubuntu/trusty64
+  - name: ubuntu/xenial64
+    verifier:
+      attributes:
+        is_docker: false
+  - name: centos/7
+    attributes:
+      myattribute: 'something else'
+  - name: myec2
+    driver:
+      name: ec2
+      image_id: ami-06640050dc3f556bb
+      aws_ssh_key_id: tempkey2023Mar
+      region: us-east-1
+      availability_zone: us-east-1c
+      security_group_ids: ["sg-02e1225eff9b49699"]
+      subnet_id: subnet-9b1766d3
+      # associate_public_ip: false
+      # interface: private_dns
+      instance_type: t2.medium
+      # block_device_mappings:
+      #   - device_name: /dev/sda1
+      #     ebs:
+      #       volume_type: gp2
+      #       virtual_name: test
+      #       volume_size: 10
+      #       delete_on_termination: true
+    transport:
+      username: ec2-user
+      ssh_key: c:\\Users\\modemusr\\.ssh\\tempkey2023Mar.pem
+
+suites:
+  - name: default
+    run_list:
+    - recipe[lazytest::default]
+    verifier:
+      inspec_tests:
+        - test/integration/default

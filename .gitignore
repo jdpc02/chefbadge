@@ -1,6 +1,6 @@
 .kitchen/*
 .kitchen/*.*
-Bersfile.lock
+Berksfile.lock
 Gemfile.lock
 .kitchen
 *.*~
